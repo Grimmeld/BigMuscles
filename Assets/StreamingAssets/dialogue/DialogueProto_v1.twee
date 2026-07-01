@@ -1,0 +1,44 @@
+:: StoryTitle
+TestDialogue
+
+
+:: StoryData
+{
+  "ifid": "78863403-EB2F-46F0-ABB9-3D02401398FF",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Start",
+  "tag-colors": {
+    "START": "orange",
+    "END": "blue",
+    "Glace": "green",
+    "Malus": "red",
+    "Bonus": "green"
+  },
+  "zoom": 1
+}
+
+
+:: Domac [Malus] {"position":"925,550","size":"1920,1080"}
+Vous vous sentez lourd.e mais bordel que ça fait du bien par où ça passe !
+[[>>->End]]
+
+
+:: End [END] {"position":"775,750","size":"1920,1080"}
+[[Image:bckgrnd\Gym_Upper.jpg]]
+Pfffiou c'était un choix difficile à faire
+
+
+:: Glace [Bonus] {"position":"650,550","size":"1920,1080"}
+[[Image:bckgrnd\Gym_Bench.jpg]]
+La glace est bien fraiche et vous êtes satisfait.
+[[>>->End]]
+
+
+:: Start [START] {"position":"800,400","size":"1920,1080"}
+[[Image:bckgrnd\Gym_Upper_2.png]]
+Il fait ''extrêmement'' chaud dehors et vous avez une petite faim. 
+Vous décidez de prendre un goûter.
+[[Je vais prendre une glace goût Yaourt->Glace]]
+[[Fuck it ! Je vais m'prendre un domac->Domac]]
+

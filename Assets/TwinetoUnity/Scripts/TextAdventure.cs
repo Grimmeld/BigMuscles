@@ -1,11 +1,14 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using TMPro;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Networking;
-using System.Collections;
 using System.Text;
+using TMPro;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Networking;
+using UnityEngine.UI;
+using static SimpleTwineDialogue.TweeParser;
 
 namespace SimpleTwineDialogue
 {
@@ -74,6 +77,11 @@ namespace SimpleTwineDialogue
 
         // Title of the currently displayed passage
         private string currentPassageTitle;
+        private string currentPassageBody;
+
+        //Type writer text style
+        [Header("Styling text")]
+        [Tooltip("The delay every letter will appear, in seconds")] public float delay;
 
         /// <summary>
         /// Initialize the text adventure and start loading the Twee file
@@ -248,7 +256,11 @@ namespace SimpleTwineDialogue
 
             // Display passage text
             currentPassageTitle = passageTitle;
-            passageText.text = passage.Body;
+
+            currentPassageBody = passage.Body;
+            StopAllCoroutines(); // Clear show text
+            StartCoroutine(ShowText(passage.Body));
+            //passageText.text = passage.Body;
 
             // Create choice buttons using ParsedChoices (handles all link formats automatically)
             foreach (var choice in passage.ParsedChoices)
@@ -329,5 +341,41 @@ namespace SimpleTwineDialogue
             }
         }
 
+        private void CreateChoices()
+        {
+            //foreach (var choice in passage.ParsedChoices)
+            //{
+            //    var choiceButton = Instantiate(choiceButtonPrefab, choiceButtonContainer);
+
+            //    // Display the choice text on the button
+            //    choiceButton.GetComponentInChildren<TextMeshProUGUI>().text = choice.Text;
+
+            //    // When clicked, navigate to the target passage
+            //    string targetPassage = choice.Target; // Capture for lambda
+            //    choiceButton.onClick.AddListener(() => OnChoiceSelected(targetPassage, passage.Body));
+            //}
+        }
+
+        private void CreateImage()
+        {
+
+        }
+
+        IEnumerator ShowText(string fulltext)
+        {
+            for (int i = 0; i < fulltext.Length; i++)
+            {
+                passageText.text = fulltext.Substring(0, i);
+                yield return new WaitForSeconds(delay);
+                
+            }
+        }
+
+        public void onAdvanceSequence(InputAction.CallbackContext context)
+        {
+            StopAllCoroutines();
+            passageText.text = currentPassageBody;
+
+        }
     }
 }
