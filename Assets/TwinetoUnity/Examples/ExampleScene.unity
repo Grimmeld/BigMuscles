@@ -232,7 +232,7 @@ MonoBehaviour:
   loadFromWeb: 0
   webFileURL: https://alexiabucket.s3.us-east-2.amazonaws.com/twinetounity/ExampleTwee.twee
   imageBaseURL: https://alexiabucket.s3.us-east-2.amazonaws.com/twinetounity/
-  localFileName: ExampleTwee.twee
+  localFileName: TestDialogue.twee
 --- !u!4 &537362386
 Transform:
   m_ObjectHideFlags: 0

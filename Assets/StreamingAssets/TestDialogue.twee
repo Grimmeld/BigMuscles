@@ -1,0 +1,28 @@
+:: StoryTitle
+TestDialogue
+
+
+:: StoryData
+{
+  "ifid": "78863403-EB2F-46F0-ABB9-3D02401398FF",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Start",
+  "zoom": 1
+}
+
+
+:: Dialogue2 {"position":"800,525","size":"100,100"}
+Ceci est un deuxième texte
+[[>>->Dialogue3]]
+
+
+:: Dialogue3 {"position":"1000,525","size":"100,100"}
+Le dialogue est là
+[[>>->Start]]
+
+
+:: Start {"position":"800,400","size":"100,100"}
+Ceci est un test
+[[Image:image1.png]]
+[[>>->Dialogue2]]
