@@ -263,31 +263,37 @@ namespace SimpleTwineDialogue
             // Display passage text
             currentPassageTitle = passageTitle;
 
+
+            /// <summary>
+            /// Modifications :
+            /// - Text will appear letter by letter
+            /// - Choices have to appear only when the full text is displayed
+            /// - Player can show full text by clicking on space
+            /// </summary>
+
             currentPassage = passage;
             StopAllCoroutines(); // Clear show text
             StartCoroutine(ShowText(passage));
 
-            //passageText.text = passage.Body;
+            foreach (var tags in passage.Tags)
+            {
+                if (tags.Contains("BONUS"))
+                {
+                    string[] c = tags.Split("-");
+                }
 
+                Debug.Log(tags);
+                switch(tags)
+                {
+                    case "START":
 
-            //// Create choice buttons using ParsedChoices (handles all link formats automatically)
-            //foreach (var choice in passage.ParsedChoices)
-            //{
-            //    var choiceButton = Instantiate(choiceButtonPrefab, choiceButtonContainer);
+                    break;
+                    
 
-            //    // Display the choice text on the button
-            //    choiceButton.GetComponentInChildren<TextMeshProUGUI>().text = choice.Text;
+                }
 
-            //    // When clicked, navigate to the target passage
-            //    string targetPassage = choice.Target; // Capture for lambda
-            //    choiceButton.onClick.AddListener(() => OnChoiceSelected(targetPassage, passage.Body));
-            //}
+            }
 
-            //// Load and display images
-            //foreach (var imageFileName in passage.Images)
-            //{
-            //    StartCoroutine(LoadImage(imageFileName));
-            //}
         }
 
         /// <summary>
@@ -382,13 +388,13 @@ namespace SimpleTwineDialogue
                 // When clicked, navigate to the target passage
                 string targetPassage = passage.ParsedChoices[i].Target; // Capture for lambda
                 choiceButton.onClick.AddListener(() => OnChoiceSelected(targetPassage, passage.Body));
-            
+                
+                // Navigation with keyboard
+                // Select the first button to continue
                 if (i == 0)
                 {
                     EventSystem.current.firstSelectedGameObject = choiceButton.gameObject;
-                    //EventSystem.SetSelectedGameObject(choiceButton.gameObject);
                     choiceButton.Select();
-                    Debug.Log(choiceButton.gameObject.name);
                 }
             }
         
@@ -421,9 +427,13 @@ namespace SimpleTwineDialogue
 
         private void Awake()
         {
-            _actionSelect = GetComponent<PlayerInput>().actions.FindActionMap("Player").FindAction("Select");
+            _actionSelect = GameObject.FindWithTag("Player").GetComponent<PlayerInput>().actions.FindActionMap("Player").FindAction("Select");
 
         }
+
+        /// <summary>
+        /// PLAYER INPUT ACTIONS
+        /// </summary>
 
         public void onAdvanceSequence(InputAction.CallbackContext context)
         {
@@ -437,7 +447,8 @@ namespace SimpleTwineDialogue
                     // The choices needs to appear when the full text is displayed
                     CreateChoices(currentPassage);
 
-                    StartCoroutine(DelaySpamming());
+                    _actionSelect.canceled += OnSelectChoice;
+                    _actionSelect.Enable();
                 }
             }
             
@@ -461,13 +472,5 @@ namespace SimpleTwineDialogue
             }
         }
 
-        // A delay is needed to separate the click from the 
-        IEnumerator DelaySpamming()
-        {
-            yield return new WaitForSeconds(0.3f);
-
-            _actionSelect.canceled += OnSelectChoice;
-            _actionSelect.Enable();
-        }
     }
 }
