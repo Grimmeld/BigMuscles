@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13a45f7832a81bb4e8b5f52fd5456024, type: 3}
+  m_Script: {fileID: 11500000, guid: 32dac72697ff56243a8d44e17917fe0f, type: 3}
   m_Name: BILL
-  m_EditorClassIdentifier: Assembly-CSharp::Character
-  charName: Bill
-  image: {fileID: 2800000, guid: 1b3d54e4e32b87945a1ebb798d4275cb, type: 3}
-  meter: 0
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterSO
+  character:
+    keyName: BILL
+    charName: Bill
+    image: {fileID: 2800000, guid: 1b3d54e4e32b87945a1ebb798d4275cb, type: 3}
+    meter: 0

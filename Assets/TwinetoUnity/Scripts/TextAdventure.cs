@@ -50,6 +50,9 @@ namespace SimpleTwineDialogue
         // Prefab for images that will be instantiated
         public Image imagePrefab;
 
+        // Container where character name will be displayed
+        [SerializeField] private Transform charnameContainer;
+
         // Counter for tracking how many choices the player has made
         int myChoices = 0;
         public TextMeshProUGUI myChoiceCounterUI;
@@ -79,7 +82,6 @@ namespace SimpleTwineDialogue
         private string currentPassageTitle;
         private Passage currentPassage;
         private bool isWriting;
-        private bool CanBeClicked;
 
         //Type writer text style
         [Header("Styling text")]
@@ -277,12 +279,22 @@ namespace SimpleTwineDialogue
 
             foreach (var tags in passage.Tags)
             {
-                if (tags.Contains("BONUS"))
+                Debug.Log(tags);
+
+
+                if (tags.Contains("CHAR"))
                 {
-                    string[] c = tags.Split("-");
+                    string[] charTags = tags.Split("-");
+
+                    Character character = CharacterManagement.Instance.FindCharacterName(charTags[1]);
+                    if (character != null)
+                    {
+
+                    }
+
+
                 }
 
-                Debug.Log(tags);
                 switch(tags)
                 {
                     case "START":
@@ -358,7 +370,6 @@ namespace SimpleTwineDialogue
         void ClearText()
         {
             isWriting = true;
-            CanBeClicked = false;
             _actionSelect.canceled -= OnSelectChoice;
             _actionSelect.Disable();
         }

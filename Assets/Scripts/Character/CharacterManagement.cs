@@ -1,30 +1,56 @@
 using NUnit.Framework;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.TextCore.Text;
+using UnityEngine.UI;
 
 public class CharacterManagement : MonoBehaviour
 {
-    public Character[] charactersSO;
-    public List<Character> characters;
-    public TextMeshProUGUI meterTest;
+    public static CharacterManagement Instance;
+
+    [Header("Parameters")]
+    [Tooltip("Lister tous les personnages de la scène")]
+    [SerializeField] private CharacterSO[] characters;
+    [HideInInspector] public List<Character> characterList;
+
+    [Header("UI")]
+    [SerializeField] Slider meterSlider;
+    [SerializeField] float fadeSlider;
+
+    [Header("Debug")]
     public float bonusLevel;
 
-    private void Start()
+    private void Awake()
     {
-        characters = Resources.LoadAll<Character>("Character/");
-        //characters = charactersSO;
+        if (Instance != null)
+            Destroy(this);
 
-        foreach (Character character in characters)
+        Instance = this;
+
+        foreach(CharacterSO so in characters)
         {
-            if (character.name == "BILL")
-            {
-                UpdateUI(character.meter);
-            }
-        }
+            // Instantiate the Scriptable Object allows to change data and not change the SO
+            CharacterSO s = Instantiate(so);
+            AddToList(s.character);
     }
 
+        Character character = FindCharacterName(name);
+
+        if (character != null)
+        {
+            StartCoroutine(UpdateUI(character.meter));
+        }
+
+    }
+
+    private void AddToList(Character c)
+    {
+        characterList.Add(c);
+    }
 
     public void UpdateMeter(string name, float bonus)
     {
@@ -33,23 +59,46 @@ public class CharacterManagement : MonoBehaviour
         /// update the meter
         /// Change UI
 
+        Character character = FindCharacterName(name);
 
-        foreach(Character character in characters)
+        if (character != null)
         {
+            character.meter = UpdaterMeterChar(character.meter, bonus);
 
-            if (character.name == name)
-            {
-                character.meter = UpdaterMeterChar(character.meter, bonus);
-
-                UpdateUI(character.meter);
-            }
+            StartCoroutine(UpdateUI(character.meter));
         }
+
 
     }
 
-    public void UpdateUI(float meter)
+    
+
+    private IEnumerator UpdateUI(float meter)
     {
-        meterTest.text = new string("Meter : " + meter);
+
+        if (meterSlider.value < meter) //bonus
+        {
+            while (meterSlider.value <= meter)
+            {
+                
+                meterSlider.value += Time.deltaTime * fadeSlider;
+                yield return null;
+            }
+
+        }
+        else if (meterSlider.value > meter) //malus
+        {
+
+            while (meter <= meterSlider.value)
+            {
+                
+                meterSlider.value -= Time.deltaTime * fadeSlider;
+                yield return null;
+            }
+        }
+
+
+        meterSlider.value = meter;
     }
 
     public float UpdaterMeterChar(float currentMeter, float bonus)
@@ -71,6 +120,20 @@ public class CharacterManagement : MonoBehaviour
         {
             UpdateMeter("BILL", bonusLevel);
         }
+    }
+
+    public Character FindCharacterName(string nameToCheck)
+    {
+        foreach (Character character in characterList)
+        {
+            if (character.keyName == nameToCheck)
+            {
+                return character;            
+            }
+        }
+
+
+        return null;
     }
 
 }
