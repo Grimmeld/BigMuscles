@@ -234,6 +234,7 @@ MonoBehaviour:
   webFileURL: https://alexiabucket.s3.us-east-2.amazonaws.com/twinetounity/ExampleTwee.twee
   imageBaseURL: https://alexiabucket.s3.us-east-2.amazonaws.com/twinetounity/
   localFileName: dialogue/DialogueProto_v1.twee
+  isWriting: 0
   delay: 0.1
 --- !u!4 &537362386
 Transform:
@@ -339,6 +340,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 537362385}
+        m_TargetAssemblyTypeName: SimpleTwineDialogue.TextAdventure, Assembly-CSharp
+        m_MethodName: OnSelectChoice
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3d3f6057-6e3d-4052-bf51-af7b02bfa838
+    m_ActionName: 'Player/Select[/Keyboard/space,/Keyboard/enter]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

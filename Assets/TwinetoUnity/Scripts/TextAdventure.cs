@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.Networking;
 using UnityEngine.UI;
@@ -77,7 +77,9 @@ namespace SimpleTwineDialogue
 
         // Title of the currently displayed passage
         private string currentPassageTitle;
-        private string currentPassageBody;
+        private Passage currentPassage;
+        private bool isWriting;
+        private bool CanBeClicked;
 
         //Type writer text style
         [Header("Styling text")]
@@ -253,33 +255,39 @@ namespace SimpleTwineDialogue
             // Clear previous content
             ClearChoices();
             ClearImages();
+            ClearText();
+
+            // Display background image 
+            CreateImage(passage);
 
             // Display passage text
             currentPassageTitle = passageTitle;
 
-            currentPassageBody = passage.Body;
+            currentPassage = passage;
             StopAllCoroutines(); // Clear show text
-            StartCoroutine(ShowText(passage.Body));
+            StartCoroutine(ShowText(passage));
+
             //passageText.text = passage.Body;
 
-            // Create choice buttons using ParsedChoices (handles all link formats automatically)
-            foreach (var choice in passage.ParsedChoices)
-            {
-                var choiceButton = Instantiate(choiceButtonPrefab, choiceButtonContainer);
 
-                // Display the choice text on the button
-                choiceButton.GetComponentInChildren<TextMeshProUGUI>().text = choice.Text;
+            //// Create choice buttons using ParsedChoices (handles all link formats automatically)
+            //foreach (var choice in passage.ParsedChoices)
+            //{
+            //    var choiceButton = Instantiate(choiceButtonPrefab, choiceButtonContainer);
 
-                // When clicked, navigate to the target passage
-                string targetPassage = choice.Target; // Capture for lambda
-                choiceButton.onClick.AddListener(() => OnChoiceSelected(targetPassage, passage.Body));
-            }
+            //    // Display the choice text on the button
+            //    choiceButton.GetComponentInChildren<TextMeshProUGUI>().text = choice.Text;
 
-            // Load and display images
-            foreach (var imageFileName in passage.Images)
-            {
-                StartCoroutine(LoadImage(imageFileName));
-            }
+            //    // When clicked, navigate to the target passage
+            //    string targetPassage = choice.Target; // Capture for lambda
+            //    choiceButton.onClick.AddListener(() => OnChoiceSelected(targetPassage, passage.Body));
+            //}
+
+            //// Load and display images
+            //foreach (var imageFileName in passage.Images)
+            //{
+            //    StartCoroutine(LoadImage(imageFileName));
+            //}
         }
 
         /// <summary>
@@ -341,7 +349,16 @@ namespace SimpleTwineDialogue
             }
         }
 
-        private void CreateChoices()
+        void ClearText()
+        {
+            isWriting = true;
+            CanBeClicked = false;
+            _actionSelect.canceled -= OnSelectChoice;
+            _actionSelect.Disable();
+        }
+
+
+        private void CreateChoices(Passage passage)
         {
             //foreach (var choice in passage.ParsedChoices)
             //{
@@ -354,28 +371,103 @@ namespace SimpleTwineDialogue
             //    string targetPassage = choice.Target; // Capture for lambda
             //    choiceButton.onClick.AddListener(() => OnChoiceSelected(targetPassage, passage.Body));
             //}
-        }
 
-        private void CreateImage()
-        {
-
-        }
-
-        IEnumerator ShowText(string fulltext)
-        {
-            for (int i = 0; i < fulltext.Length; i++)
+            for(int i = 0; i < passage.ParsedChoices.Count; i++) 
             {
-                passageText.text = fulltext.Substring(0, i);
-                yield return new WaitForSeconds(delay);
-                
+                var choiceButton = Instantiate(choiceButtonPrefab, choiceButtonContainer);
+
+                // Display the choice text on the button
+                choiceButton.GetComponentInChildren<TextMeshProUGUI>().text = passage.ParsedChoices[i].Text;
+
+                // When clicked, navigate to the target passage
+                string targetPassage = passage.ParsedChoices[i].Target; // Capture for lambda
+                choiceButton.onClick.AddListener(() => OnChoiceSelected(targetPassage, passage.Body));
+            
+                if (i == 0)
+                {
+                    EventSystem.current.firstSelectedGameObject = choiceButton.gameObject;
+                    //EventSystem.SetSelectedGameObject(choiceButton.gameObject);
+                    choiceButton.Select();
+                    Debug.Log(choiceButton.gameObject.name);
+                }
             }
+        
+        }
+
+        private void CreateImage(Passage passage)
+        {
+            foreach (var imageFileName in passage.Images)
+            {
+                StartCoroutine(LoadImage(imageFileName));
+            }
+        }
+
+        IEnumerator ShowText(Passage passage)
+        {
+            for (int i = 0; i < passage.Body.Length; i++)
+            {
+                passageText.text = passage.Body.Substring(0, i);
+                yield return new WaitForSeconds(delay);
+            }
+
+            isWriting = false;
+
+            // The choices needs to appear when the full text is displayed
+            CreateChoices(passage);
+            
+        }
+
+        private InputAction _actionSelect;
+
+        private void Awake()
+        {
+            _actionSelect = GetComponent<PlayerInput>().actions.FindActionMap("Player").FindAction("Select");
+
         }
 
         public void onAdvanceSequence(InputAction.CallbackContext context)
         {
-            StopAllCoroutines();
-            passageText.text = currentPassageBody;
+            if (context.started)
+            {
+                if (isWriting)
+                {
+                    StopAllCoroutines();
+                    passageText.text = currentPassage.Body;
 
+                    // The choices needs to appear when the full text is displayed
+                    CreateChoices(currentPassage);
+
+                    StartCoroutine(DelaySpamming());
+                }
+            }
+            
+            isWriting = false;
+
+        }
+
+        public void OnSelectChoice(InputAction.CallbackContext context) 
+        { 
+            if (!isWriting)
+            {
+                if (context.canceled)
+                {
+                     if (EventSystem.current.currentSelectedGameObject != null)
+                    {
+                            Button button = EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
+                            ExecuteEvents.Execute<IPointerClickHandler>(button.gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerClickHandler);
+                    }
+
+                }
+            }
+        }
+
+        // A delay is needed to separate the click from the 
+        IEnumerator DelaySpamming()
+        {
+            yield return new WaitForSeconds(0.3f);
+
+            _actionSelect.canceled += OnSelectChoice;
+            _actionSelect.Enable();
         }
     }
 }
