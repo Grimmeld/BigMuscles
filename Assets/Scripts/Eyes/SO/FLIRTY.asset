@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: FLIRTY
   m_EditorClassIdentifier: Assembly-CSharp::Eye
   keyName: FLIRTY
-  eyeImage: {fileID: 2800000, guid: 0ee5df980bd101744bc7d09a4e3a3ce6, type: 3}
+  eyeImage: {fileID: 2800000, guid: 385a7bc20ced14d42b80cbf2a7066462, type: 3}
   eyeWidth: 300
   eyeHeight: 300

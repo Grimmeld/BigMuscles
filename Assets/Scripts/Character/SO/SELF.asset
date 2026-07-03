@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSO
   character:
     keyName: SELF
-    charName: Eric
-    image: {fileID: 0}
+    charName: You
+    characterImage: {fileID: 0}
+    characterWidth: 0
+    characterHeight: 0
     meter: 0

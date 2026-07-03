@@ -62,8 +62,8 @@ namespace SimpleTwineDialogue
         public Transform imageEyeContainer;
 
         // Counter for tracking how many choices the player has made
-        int myChoices = 0;
-        public TextMeshProUGUI myChoiceCounterUI;
+        //int myChoices = 0;
+        //public TextMeshProUGUI myChoiceCounterUI;
 
         [Header("File Loading")]
         // Toggle between web and local file loading
@@ -120,8 +120,8 @@ namespace SimpleTwineDialogue
         void OnChoiceSelected(string choiceTitle, string currentPassageText)
         {
             DisplayPassage(choiceTitle);
-            myChoices += 1;
-            myChoiceCounterUI.text = "Choices made: " + myChoices.ToString();
+            //myChoices += 1;
+            //myChoiceCounterUI.text = "Choices made: " + myChoices.ToString();
         }
 
         /// <summary>
@@ -294,7 +294,40 @@ namespace SimpleTwineDialogue
 
                 }
 
-                if(tags.Contains("BONUS"))
+                if (tags.Contains("SPEAK"))
+                {
+                    string[] charTags = tags.Split("-");
+
+                    Character character = CharacterManagement.Instance.FindCharacterName(charTags[1]);
+                    if (character != null)
+                    {
+                        switch (character.keyName)
+                        {
+                            case "SELF":
+
+                                selfnameContainer.gameObject.SetActive(true);
+                                charnameContainer.gameObject.SetActive(false);
+
+                                selfnameContainer.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = character.charName;
+
+
+                                break;
+
+                            default:
+
+                                selfnameContainer.gameObject.SetActive(false);
+                                charnameContainer.gameObject.SetActive(true);
+
+                                charnameContainer.GetComponentInChildren<TextMeshProUGUI>().text = character.charName;
+
+
+                                break;
+
+                        }
+                    }
+                    }
+
+                if (tags.Contains("BONUS"))
                 {
                     string[] charTags = tags.Split("-");
 
@@ -354,10 +387,10 @@ namespace SimpleTwineDialogue
                 {
                     case "SELF":
 
-                        selfnameContainer.gameObject.SetActive(true);
-                        charnameContainer.gameObject.SetActive(false);
+                        //selfnameContainer.gameObject.SetActive(true);
+                        //charnameContainer.gameObject.SetActive(false);
 
-                        selfnameContainer.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = character.charName;
+                        //selfnameContainer.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = character.charName;
 
                         imageCharContainer.gameObject.SetActive(false);
                         imageEyeContainer.gameObject.SetActive(false);
@@ -367,14 +400,15 @@ namespace SimpleTwineDialogue
 
                     default:
 
-                        selfnameContainer.gameObject.SetActive(false);
-                        charnameContainer.gameObject.SetActive(true);
+                        //selfnameContainer.gameObject.SetActive(false);
+                        //charnameContainer.gameObject.SetActive(true);
 
-                        charnameContainer.GetComponentInChildren<TextMeshProUGUI>().text = character.charName;
+                        //charnameContainer.GetComponentInChildren<TextMeshProUGUI>().text = character.charName;
 
                         // Character image
-                        SetImageSize(imageCharContainer, character.characterImage.width, character.characterImage.height);
+                        SetImageSize(imageCharContainer, character.characterWidth, character.characterHeight);
                         DisplayImage(character.characterImage, character.characterImage.width, character.characterImage.height, imageCharContainer);
+
 
                         // Show Bro Meter for current character
                         CharacterManagement.Instance.ToggleMeterContainer(true);
@@ -460,6 +494,11 @@ namespace SimpleTwineDialogue
             }
 
             foreach (Transform child in imageCharContainer)
+            {
+                Destroy(child.gameObject);
+            }
+
+            foreach (Transform child in imageEyeContainer)
             {
                 Destroy(child.gameObject);
             }
