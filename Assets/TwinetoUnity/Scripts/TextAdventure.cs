@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.Networking;
+using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 using static SimpleTwineDialogue.TweeParser;
 
@@ -52,6 +53,13 @@ namespace SimpleTwineDialogue
 
         // Container where character name will be displayed
         [SerializeField] private Transform charnameContainer;
+        [SerializeField] private Transform selfnameContainer;
+
+        // Container where images will be displayed
+        public Transform imageCharContainer;
+
+        // Container where images will be displayed
+        public Transform imageEyeContainer;
 
         // Counter for tracking how many choices the player has made
         int myChoices = 0;
@@ -228,18 +236,16 @@ namespace SimpleTwineDialogue
 
                     Debug.Log("Texture loaded from StreamingAssets. Width: " + texture.width + ", Height: " + texture.height);
 
-                    // Create sprite from texture and display it
-                    Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
-                    Image image = Instantiate(imagePrefab, imageContainer);
-                    image.sprite = sprite;
-                    image.gameObject.SetActive(true);
-                }
+                    DisplayImage(texture, texture.width, texture.height, imageContainer);
+
+            }
                 else
                 {
                     Debug.LogError("Image file not found in StreamingAssets: " + imagePath);
                 }
             }
         }
+
 
         /// <summary>
         /// Display a passage and its contents (text, choices, images) in the UI
@@ -284,18 +290,47 @@ namespace SimpleTwineDialogue
 
                 if (tags.Contains("CHAR"))
                 {
+                    TagCharacterManager(tags);
+
+                }
+
+                if(tags.Contains("BONUS"))
+                {
                     string[] charTags = tags.Split("-");
 
                     Character character = CharacterManagement.Instance.FindCharacterName(charTags[1]);
                     if (character != null)
                     {
-
+                        CharacterManagement.Instance.GetAndUpdateMeterBYCharacter(character.keyName, CharacterManagement.Instance.bonusLevel);
                     }
-
-
                 }
 
-                switch(tags)
+                if (tags.Contains("MALUS"))
+                {
+                    string[] charTags = tags.Split("-");
+
+                    Character character = CharacterManagement.Instance.FindCharacterName(charTags[1]);
+                    if (character != null)
+                    {
+                        CharacterManagement.Instance.GetAndUpdateMeterBYCharacter(character.keyName, CharacterManagement.Instance.bonusLevel * -1);
+                    }
+                }
+
+                if (tags.Contains("EYE"))
+                {
+                    string[] charTags = tags.Split("-");
+
+                    Eye eye = CharacterManagement.Instance.FindEyeByName(charTags[1]);
+                    if (eye != null)
+                    {
+                        imageEyeContainer.gameObject.SetActive(true);
+                        SetImageSize(imageEyeContainer, eye.eyeWidth, eye.eyeHeight);
+                        DisplayImage(eye.eyeImage, eye.eyeImage.width, eye.eyeImage.height, imageEyeContainer);
+
+                    }
+                }
+
+                switch (tags)
                 {
                     case "START":
 
@@ -306,6 +341,64 @@ namespace SimpleTwineDialogue
 
             }
 
+        }
+
+        private void TagCharacterManager(string tags)
+        {
+            string[] charTags = tags.Split("-");
+
+            Character character = CharacterManagement.Instance.FindCharacterName(charTags[1]);
+            if (character != null)
+            {
+                switch (character.keyName)
+                {
+                    case "SELF":
+
+                        selfnameContainer.gameObject.SetActive(true);
+                        charnameContainer.gameObject.SetActive(false);
+
+                        selfnameContainer.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = character.charName;
+
+                        imageCharContainer.gameObject.SetActive(false);
+                        imageEyeContainer.gameObject.SetActive(false);
+                        CharacterManagement.Instance.ToggleMeterContainer(false);
+
+                        break;
+
+                    default:
+
+                        selfnameContainer.gameObject.SetActive(false);
+                        charnameContainer.gameObject.SetActive(true);
+
+                        charnameContainer.GetComponentInChildren<TextMeshProUGUI>().text = character.charName;
+
+                        // Character image
+                        SetImageSize(imageCharContainer, character.characterImage.width, character.characterImage.height);
+                        DisplayImage(character.characterImage, character.characterImage.width, character.characterImage.height, imageCharContainer);
+
+                        // Show Bro Meter for current character
+                        CharacterManagement.Instance.ToggleMeterContainer(true);
+                        CharacterManagement.Instance.GetAndUpdateMeterBYCharacter(character.keyName, 0);
+
+                        break;
+
+                }
+            }
+        }
+
+        private void SetImageSize(Transform container, float width, float height)
+        {
+            container.gameObject.SetActive(true);
+            container.gameObject.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, width);
+            container.gameObject.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, height);
+        }
+
+        private void DisplayImage(Texture2D texture, int width, int height, Transform container)
+        {
+            Sprite sprite = Sprite.Create(texture, new Rect(0, 0, width, height), Vector2.zero);
+            Image image = Instantiate(imagePrefab, container);
+            image.sprite = sprite;
+            image.gameObject.SetActive(true);
         }
 
         /// <summary>
@@ -362,6 +455,11 @@ namespace SimpleTwineDialogue
         void ClearImages()
         {
             foreach (Transform child in imageContainer)
+            {
+                Destroy(child.gameObject);
+            }
+
+            foreach (Transform child in imageCharContainer)
             {
                 Destroy(child.gameObject);
             }

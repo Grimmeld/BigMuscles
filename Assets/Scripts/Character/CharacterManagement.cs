@@ -8,6 +8,15 @@ using UnityEngine.InputSystem;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
+/// <summary>
+/// In this script, the characters statistics will be managed like the Bro Meter
+/// The meter is updated by character
+/// 
+/// All characters SO including SELF needs to be added to the Parameters
+/// 
+/// For now the bonus/malus is always the same amount
+/// </summary>
+
 public class CharacterManagement : MonoBehaviour
 {
     public static CharacterManagement Instance;
@@ -15,14 +24,17 @@ public class CharacterManagement : MonoBehaviour
     [Header("Parameters")]
     [Tooltip("Lister tous les personnages de la scène")]
     [SerializeField] private CharacterSO[] characters;
+    [SerializeField] private Eye[] eyes;
     [HideInInspector] public List<Character> characterList;
 
     [Header("UI")]
-    [SerializeField] Slider meterSlider;
+    public Transform meterContainer;
     [SerializeField] float fadeSlider;
 
     [Header("Debug")]
     public float bonusLevel;
+
+    private Action<float> OnValueChanged;
 
     private void Awake()
     {
@@ -36,15 +48,16 @@ public class CharacterManagement : MonoBehaviour
             // Instantiate the Scriptable Object allows to change data and not change the SO
             CharacterSO s = Instantiate(so);
             AddToList(s.character);
-    }
-
-        Character character = FindCharacterName(name);
-
-        if (character != null)
-        {
-            StartCoroutine(UpdateUI(character.meter));
         }
 
+        OnValueChanged += UpdateUI;
+
+    }
+
+    private void UpdateUI(float NewMeter)
+    {
+        StopAllCoroutines();
+        StartCoroutine(ChangeMeterContainer(NewMeter));
     }
 
     private void AddToList(Character c)
@@ -52,7 +65,7 @@ public class CharacterManagement : MonoBehaviour
         characterList.Add(c);
     }
 
-    public void UpdateMeter(string name, float bonus)
+    public void GetAndUpdateMeterBYCharacter(string name, float bonus)
     {
         /// Get the right character
         /// Retrieve the meter level
@@ -63,64 +76,49 @@ public class CharacterManagement : MonoBehaviour
 
         if (character != null)
         {
-            character.meter = UpdaterMeterChar(character.meter, bonus);
+            character.meter += bonus;
+            character.meter = Mathf.Clamp(character.meter, -100, 100);
 
-            StartCoroutine(UpdateUI(character.meter));
+            OnValueChanged.Invoke(character.meter);
+
         }
 
 
     }
-
     
 
-    private IEnumerator UpdateUI(float meter)
+    private IEnumerator ChangeMeterContainer(float meter)
     {
+        meterContainer.GetComponentInChildren<TextMeshProUGUI>().text = (meter.ToString() + " %");
 
-        if (meterSlider.value < meter) //bonus
+        Slider slider = meterContainer.GetComponentInChildren<Slider>();
+        if (slider.value < meter) //bonus
         {
-            while (meterSlider.value <= meter)
+            while (slider.value <= meter)
             {
-                
-                meterSlider.value += Time.deltaTime * fadeSlider;
+
+                slider.value += Time.deltaTime * fadeSlider;
                 yield return null;
             }
 
         }
-        else if (meterSlider.value > meter) //malus
+        else if (slider.value > meter) //malus
         {
 
-            while (meter <= meterSlider.value)
+            while (meter <= slider.value)
             {
-                
-                meterSlider.value -= Time.deltaTime * fadeSlider;
+
+                slider.value -= Time.deltaTime * fadeSlider;
                 yield return null;
             }
         }
 
 
-        meterSlider.value = meter;
-    }
-
-    public float UpdaterMeterChar(float currentMeter, float bonus)
-    {
-        currentMeter += bonus;
-        currentMeter = Mathf.Clamp(currentMeter, -100, 100);
-
-        // Mettre un event d'update UI
-
-        // Change in UI if meter is above 100
-
-        return currentMeter;
+        slider.value = meter;
 
     }
 
-    public void DebuggerKey(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            UpdateMeter("BILL", bonusLevel);
-        }
-    }
+
 
     public Character FindCharacterName(string nameToCheck)
     {
@@ -136,4 +134,24 @@ public class CharacterManagement : MonoBehaviour
         return null;
     }
 
+
+
+    public void ToggleMeterContainer(bool state)
+    {
+        meterContainer.gameObject.SetActive(state);
+
+    }
+    public Eye FindEyeByName(string nameToCheck)
+    {
+        foreach (Eye eye in eyes)
+        {
+            if (eye.keyName == nameToCheck)
+            {
+                return eye;
+            }
+        }
+
+
+        return null;
+    }
 }

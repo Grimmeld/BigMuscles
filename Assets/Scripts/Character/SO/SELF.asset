@@ -10,12 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32dac72697ff56243a8d44e17917fe0f, type: 3}
-  m_Name: BILL
+  m_Name: SELF
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSO
   character:
-    keyName: BILL
-    charName: Bill
-    characterImage: {fileID: 2800000, guid: 1b3d54e4e32b87945a1ebb798d4275cb, type: 3}
-    characterWidth: 500
-    characterHeight: 500
+    keyName: SELF
+    charName: Eric
+    image: {fileID: 0}
     meter: 0
