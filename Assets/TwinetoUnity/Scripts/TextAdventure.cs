@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -94,6 +95,9 @@ namespace SimpleTwineDialogue
         //Type writer text style
         [Header("Styling text")]
         [Tooltip("The delay every letter will appear, in seconds")] public float delay;
+        public TMP_FontAsset _narraFont;
+        public TMP_FontAsset _speakFont;
+        public Color _narraColor;
 
         /// <summary>
         /// Initialize the text adventure and start loading the Twee file
@@ -262,11 +266,16 @@ namespace SimpleTwineDialogue
 
             // Clear previous content
             ClearChoices();
-            ClearImages();
+            //ClearImages();
             ClearText();
 
-            // Display background image 
-            CreateImage(passage);
+            // Display background image
+            if (passage.Images.Count > 0)
+            {
+                ClearImagesBack();
+                CreateImage(passage);
+            }
+            
 
             // Display passage text
             currentPassageTitle = passageTitle;
@@ -285,22 +294,25 @@ namespace SimpleTwineDialogue
 
             foreach (var tags in passage.Tags)
             {
-                Debug.Log(tags);
-
 
                 if (tags.Contains("CHAR"))
                 {
+                    ClearImagesChar();
                     TagCharacterManager(tags);
 
                 }
 
                 if (tags.Contains("SPEAK"))
                 {
+                    passageText.font = _speakFont;
+
                     string[] charTags = tags.Split("-");
 
                     Character character = CharacterManagement.Instance.FindCharacterName(charTags[1]);
                     if (character != null)
                     {
+                        passageText.color = character.text_color;
+
                         switch (character.keyName)
                         {
                             case "SELF":
@@ -309,6 +321,7 @@ namespace SimpleTwineDialogue
                                 charnameContainer.gameObject.SetActive(false);
 
                                 selfnameContainer.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = character.charName;
+                                selfnameContainer.gameObject.GetComponentInChildren<TextMeshProUGUI>().color = character.text_color;
 
 
                                 break;
@@ -319,6 +332,7 @@ namespace SimpleTwineDialogue
                                 charnameContainer.gameObject.SetActive(true);
 
                                 charnameContainer.GetComponentInChildren<TextMeshProUGUI>().text = character.charName;
+                                charnameContainer.GetComponentInChildren<TextMeshProUGUI>().color = character.text_color;
 
 
                                 break;
@@ -351,6 +365,8 @@ namespace SimpleTwineDialogue
 
                 if (tags.Contains("EYE"))
                 {
+                    ClearImagesEye();
+
                     string[] charTags = tags.Split("-");
 
                     Eye eye = CharacterManagement.Instance.FindEyeByName(charTags[1]);
@@ -365,7 +381,9 @@ namespace SimpleTwineDialogue
 
                 switch (tags)
                 {
-                    case "START":
+                    case "END":
+
+                        Application.Quit();
 
                     break;
                     
@@ -387,8 +405,15 @@ namespace SimpleTwineDialogue
                 {
                     case "SELF":
 
-                        //selfnameContainer.gameObject.SetActive(true);
-                        //charnameContainer.gameObject.SetActive(false);
+                        ClearImagesChar();
+                        ClearImagesEye();
+
+                        passageText.font = _narraFont;
+                        passageText.color = _narraColor;
+
+
+                        selfnameContainer.gameObject.SetActive(false);
+                        charnameContainer.gameObject.SetActive(false);
 
                         //selfnameContainer.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = character.charName;
 
@@ -485,6 +510,30 @@ namespace SimpleTwineDialogue
 
         }
 
+        void ClearImagesBack()
+        {
+            foreach (Transform child in imageContainer)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+        void ClearImagesChar()
+        {
+            foreach (Transform child in imageCharContainer)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+        void ClearImagesEye()
+        {
+            foreach (Transform child in imageEyeContainer)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
         // Clear out the image to make room for the new one.
         void ClearImages()
         {
@@ -507,8 +556,8 @@ namespace SimpleTwineDialogue
         void ClearText()
         {
             isWriting = true;
-            _actionSelect.canceled -= OnSelectChoice;
-            _actionSelect.Disable();
+            CanceledSelect();
+            
         }
 
 
@@ -587,21 +636,29 @@ namespace SimpleTwineDialogue
         {
             if (context.started)
             {
-                if (isWriting)
-                {
-                    StopAllCoroutines();
-                    passageText.text = currentPassage.Body;
+                ShowAllPassageText();
 
-                    // The choices needs to appear when the full text is displayed
-                    CreateChoices(currentPassage);
-
-                    _actionSelect.canceled += OnSelectChoice;
-                    _actionSelect.Enable();
-                }
             }
-            
-            isWriting = false;
 
+
+        }
+
+        public void ShowAllPassageText()
+        {
+            if (isWriting)
+            {
+                StopAllCoroutines();
+                passageText.text = currentPassage.Body;
+                
+                // The choices needs to appear when the full text is displayed
+                CreateChoices(currentPassage);
+
+                EnableSelect();
+                
+
+                isWriting = false;
+
+            }
         }
 
         public void OnSelectChoice(InputAction.CallbackContext context) 
@@ -620,5 +677,15 @@ namespace SimpleTwineDialogue
             }
         }
 
+        public void CanceledSelect()
+        {
+            _actionSelect.canceled -= OnSelectChoice;
+            _actionSelect.Disable();
+        }
+        public void EnableSelect()
+        {
+            _actionSelect.canceled += OnSelectChoice;
+            _actionSelect.Enable();
+        }
     }
 }

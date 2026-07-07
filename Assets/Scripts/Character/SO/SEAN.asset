@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32dac72697ff56243a8d44e17917fe0f, type: 3}
-  m_Name: SELF
+  m_Name: SEAN
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSO
   character:
-    keyName: SELF
-    charName: Toi
-    characterImage: {fileID: 0}
-    characterWidth: 0
-    characterHeight: 0
+    keyName: SEAN
+    charName: Sean
+    characterImage: {fileID: 2800000, guid: 49271b594f2d0b04485f30b2660b6cad, type: 3}
+    characterWidth: 500
+    characterHeight: 1200
     meter: 0
-    text_color: {r: 1, g: 0.7368674, b: 0.41037738, a: 1}
+    text_color: {r: 0.54509807, g: 0.87058824, b: 0.43137255, a: 1}

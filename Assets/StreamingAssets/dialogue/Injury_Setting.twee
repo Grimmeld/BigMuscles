@@ -1,0 +1,853 @@
+:: StoryTitle
+TestDialogue
+
+
+:: StoryData
+{
+  "ifid": "78863403-EB2F-46F0-ABB9-3D02401398FF",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Start",
+  "tag-colors": {
+    "START": "orange",
+    "END": "blue",
+    "Glace": "green",
+    "Malus": "red",
+    "Bonus": "green",
+    "AJOUT": "orange",
+    "SELF": "purple",
+    "BILL": "purple",
+    "MOI": "blue",
+    "CHAR-SELF": "blue",
+    "CHAR-BILL": "blue",
+    "BONUS-BILL": "red",
+    "MALUS-BILL": "red",
+    "EYE-FLIRTY": "orange",
+    "EYE-SAD": "green",
+    "SPEAK-BILL": "red",
+    "SPEAK-SELF": "red",
+    "CHAR-SEAN": "blue",
+    "SPEAK-SEAN": "red",
+    "BONUS-SEAN": "red",
+    "MALUS-SEAN": "blue"
+  },
+  "zoom": 1
+}
+
+
+:: Chp2_Inj_Pres_1 [CHAR-SELF] {"position":"800,2425","size":"100,100"}
+Tu te diriges vers la machine de Pull Down, le buste en avant, avec cette confiance qui te va si bien. 
+[[>>->Chp2_Inj_Pres_2]]
+
+[[Image:bckgrnd\Gym_PullDown.png]]
+
+
+:: Chp2_Inj_Pres_10 [CHAR-SELF] {"position":"800,3550","size":"100,100"}
+Faire des tractions ça a toujours été un objectif. Tu as déjà essayé d’apprendre à en faire avec une barre de traction chez toi, bloqué dans l’ouverture d’une porte. Mais elle avait juste glissé et il était tombé sur les fesses. 
+
+[[>>->Chp2_Inj_Pres_11]]
+
+
+
+:: Chp2_Inj_Pres_11 [CHAR-SEAN EYE-FLIRTY SPEAK-SEAN] {"position":"800,3675","size":"100,100"}
+Ecoute-moi bien, ma couille : me fais pas perdre mon temps. Je suis quelqu’un ici. 
+
+[[>>->Chp2_Inj_Pres_12]]
+
+
+
+:: Chp2_Inj_Pres_12 [CHAR-SEAN EYE-FLIRTY SPEAK-SELF] {"position":"800,3800","size":"100,100"}
+Eh je suis pas là pour rigoler non plus ! 
+
+[[>>->Chp2_Inj_Pres_13]]
+
+
+
+:: Chp2_Inj_Pres_13 [CHAR-SEAN EYE-FLIRTY SPEAK-SEAN] {"position":"800,3925","size":"100,100"}
+Ouais… Enfin avec un dos comme ça, je préfère m’assurer que t’es sérieux. Pourquoi t’es venu voir mon banc ? 
+
+[[Devenir le meilleur de moi-même->Chp2_Inj_Pres_13A_1]]
+[[Je veux de la nouveauté ->Chp2_Inj_Pres_13B_1]]
+[[Je veux que mon ex soit dégoutée de m’avoir quitté  ->Chp2_Inj_Pres_13C_1]]
+
+
+
+
+:: Chp2_Inj_Pres_13A_1 [CHAR-SEAN EYE-FLIRTY SPEAK-SELF] {"position":"800,4050","size":"100,100"}
+Juste être un homme en fait
+
+[[>>->Chp2_Inj_Pres_13A_2]]
+
+
+
+:: Chp2_Inj_Pres_13A_2 [CHAR-SEAN EYE-FLIRTY SPEAK-SEAN] {"position":"800,4175","size":"100,100"}
+Tant que t’as pas passé tes séances avec les kettle, tu devrais être safe.
+
+[[>>->Chp2_Inj_Pres_14]]
+
+
+
+:: Chp2_Inj_Pres_13B_1 [CHAR-SEAN EYE-FLIRTY SPEAK-SELF] {"position":"925,4050","size":"100,100"}
+C'est comme découvrir le monde tu vois
+
+[[>>->Chp2_Inj_Pres_13B_2]]
+
+
+
+:: Chp2_Inj_Pres_13B_2 [CHAR-SEAN EYE-FLIRTY SPEAK-SEAN] {"position":"925,4175","size":"100,100"}
+C’est qu’ils veulent tous…
+
+[[>>->Chp2_Inj_Pres_14]]
+
+
+
+:: Chp2_Inj_Pres_13C_1 [CHAR-SEAN EYE-FLIRTY SPEAK-SELF] {"position":"675,4050","size":"100,100"}
+J'ai été trop con
+
+[[>>->Chp2_Inj_Pres_13C_2]]
+
+
+
+:: Chp2_Inj_Pres_13C_2 [CHAR-SEAN EYE-FLIRTY SPEAK-SEAN] {"position":"675,4175","size":"100,100"}
+Encore une gonz’ dans le chemin. Mon pauv’ !
+
+[[>>->Chp2_Inj_Pres_14]]
+
+
+
+:: Chp2_Inj_Pres_14 [CHAR-SEAN EYE-FLIRTY SPEAK-SEAN] {"position":"800,4300","size":"100,100"}
+Viens poser ton p’tit cul moulé et on commence 
+
+[[Attraper la barre directement ->Chp2_Inj_Pres_14A_1]]
+[[Regarder tout autour pour savoir comment fonctionne la machine ->Chp2_Inj_Pres_14B_1]]
+
+
+
+
+:: Chp2_Inj_Pres_14A_1 [CHAR-SEAN EYE-FLIRTY SPEAK-SEAN BONUS-SEAN] {"position":"800,4425","size":"100,100"}
+Oh ouais ! T’y vas pas de main morte, mon grand. 
+
+[[>>->Chp2_Inj_Pres_14A_2]]
+
+
+
+:: Chp2_Inj_Pres_14A_2 [CHAR-SEAN EYE-FLIRTY SPEAK-SEAN] {"position":"800,4550","size":"100,100"}
+J’aime ça. 
+
+[[>>->Chp2_Inj_WrmUp_1]]
+
+
+
+:: Chp2_Inj_Pres_14B_1 [CHAR-SEAN EYE-SAD SPEAK-SEAN MALUS-SEAN] {"position":"925,4425","size":"100,100"}
+Eh je t’ai dit de pas me faire perdre mon temps. 
+
+[[>>->Chp2_Inj_WrmUp_1]]
+
+
+
+:: Chp2_Inj_Pres_2 [CHAR-SEAN EYE-FLIRTY SPEAK-SEAN] {"position":"800,2550","size":"100,100"}
+Salut toi ! Tu viens tâter de la barre ?
+[[>>->Chp2_Inj_Pres_3]]
+
+
+:: Chp2_Inj_Pres_3 [CHAR-SEAN EYE-FLIRTY SPEAK-SELF] {"position":"800,2675","size":"100,100"}
+Je vois que tu commences pas timidement ! 
+
+[[>>->Chp2_Inj_Pres_4]]
+
+
+:: Chp2_Inj_Pres_4 [CHAR-SEAN EYE-FLIRTY SPEAK-SEAN] {"position":"800,2800","size":"100,100"}
+Commencer timidement c’pas mon moto, mon pote. Avec moi on tire vite.. et fort. C’est la seule façon de faire des progrès. 
+
+[[>>->Chp2_Inj_Pres_5]]
+
+
+:: Chp2_Inj_Pres_5 [CHAR-SELF] {"position":"800,2925","size":"100,100"}
+Tu rigoles en montrant les canines. Les progrès, c’est ça que tu cherches. Tu passes ta serviette à l’arrière de ta nuque, en prenant soin de montrer tes bras que tu viens d’entraîner. 
+[[>>->Chp2_Inj_Pres_6]]
+
+
+
+:: Chp2_Inj_Pres_6 [CHAR-SEAN EYE-FLIRTY SPEAK-SELF] {"position":"800,3050","size":"100,100"}
+Et qu’est-ce que tu sais faire de si intéressant ? 
+
+[[>>->Chp2_Inj_Pres_7]]
+
+
+
+:: Chp2_Inj_Pres_7 [CHAR-SEAN EYE-FLIRTY SPEAK-SEAN] {"position":"800,3175","size":"100,100"}
+Tu sais très bien pourquoi t’es là, mec. T’as vu les autres. Tu sais que faire une traction ça fait partie du « package ». 
+
+[[>>->Chp2_Inj_Pres_8]]
+
+
+
+:: Chp2_Inj_Pres_8 [CHAR-SEAN EYE-FLIRTY SPEAK-SEAN] {"position":"800,3300","size":"100,100"}
+Et crois-moi, je t’ai vu te bouger là-bas et c’pas avec des deltoïdes comme ça que tu vas pouvoir en faire une. 
+
+[[>>->Chp2_Inj_Pres_9]]
+
+
+
+:: Chp2_Inj_Pres_9 [CHAR-SELF] {"position":"800,3425","size":"100,100"}
+Tu le regardes un instant mais il marque un point.
+
+[[>>->Chp2_Inj_Pres_10]]
+
+
+
+:: Chp2_Inj_Rej_1 [CHAR-SELF] {"position":"675,7200","size":"100,100"}
+Tu souhaites recommencer une série avec le poids léger. Tu poses tes mains sur la barre de traction et commences à tirer.
+
+[[>>->Chp2_Inj_Rej_2]]
+
+
+
+:: Chp2_Inj_Rej_10 [CHAR-SELF] {"position":"675,8325","size":"100,100"}
+Tu récupères ta serviette, toujours humide de ton sport précédent. Avec un soupir, tu te diriges vers les vestiaires. Tu sens la frustration d’avoir commencé un nouvel exercice sans la finir. Tu as envie de ressentir cette force qui t’avais atteint à la fin de ton entraînement.
+
+[[>>->Chp2_Inj_Rej_11]]
+
+
+
+:: Chp2_Inj_Rej_11 [CHAR-SELF] {"position":"675,8450","size":"100,100"}
+Avec un coup d’œil, tu retournes voir ta kettle bell préféré.
+
+[[>>->Chp2_Inj_Rej_12]]
+
+
+
+:: Chp2_Inj_Rej_12 [CHAR-BILL EYE-SAD SPEAK-BILL] {"position":"675,8575","size":"100,100"}
+Le nouveau à mauvais caractère ?
+
+[[>>->Chp2_Inj_Rej_13]]
+
+
+
+:: Chp2_Inj_Rej_13 [CHAR-SELF] {"position":"675,8700","size":"100,100"}
+Tu passes une main derrière ta nuque.
+
+[[>>->Chp2_Inj_Rej_14]]
+
+
+
+:: Chp2_Inj_Rej_14 [CHAR-BILL EYE-FLIRTY SPEAK-SELF] {"position":"675,8825","size":"100,100"}
+Je vais avoir besoin de temps pour l’apprivoiser.
+
+[[>>->Chp2_Inj_Rej_15]]
+
+
+
+:: Chp2_Inj_Rej_15 [CHAR-BILL EYE-FLIRTY SPEAK-BILL] {"position":"675,8950","size":"100,100"}
+Eh t’as vu ce que t’as réussi à faire en peu de temps. T’as déjà bien augmenté ta masse musculaire. Regarde-moi ces cuisses de champion, mon bro !
+
+[[>>->Chp2_Inj_Rej_16]]
+
+
+
+:: Chp2_Inj_Rej_16 [CHAR-BILL EYE-FLIRTY SPEAK-SELF] {"position":"675,9075","size":"100,100"}
+J’aurai jamais pu y arriver sans toi, bro.
+
+[[>>->Chp2_Inj_Rej_17]]
+
+
+
+:: Chp2_Inj_Rej_17 [CHAR-BILL EYE-FLIRTY SPEAK-BILL] {"position":"675,9200","size":"100,100"}
+Eh bro ?
+
+[[>>->Chp2_Inj_Rej_18]]
+
+
+
+:: Chp2_Inj_Rej_18 [CHAR-BILL EYE-FLIRTY SPEAK-SELF] {"position":"675,9325","size":"100,100"}
+Ouais ?
+
+[[>>->Chp2_Inj_Rej_19]]
+
+
+
+:: Chp2_Inj_Rej_19 [CHAR-BILL EYE-FLIRTY SPEAK-BILL] {"position":"675,9450","size":"100,100"}
+Regarde la feuille qu’il y a dans l’imprimante.
+
+[[>>->Chp2_Inj_Rej_20]]
+
+
+
+:: Chp2_Inj_Rej_2 [CHAR-SELF] {"position":"675,7325","size":"100,100"}
+Mais la goupille qui soutient les poids lâche. Tu sens la barre qui arrive beaucoup trop vite. Tu cognes tes mains sur tes pecs.
+
+[[>>->Chp2_Inj_Rej_3]]
+
+
+
+:: Chp2_Inj_Rej_20 [CHAR-SELF] {"position":"675,9575","size":"100,100"}
+Confus, tu fais les deux pas qui te séparent de l’imprimante et regarde la première feuille que tu vois.
+
+[[>>->Chp2_Inj_Rej_21]]
+
+
+
+:: Chp2_Inj_Rej_21 [CHAR-BILL EYE-FLIRTY SPEAK-SELF] {"position":"675,9700","size":"100,100"}
+Il n’y a rien sur ta feuille.
+
+[[>>->Chp2_Inj_Rej_22]]
+
+
+
+:: Chp2_Inj_Rej_22 [CHAR-BILL EYE-FLIRTY SPEAK-BILL] {"position":"675,9825","size":"100,100"}
+C’est ma vie sans toi, bro.
+
+[[>>->Chp2_Inj_Rej_23]]
+
+
+
+:: Chp2_Inj_Rej_23 [CHAR-BILL EYE-FLIRTY SPEAK-SELF] {"position":"675,9950","size":"100,100"}
+Bro… 
+
+[[>>->Chp2_Inj_Rej_24]]
+
+
+
+:: Chp2_Inj_Rej_24 [CHAR-BILL EYE-FLIRTY SPEAK-SELF] {"position":"675,10075","size":"100,100"}
+Une dernière série ?
+
+[[>>->Chp2_Inj_Rej_25]]
+
+
+
+:: Chp2_Inj_Rej_25 [CHAR-SELF] {"position":"675,10200","size":"100,100"}
+Bill te fait son plus beau sourire. Tu attrapes la poignée de la kettle bell pour reprendre une série de fentes bulgare.
+
+[[END OF CHAPTER->END]]
+
+
+
+:: Chp2_Inj_Rej_3 [CHAR-SELF SPEAK-SELF] {"position":"675,7450","size":"100,100"}
+Aïe !
+
+[[>>->Chp2_Inj_Rej_4]]
+
+
+
+:: Chp2_Inj_Rej_4 [CHAR-SEAN EYE-SAD SPEAK-SEAN] {"position":"675,7575","size":"100,100"}
+Pas question qu’une fillette comme toi m’utilise si c’est pour pas donner ton max. J’accepte que les gagnants. Tu piges ?
+
+[[>>->Chp2_Inj_Rej_5]]
+
+
+
+:: Chp2_Inj_Rej_5 [CHAR-SEAN EYE-SAD SPEAK-SELF] {"position":"675,7700","size":"100,100"}
+Mec, j’ai déjà fait une séance complète. Si je force trop, je vais me faire mal.
+
+[[>>->Chp2_Inj_Rej_6]]
+
+
+
+:: Chp2_Inj_Rej_6 [CHAR-SEAN EYE-SAD SPEAK-SEAN] {"position":"675,7825","size":"100,100"}
+Bouhouuu ! Retourne faire ton sport vanilla.
+
+[[>>->Chp2_Inj_Rej_7]]
+
+
+
+:: Chp2_Inj_Rej_7 [CHAR-SELF] {"position":"675,7950","size":"100,100"}
+Tu lâches la barre de traction qui s’arrête contre la poulie. Tu es sûr de ton choix. Tu sais ce qui est bien pour toi, tu sais que tu as fait le bon choix.
+
+[[>>->Chp2_Inj_Rej_8]]
+
+
+
+:: Chp2_Inj_Rej_8 [CHAR-SELF] {"position":"675,8075","size":"100,100"}
+Tu pourras faire une traction un jour, mais le moment n’est pas venu.
+
+[[>>->Chp2_Inj_Rej_9]]
+
+
+
+:: Chp2_Inj_Rej_9 [CHAR-SELF] {"position":"675,8200","size":"100,100"}
+Quelquefois, il faut savoir s’arrêter pour mieux revenir, c’est ça la vraie sagesse.
+
+[[>>->Chp2_Inj_Rej_10]]
+
+
+
+:: Chp2_Inj_Set_10 [CHAR-SELF] {"position":"800,1525","size":"100,100"}
+Tu observes la personne, installée sur le Pull Down. Le marcel qu’elle portait mettait en valeur les muscles de son dos. Le geste avait l’air des plus simples. Tirer avec ses bras, relâcher. Tirer. Relâcher. Easy peasy. 
+[[>>->Chp2_Inj_Set_11]]
+
+
+:: Chp2_Inj_Set_11 [CHAR-SELF] {"position":"800,1650","size":"100,100"}
+La personne finit sa série en reprenant sa serviette posée sur le banc. Tu scrutes la machine avant de t’y diriger. 
+[[>>->Chp2_Inj_Set_12]]
+
+
+:: Chp2_Inj_Set_12 [CHAR-BILL EYE-SAD SPEAK-BILL] {"position":"800,1775","size":"100,100"}
+Bro, tu comptes pas arrêter ta série maintenant ? 
+[[>>->Chp2_Inj_Set_13]]
+
+
+:: Chp2_Inj_Set_13 [CHAR-BILL EYE-SAD SPEAK-SELF] {"position":"800,1900","size":"100,100"}
+Il faut que j’y aille rapidement où la machine sera prise. 
+[[>>->Chp2_Inj_Set_14]]
+
+
+:: Chp2_Inj_Set_14 [CHAR-BILL EYE-SAD SPEAK-BILL] {"position":"800,2025","size":"100,100"}
+Me laisse pas, bro. Je t’ai déjà dit que je pouvais t’aider à entrainer ce que tu voulais.
+[[>>->Chp2_Inj_Set_15]]
+
+
+:: Chp2_Inj_Set_15 [CHAR-BILL EYE-SAD SPEAK-SELF] {"position":"800,2150","size":"100,100"}
+Même m’aider à faire des tractions ? 
+[[>>->Chp2_Inj_Set_16]]
+
+
+:: Chp2_Inj_Set_16 [CHAR-BILL EYE-SAD SPEAK-BILL] {"position":"800,2275","size":"100,100"}
+… 
+[[>>->Chp2_Inj_Pres_1]]
+
+
+:: Chp2_Inj_Set_2 [CHAR-BILL EYE-FLIRTY SPEAK-BILL] {"position":"800,525","size":"100,100"}
+C’est beau ça, mon frère.
+
+[[>>->Chp2_Inj_Set_3]]
+
+
+:: Chp2_Inj_Set_3 [CHAR-BILL EYE-FLIRTY SPEAK-SELF] {"position":"800,650","size":"100,100"}
+Ouais, c’est une bonne séance. Tu m’as bien aidé, Bill.
+
+[[>>->Chp2_Inj_Set_4]]
+
+
+:: Chp2_Inj_Set_4 [CHAR-BILL EYE-FLIRTY SPEAK-BILL] {"position":"800,775","size":"100,100"}
+Eh. Tu as tout fait ! T’y es un tigre, bro.
+
+[[>>->Chp2_Inj_Set_5]]
+
+
+:: Chp2_Inj_Set_5 [CHAR-BILL EYE-FLIRTY SPEAK-SELF] {"position":"800,900","size":"100,100"}
+Je sais, je sais. Mais tu l’as dit. La muscu, c’est un travail d’équipe.
+
+[[>>->Chp2_Inj_Set_6]]
+
+
+:: Chp2_Inj_Set_6 [CHAR-BILL EYE-SAD SPEAK-BILL BONUS-BILL] {"position":"800,1025","size":"100,100"}
+Regarde ma fonte, elle ressemble à rien ! Je tangue à peine je touche le sol. Tu dois croire en toi, tes progrès ne sont que le fruit de TON travail.
+[[>>->Chp2_Inj_Set_7]]
+
+
+:: Chp2_Inj_Set_7 [CHAR-BILL EYE-FLIRTY SPEAK-BILL] {"position":"800,1150","size":"100,100"}
+Tu le mérites, bro. 
+[[>>->Chp2_Inj_Set_8]]
+
+
+:: Chp2_Inj_Set_8 [CHAR-SELF] {"position":"800,1275","size":"100,100"}
+Tu attrapes ta gourde et appuies sur le plastique pour qu’une rasade de loquide atterrisse dans ta bouche. Souriant et satisfait, tu fais le tour de la salle. Ton regard se pose sur la nouvelle machine de la salle : un Pull Down. 
+[[>>->Chp2_Inj_Set_9]]
+
+
+:: Chp2_Inj_Set_9 [CHAR-SELF] {"position":"800,1400","size":"100,100"}
+Quelques gouttes de boisson énergétique tombent sur tes lèvres, tu l’essuies un coup de poignet avant de déglutir. 
+[[>>->Chp2_Inj_Set_10]]
+
+
+:: Chp2_Inj_Smut_13 [CHAR-SELF] {"position":"900,7200","size":"100,100"}
+Tu changes la goupille pour ajouter plus de poids. Le glissement fait un bruit de métal qui te donne des frissons
+
+[[>>->Chp2_Inj_Smut_14]]
+
+
+
+:: Chp2_Inj_Smut_14 [CHAR-SELF] {"position":"900,7325","size":"100,100"}
+Tu t’assois sur le banc, ta serviette sous tes fesses. Loin de toi l’envie de salir le cuir à cause d’une raie humide.  
+
+[[>>->Chp2_Inj_Smut_15]]
+
+
+
+:: Chp2_Inj_Smut_15 [CHAR-SELF] {"position":"900,7450","size":"100,100"}
+Tu avances ton entrejambe pour bien caler tes cuisses sous les pads.
+
+[[>>->Chp2_Inj_Smut_16]]
+
+
+
+:: Chp2_Inj_Smut_16 [CHAR-SELF] {"position":"900,7575","size":"100,100"}
+Tu regardes la barre au-dessus de toi. Tu l’attrapes et sans vraiment tirer, tu as conscience de la différence de poids que tu as ajouté. Tu déglutis. La force requise t’intimide.
+
+[[>>->Chp2_Inj_Smut_17]]
+
+
+
+:: Chp2_Inj_Smut_17 [CHAR-SEAN EYE-FLIRTY SPEAK-SEAN] {"position":"900,7700","size":"100,100"}
+Ecoute-moi bien, mec. Pour tes tractions correctes, il faut que tu tires avec ton dos. C’pas la force dans les bras qui comptent. Et crois-moi, c’est tant mieux dans ton cas !
+
+[[>>->Chp2_Inj_Smut_18]]
+
+
+
+:: Chp2_Inj_Smut_18 [CHAR-SELF] {"position":"900,7825","size":"100,100"}
+Tu roules des yeux et souris à son commentaire. Est-ce que tu commences à aimer ses railleries ?
+
+[[>>->Chp2_Inj_Smut_19]]
+
+
+
+:: Chp2_Inj_Smut_19 [CHAR-SELF] {"position":"900,7950","size":"100,100"}
+Cette ambiance bon enfant où on n’a pas besoin de faire attention aux sentiments des autres.
+
+[[>>->Chp2_Inj_Smut_20]]
+
+
+
+:: Chp2_Inj_Smut_20 [CHAR-SELF] {"position":"900,8075","size":"100,100"}
+C’est plutôt agréable de pouvoir dire ce que tu veux quand tu veux, sans faire attention aux sensibles.
+
+[[>>->Chp2_Inj_Smut_21]]
+
+
+
+:: Chp2_Inj_Smut_21 [CHAR-SEAN EYE-FLIRTY SPEAK-SEAN] {"position":"900,8200","size":"100,100"}
+Tu vas te reculer juste un peu. Tu dois tenir la barre devant toi, comme un mec fier.
+
+[[>>->Chp2_Inj_Smut_22]]
+
+
+
+:: Chp2_Inj_Smut_22 [CHAR-SEAN EYE-FLIRTY SPEAK-SEAN] {"position":"900,8325","size":"100,100"}
+Ouais c’est bien. Juste comme ça.
+
+[[>>->Chp2_Inj_Smut_23]]
+
+
+
+:: Chp2_Inj_Smut_23 [CHAR-SEAN EYE-FLIRTY SPEAK-SEAN] {"position":"900,8450","size":"100,100"}
+Sers tes omoplates, mobilise ton grand dorsal.
+
+[[>>->Chp2_Inj_Smut_24]]
+
+
+
+:: Chp2_Inj_Smut_24 [CHAR-SELF] {"position":"900,8575","size":"100,100"}
+En changeant de posture, tu sens la différence. Tu passes les doigts sur la barre de traction, la serre et tires de toutes tes forces. Le mouvement est fluide, même si la barre remonte un peu vide. Tes fesses sont soulevées du banc. Tu recommences ta série.
+
+[[>>->Chp2_Inj_Smut_25]]
+
+
+
+:: Chp2_Inj_Smut_25 [CHAR-SELF] {"position":"900,8700","size":"100,100"}
+A la 6ème répétition, tu lâches la barre.
+
+[[>>->Chp2_Inj_Smut_26]]
+
+
+
+
+:: Chp2_Inj_Smut_26 [CHAR-SELF] {"position":"1025,8700","size":"100,100"}
+Tu inspires et expires rapidement par la bouche. Ton cœur s’emballe.
+
+
+[[Continuer de tirer->Chp2_Inj_Smut_26A_1]]
+[[Reprendre son souffle->Chp2_Inj_Smut_26B_1]]
+
+
+
+
+:: Chp2_Inj_Smut_26A_1 [CHAR-SEAN EYE-FLIRTY SPEAK-SEAN] {"position":"1025,8850","size":"100,100"}
+Oh yeah. J’aime le feu que je vois dans tes yeux.
+
+[[>>->Chp2_Inj_Smut_27]]
+
+
+
+:: Chp2_Inj_Smut_26B_1 [CHAR-SELF] {"position":"800,8850","size":"100,100"}
+Tu as l’impression de retourner au tout début de tes entrainements et ça t’énerve. Ça t’énerve de ne pas réussir à faire ce que tu veux. Ça t’énerve de galérer autant. Ça t’énerve de te sentir faible à nouveau.
+
+[[>>->Chp2_Inj_Smut_26B_2]]
+
+
+
+:: Chp2_Inj_Smut_26B_2 [CHAR-SEAN EYE-FLIRTY SPEAK-SEAN] {"position":"800,8975","size":"100,100"}
+Allez, mec ! C’pas mon genre de faire trop de compliments. Mais bon… J’dois avouer que tu m’impressionnes.
+
+[[>>->Chp2_Inj_Smut_26B_3]]
+
+
+
+:: Chp2_Inj_Smut_26B_3 [CHAR-SELF] {"position":"800,9100","size":"100,100"}
+Chargé par les compliments de la machine, tu saisis la barre fortement.
+
+[[>>->Chp2_Inj_Smut_27]]
+
+
+
+:: Chp2_Inj_Smut_27 [CHAR-SELF] {"position":"900,9275","size":"100,100"}
+De toutes tes forces, tu tires avec ton dos. Une traction. Deux tractions.
+
+[[>>->Chp2_Inj_Smut_28]]
+
+
+
+:: Chp2_Inj_Smut_28 [CHAR-SELF] {"position":"900,9400","size":"100,100"}
+Les muscles de tes épaules commencent à se contracter. Tu serres les dents pour continuer.
+
+[[>>->Chp2_Inj_Smut_29]]
+
+
+
+:: Chp2_Inj_Smut_29 [CHAR-SEAN EYE-FLIRTY SPEAK-SEAN] {"position":"900,9525","size":"100,100"}
+Tu fais remonter la barre, puis en full extension, tu la ramènes vers toi.
+
+[[>>->Chp2_Inj_Smut_30]]
+
+
+
+:: Chp2_Inj_Smut_30 [CHAR-SELF] {"position":"900,9650","size":"100,100"}
+Tu fais remonter la barre, puis en full extension, tu la ramènes vers toi.
+
+[[>>->Chp2_Inj_Smut_31]]
+
+
+
+:: Chp2_Inj_Smut_31 [CHAR-SELF] {"position":"900,9775","size":"100,100"}
+Encore une fois.
+
+[[>>->Chp2_Inj_Smut_32]]
+
+
+
+:: Chp2_Inj_Smut_32 [CHAR-SELF] {"position":"900,9900","size":"100,100"}
+Encore une traction.
+
+[[>>->Chp2_Inj_Smut_33]]
+
+
+
+:: Chp2_Inj_Smut_33 [CHAR-SEAN EYE-FLIRTY SPEAK-SEAN] {"position":"900,10025","size":"100,100"}
+Ça c’est mon champion !
+
+[[>>->Chp2_Inj_Smut_34]]
+
+
+
+:: Chp2_Inj_Smut_34 [CHAR-SELF] {"position":"900,10150","size":"100,100"}
+Et tu le sens. La tension dans ton cou ne trouve nulle part où s’enfuir.
+
+[[>>->Chp2_Inj_Smut_35]]
+
+
+
+:: Chp2_Inj_Smut_35 [CHAR-SELF] {"position":"900,10275","size":"100,100"}
+Un cri s’échappe de ta bouche quand tu sens la douleur irradiée dans ton épaule gauche.
+
+[[>>->Chp2_Inj_Smut_36]]
+
+
+
+:: Chp2_Inj_Smut_36 [CHAR-SELF] {"position":"900,10400","size":"100,100"}
+Tu lâches tout. Tu entends à peine le claquement des poids sur le stack.
+
+[[>>->Chp2_Inj_Smut_37]]
+
+
+
+:: Chp2_Inj_Smut_37 [CHAR-SELF SPEAK-SELF] {"position":"900,10525","size":"100,100"}
+Aaaaaargh !! 
+
+[[>>->Chp2_Inj_Smut_38]]
+
+
+
+:: Chp2_Inj_Smut_38 [CHAR-SELF] {"position":"900,10650","size":"100,100"}
+Tu portes ta main à ton épaule. Le muscle est chaud et dur. Tu sens une boule en le massant délicatement avec ta main.
+
+[[>>->Chp2_Inj_Smut_39]]
+
+
+
+:: Chp2_Inj_Smut_39 [CHAR-SEAN EYE-FLIRTY SPEAK-SEAN] {"position":"900,10775","size":"100,100"}
+Ça c’est des muscles ! Tu vas réussir à faire des tractions en un rien de temps. Je m’appelle Sean au fait. Sean, the Pull Down machine.
+
+[[>>->Chp2_Inj_Smut_40]]
+
+
+
+:: Chp2_Inj_Smut_40 [CHAR-SELF] {"position":"900,10900","size":"100,100"}
+Tu lèves ton bras gauche et la douleur est immédiate. Ça te peine de le dire, mais tu ne penses pas pouvoir retourner à la salle demain.
+
+[[END OF CHAPTER->END]]
+
+
+
+:: Chp2_Inj_WrmUp_1 [CHAR-SELF] {"position":"800,4675","size":"100,100"}
+Tu t’assoies sur le banc et love tes cuisses sous la poutre de soutien. Le cuir nu est doux et le molletonné agréable. 
+
+[[>>->Chp2_Inj_WrmUp_2]]
+
+
+
+:: Chp2_Inj_WrmUp_10 [CHAR-SELF] {"position":"800,5800","size":"100,100"}
+Tu recommences, une fois, deux fois. 
+
+[[>>->Chp2_Inj_WrmUp_11]]
+
+
+
+:: Chp2_Inj_WrmUp_11 [CHAR-SELF] {"position":"800,5925","size":"100,100"}
+Tu as mis un poids assez léger, mais tu n’imaginais pas que le geste soit si facile. Tu sens la chaleur dans tes biceps et ton cœur s’emballer. Tu en profites pour faire 15 répétitions. 
+
+[[>>->Chp2_Inj_WrmUp_12]]
+
+
+
+:: Chp2_Inj_WrmUp_12 [CHAR-SEAN EYE-FLIRTY SPEAK-SEAN] {"position":"800,6050","size":"100,100"}
+Wow ! C’est pas mal ! 
+
+[[>>->Chp2_Inj_WrmUp_13]]
+
+
+
+:: Chp2_Inj_WrmUp_13 [CHAR-SELF] {"position":"800,6175","size":"100,100"}
+Tu lâches complètement la barre de traction et regarde ton rythme cardiaque sur ta montre connectée. 
+
+[[>>->Chp2_Inj_WrmUp_14]]
+
+
+
+:: Chp2_Inj_WrmUp_14 [CHAR-SELF] {"position":"800,6300","size":"100,100"}
+Elle montre 135 bpm. 
+
+[[>>->Chp2_Inj_WrmUp_15]]
+
+
+
+:: Chp2_Inj_WrmUp_15 [CHAR-SELF] {"position":"800,6425","size":"100,100"}
+C’est pas mal, mais pour être optimum, il faudrait être entre 140 et 150 bpm. 
+
+[[>>->Chp2_Inj_WrmUp_16]]
+
+
+
+:: Chp2_Inj_WrmUp_16 [CHAR-SEAN SPEAK-SEAN EYE-SAD] {"position":"800,6550","size":"100,100"}
+Eh mon gars. T’es un homme ou une gonz’ ? Tu me fais rire avec tes poids, là ! 
+
+[[>>->Chp2_Inj_WrmUp_17]]
+
+
+
+:: Chp2_Inj_WrmUp_17 [CHAR-SEAN EYE-FLIRTY SPEAK-SELF MALUS-SEAN] {"position":"800,6675","size":"100,100"}
+C’était juste pour commencer. 
+
+[[>>->Chp2_Inj_WrmUp_18]]
+
+
+
+:: Chp2_Inj_WrmUp_18 [CHAR-SEAN SPEAK-SELF EYE-SAD] {"position":"800,6800","size":"100,100"}
+Pour commencer ? Je t’ai dit de pas m’faire perdre mon temps. Donc tu vas te donner à fond ou tu repars chez ta mère, c’est clair ? 
+
+[[>>->Chp2_Inj_WrmUp_19]]
+
+
+
+:: Chp2_Inj_WrmUp_19 [CHAR-SELF] {"position":"800,6925","size":"100,100"}
+Tu le regardes en pesant ses mots. Après tout, tu as déjà fait une séance complète, ça pourrait te suffire. Et pourtant tu en as encore sous la semelle. Malgré la fatigue, tu pourrais peut-être pousser encore un peu.  
+
+[[>> ->Chp2_Inj_WrmUp_20]]
+
+
+
+:: Chp2_Inj_WrmUp_2 [CHAR-SELF] {"position":"800,4800","size":"100,100"}
+Tu passes tes doigts sur ce cuir doux et molletonné qui n’a pas encore vu beaucoup de monde. C’est plutôt kiffant de savoir que tu es l’un des premiers à l’utiliser.
+
+[[>>->Chp2_Inj_WrmUp_3]]
+
+
+
+:: Chp2_Inj_WrmUp_20 [CHAR-SEAN EYE-SAD SPEAK-SEAN] {"position":"950,6925","size":"100,100"}
+Je suis là pour te guider, mec. Mais va falloir te la donner avec moi, si tu veux réussir à faire une putain de traction. 
+
+[[Ajouter beaucoup de poids à la machine ->Chp2_Inj_WrmUp_20A_1]]
+[[Refuser la proposition et s’arrêter pour la journée  ->Chp2_Inj_WrmUp_20B_1]]
+
+
+
+:: Chp2_Inj_WrmUp_20A_1 [CHAR-SEAN EYE-FLIRTY SPEAK-SELF BONUS-SEAN] {"position":"900,7075","size":"100,100"}
+Tu changes la goupille pour ajouter plus de poids. Le glissement fait un bruit de métal qui te donne des frissons
+
+[[>>->Chp2_Inj_Smut_13]]
+
+
+
+:: Chp2_Inj_WrmUp_20B_1 [CHAR-SEAN SPEAK-SELF MALUS-SEAN EYE-SAD] {"position":"675,7075","size":"100,100"}
+T’es pas là pour me dire quoi faire, je m’arrête quand j’ai envie
+
+[[>>->Chp2_Inj_Rej_1]]
+
+
+
+:: Chp2_Inj_WrmUp_3 [CHAR-SELF] {"position":"800,4925","size":"100,100"}
+Tu ajustes le poids pour le mettre sur un des premiers poids possibles.
+
+[[>>->Chp2_Inj_WrmUp_4]]
+
+
+
+:: Chp2_Inj_WrmUp_4 [CHAR-SEAN EYE-FLIRTY SPEAK-SEAN] {"position":"800,5050","size":"100,100"}
+Ha ! Je savais bien que t’avais des p’tits bras ! 
+
+[[>>->Chp2_Inj_WrmUp_5]]
+
+
+
+:: Chp2_Inj_WrmUp_5 [CHAR-SEAN EYE-FLIRTY SPEAK-SELF] {"position":"800,5175","size":"100,100"}
+Laisse-moi commencer. 
+
+[[>>->Chp2_Inj_WrmUp_6]]
+
+
+
+:: Chp2_Inj_WrmUp_6 [CHAR-SEAN EYE-FLIRTY SPEAK-SEAN] {"position":"800,5300","size":"100,100"}
+Vas y je te suis, mec. 
+
+[[>>->Chp2_Inj_WrmUp_7]]
+
+
+
+:: Chp2_Inj_WrmUp_7 [CHAR-SELF] {"position":"800,5425","size":"100,100"}
+Tu souffles par le nez, avant de te lever légèrement pour attraper la barre de traction. La barre arrive au-dessus de ta tête. 
+
+[[>>->Chp2_Inj_WrmUp_8]]
+
+
+
+:: Chp2_Inj_WrmUp_8 [CHAR-SELF] {"position":"800,5550","size":"100,100"}
+Tu tires avec tes bras. La barre arrive au niveau de tes pectoraux et tu relâches. C’est assez facile, tu ne sens presque rien. 
+
+[[>>->Chp2_Inj_WrmUp_9]]
+
+
+
+:: Chp2_Inj_WrmUp_9 [CHAR-SEAN EYE-FLIRTY SPEAK-SEAN] {"position":"800,5675","size":"100,100"}
+Ouais t’y es presque.
+
+[[>>->Chp2_Inj_WrmUp_10]]
+
+
+
+:: END [END] {"position":"900,11025","size":"100,100"}
+
+
+
+:: Image:bckgrnd\\Gym_Back_2.png {"position":"925,525","size":"100,100"}
+
+
+
+:: Image:bckgrnd\\Gym_PullDown.png {"position":"925,2550","size":"100,100"}
+
+
+
+:: Start [START CHAR-SELF] {"position":"800,400","size":"100,100"}
+Tu poses ta kettle bell au sol, les bras en feu. Tu te tamponnes le front suant avec ta serviette absorbante. Tu es très content de ta séance du jour. En face du miroir, tu remontes la manche de ton bras droit. Tu contractes le triceps pour chercher la congestion. Charmé par le volume bien visible, tu souris à ton reflet. 
+
+[[(NEXT)->Chp2_Inj_Set_2]]
+[[Image:bckgrnd\Gym_Back_2.png]]
+

@@ -15,7 +15,8 @@ MonoBehaviour:
   character:
     keyName: BILL
     charName: Bill
-    characterImage: {fileID: 2800000, guid: 1b3d54e4e32b87945a1ebb798d4275cb, type: 3}
+    characterImage: {fileID: 2800000, guid: 184095303f0d28a4482763f91aefdf78, type: 3}
     characterWidth: 500
     characterHeight: 500
-    meter: 0
+    meter: 10
+    text_color: {r: 0.3726415, g: 0.963553, b: 1, a: 1}
