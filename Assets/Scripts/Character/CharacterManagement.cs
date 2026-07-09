@@ -34,7 +34,7 @@ public class CharacterManagement : MonoBehaviour
     [Header("Debug")]
     public float bonusLevel;
 
-    private Action<float> OnValueChanged;
+    public Action<float, float> OnValueChanged;
 
     private void Awake()
     {
@@ -54,7 +54,7 @@ public class CharacterManagement : MonoBehaviour
 
     }
 
-    private void UpdateUI(float NewMeter)
+    private void UpdateUI(float NewMeter, float bonus)
     {
         StopAllCoroutines();
         StartCoroutine(ChangeMeterContainer(NewMeter));
@@ -79,13 +79,14 @@ public class CharacterManagement : MonoBehaviour
             character.meter += bonus;
             character.meter = Mathf.Clamp(character.meter, -100, 100);
 
-            OnValueChanged.Invoke(character.meter);
+            
+            OnValueChanged.Invoke(character.meter, bonus);
 
         }
 
 
     }
-    
+
 
     private IEnumerator ChangeMeterContainer(float meter)
     {
