@@ -1,0 +1,74 @@
+:: StoryTitle
+BigMuscle_Proto
+
+
+:: StoryData
+{
+  "ifid": "DEDA3618-81DA-4B08-B628-10EEF3802756",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Start",
+  "tag-colors": {
+    "CHAR-SELF": "blue",
+    "CHAR-BILL": "blue",
+    "EYE-FLIRTY": "orange",
+    "SPEAK_BILL": "orange",
+    "SPEAK-SELF": "red",
+    "SPEAK-BILL": "red",
+    "EYE-SAD": "green",
+    "MALUS-BILL": "red",
+    "BONUS-BILL": "red"
+  },
+  "zoom": 1
+}
+
+
+:: Salle1 {"position":"950,525","size":"100,100"}
+Les équipements vous semblent intimidants, alors vous décidez de commencer tranquillement votre entrainement. 
+Une kettlebell au fond de la salle vous fait de l'oeil.
+[[(Next)->Salle2]]
+[[Speak:REMOVE]]
+
+
+
+
+:: Salle2 {"position":"800,650","size":"100,100"}
+Salut beauté ! T'as envie de t'essayer un petit entrainement ?
+[[Être confiant->SalleConfiant]]
+[[Montrer sa vulnérabilité->SalleVulnérable]]
+[[Character:BILL-FLIRTY]]
+[[Speak:BILL]]
+
+
+
+:: SalleConfiant {"position":"925,775","size":"100,100"}
+"Ouais grave ! Je vais bien te soulever"
+[[(Next)->SalleConfiant2]]
+[[Speak:SELF-]]
+
+
+:: SalleConfiant2 [MALUS-BILL] {"position":"925,925","size":"100,100"}
+Les kettlebell sont la base de l'entrainement. Donc tu vas redescendre vite fait, bro
+[[Character:BILL-SAD]]
+[[Speak:BILL]]
+
+
+:: SalleVulnérable {"position":"675,775","size":"100,100"}
+"Euh ouais mais tu sais... Ca fait longtemps que je n'ai pas fait ça"
+[[(Next)->SalleVulnérable2]]
+[[Speak:SELF-]]
+
+
+:: SalleVulnérable2 [BONUS-BILL] {"position":"650,925","size":"100,100"}
+T'en fais pas bébé. Je vais te guider
+[[Character:BILL-FLIRTY]]
+[[Speak:BILL]]
+
+:: Start {"position":"800,400","size":"100,100"}
+La salle de sport est assez calme en cet après-midi.
+L'odeur de sueur et de caoutchouc vous prend au nez. Vous ne vous êtes toujours pas habitué. 
+[[Allez au fond de la salle->Salle1]]
+[[Restez près de l'accueil->Salle1]]
+[[Image:bckgrnd\Gym_Upper_2.png]]
+[[Character:SELF-]]
+[[Speak:SELF]]

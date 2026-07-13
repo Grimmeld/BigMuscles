@@ -295,52 +295,6 @@ namespace SimpleTwineDialogue
             foreach (var tags in passage.Tags)
             {
 
-                if (tags.Contains("CHAR"))
-                {
-                    ClearImagesChar();
-                    TagCharacterManager(tags);
-
-                }
-
-                if (tags.Contains("SPEAK"))
-                {
-                    passageText.font = _speakFont;
-
-                    string[] charTags = tags.Split("-");
-
-                    Character character = CharacterManagement.Instance.FindCharacterName(charTags[1]);
-                    if (character != null)
-                    {
-                        passageText.color = character.text_color;
-
-                        switch (character.keyName)
-                        {
-                            case "SELF":
-
-                                selfnameContainer.gameObject.SetActive(true);
-                                charnameContainer.gameObject.SetActive(false);
-
-                                selfnameContainer.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = character.charName;
-                                selfnameContainer.gameObject.GetComponentInChildren<TextMeshProUGUI>().color = character.text_color;
-
-
-                                break;
-
-                            default:
-
-                                selfnameContainer.gameObject.SetActive(false);
-                                charnameContainer.gameObject.SetActive(true);
-
-                                charnameContainer.GetComponentInChildren<TextMeshProUGUI>().text = character.charName;
-                                charnameContainer.GetComponentInChildren<TextMeshProUGUI>().color = character.text_color;
-
-
-                                break;
-
-                        }
-                    }
-                    }
-
                 if (tags.Contains("BONUS"))
                 {
                     string[] charTags = tags.Split("-");
@@ -363,21 +317,6 @@ namespace SimpleTwineDialogue
                     }
                 }
 
-                if (tags.Contains("EYE"))
-                {
-                    ClearImagesEye();
-
-                    string[] charTags = tags.Split("-");
-
-                    Eye eye = CharacterManagement.Instance.FindEyeByName(charTags[1]);
-                    if (eye != null)
-                    {
-                        imageEyeContainer.gameObject.SetActive(true);
-                        SetImageSize(imageEyeContainer, eye.eyeWidth, eye.eyeHeight);
-                        DisplayImage(eye.eyeImage, eye.eyeImage.width, eye.eyeImage.height, imageEyeContainer);
-
-                    }
-                }
 
                 switch (tags)
                 {
@@ -392,13 +331,98 @@ namespace SimpleTwineDialogue
 
             }
 
+            foreach (var character in passage.CharacterEmotions)
+            {
+                switch (character.CharacterName)
+                {
+                    case "REMOVE":
+                        ClearImagesChar();
+                        ClearImagesEye();
+                        break;
+
+
+                     default:
+                        if (character.CharacterName != null)
+                        {
+                            ClearImagesChar();
+                            TagCharacterManager(character.CharacterName);
+                        }
+
+                        if (character.CharacterEye != null)
+                        {
+                            ClearImagesEye();
+                            Eye eye = CharacterManagement.Instance.FindEyeByName(character.CharacterEye);
+                            if (eye != null)
+                            {
+                                imageEyeContainer.gameObject.SetActive(true);
+                                SetImageSize(imageEyeContainer, eye.eyeWidth, eye.eyeHeight);
+                                DisplayImage(eye.eyeImage, eye.eyeImage.width, eye.eyeImage.height, imageEyeContainer);
+
+                            }
+                        }
+
+                        break;
+
+                }
+
+                
+            }
+
+            foreach (var speaker in passage.Speakers)
+            {
+                passageText.font = _speakFont;
+
+                switch (speaker)
+                {
+                    case "REMOVE":
+                        selfnameContainer.gameObject.SetActive(false);
+                        charnameContainer.gameObject.SetActive(false);
+                        break;
+
+                    default:
+                        Character character = CharacterManagement.Instance.FindCharacterName(speaker);
+                        if (character != null)
+                        {
+                            passageText.color = character.text_color;
+
+                            switch (character.keyName)
+                            {
+                                case "SELF":
+
+                                    selfnameContainer.gameObject.SetActive(true);
+                                    charnameContainer.gameObject.SetActive(false);
+
+                                    selfnameContainer.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = character.charName;
+                                    selfnameContainer.gameObject.GetComponentInChildren<TextMeshProUGUI>().color = character.text_color;
+
+
+                                    break;
+
+                                default:
+
+                                    selfnameContainer.gameObject.SetActive(false);
+                                    charnameContainer.gameObject.SetActive(true);
+
+                                    charnameContainer.GetComponentInChildren<TextMeshProUGUI>().text = character.charName;
+                                    charnameContainer.GetComponentInChildren<TextMeshProUGUI>().color = character.text_color;
+
+
+                                    break;
+
+                            }
+                        }
+                        break;
+                }
+
+                
+            }
+
+
         }
 
-        private void TagCharacterManager(string tags)
+        private void TagCharacterManager(string name)
         {
-            string[] charTags = tags.Split("-");
-
-            Character character = CharacterManagement.Instance.FindCharacterName(charTags[1]);
+            Character character = CharacterManagement.Instance.FindCharacterName(name);
             if (character != null)
             {
                 switch (character.keyName)
@@ -415,8 +439,6 @@ namespace SimpleTwineDialogue
                         selfnameContainer.gameObject.SetActive(false);
                         charnameContainer.gameObject.SetActive(false);
 
-                        //selfnameContainer.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = character.charName;
-
                         imageCharContainer.gameObject.SetActive(false);
                         imageEyeContainer.gameObject.SetActive(false);
                         CharacterManagement.Instance.ToggleMeterContainer(false);
@@ -424,11 +446,6 @@ namespace SimpleTwineDialogue
                         break;
 
                     default:
-
-                        //selfnameContainer.gameObject.SetActive(false);
-                        //charnameContainer.gameObject.SetActive(true);
-
-                        //charnameContainer.GetComponentInChildren<TextMeshProUGUI>().text = character.charName;
 
                         // Character image
                         SetImageSize(imageCharContainer, character.characterWidth, character.characterHeight);

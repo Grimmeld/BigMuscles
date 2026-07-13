@@ -47,7 +47,21 @@ namespace SimpleTwineDialogue
             /// <summary>Original format from the Twee file (e.g., "[[Text|Target]]")</summary>
             public string OriginalFormat;
         }
-        
+
+        /// <summary>
+        /// Represents a parsed choice/link from a Twee passage
+        /// </summary>
+        public class CharacterEmotion
+        {
+            /// <summary>Display text shown to the user</summary>
+            public string CharacterName;
+
+            /// <summary>Target passage to navigate to when selected</summary>
+            public string CharacterEye;
+
+        }
+
+
         /// <summary>
         /// Represents a single passage from a Twee file with all its content and metadata
         /// </summary>
@@ -70,7 +84,13 @@ namespace SimpleTwineDialogue
             
             /// <summary>Parsed choices with separate Text and Target properties</summary>
             public List<Choice> ParsedChoices;
-            
+
+            /// <summary>Raw character name string to display</summary>
+            public List<CharacterEmotion> CharacterEmotions;
+
+            /// <summary>Who speaks to display</summary>
+            public List<string> Speakers;
+
             /// <summary>Position of the passage node in the Twine editor (x, y)</summary>
             public Vector2 Position;
             
@@ -103,6 +123,8 @@ namespace SimpleTwineDialogue
             // Use lookahead to stop before the next :: passage header
             var passageRegex = new Regex(@"::\s*(?<title>[^\{\[\n]+?)\s*(?:\[(?<tags>[^\]]+)\])?\s*(?:\{(?<metadata>[^\}]+)\})?\s*\n(?<body>(?:(?!^::).*\n?)*)", RegexOptions.Multiline);
             var imageRegex = new Regex(@"\[\[Image:(?<path>[^\]]+)\]\]");
+            var characterRegex = new Regex(@"\[\[Character:(?<character>[^\]]+)\]\]");
+            var speakRegex = new Regex(@"\[\[Speak:(?<speak>[^\]]+)\]\]");
 
             var matches = passageRegex.Matches(text);
             foreach (Match match in matches)
@@ -154,6 +176,34 @@ namespace SimpleTwineDialogue
                     body = body.Replace(imageMatch.Value, ""); // Remove image tag from body
                 }
 
+                /// New handle character display
+                /// 
+                var characters = new List<CharacterEmotion>();
+
+                var characterMatches = characterRegex.Matches(body);
+                foreach (Match characterMatch in characterMatches)
+                {
+                    var characterText = characterMatch.Groups["character"].Value;
+                    var parts = characterText.Split("-");
+                    characters.Add(new CharacterEmotion
+                    {
+                        CharacterName = parts[0],
+                        CharacterEye = parts[1]
+                    });
+                    body = body.Replace(characterMatch.Value, "");
+                }
+
+                /// Handle speaker
+                /// 
+                var speakers = new List<string>();
+                var speakerMatches = speakRegex.Matches(body);
+                foreach (Match speakerMatch in  speakerMatches)
+                {
+                    speakers.Add(speakerMatch.Groups["speak"].Value.Trim());
+                    body = body.Replace(speakerMatch.Value, "");
+                }
+
+
                 // Handle choices - supports three formats:
                 // 1. [[Text|Target]] - pipe format (Harlowe/SugarCube style)
                 // 2. [[Text->Target]] - arrow format (Twine 2 style)
@@ -169,6 +219,12 @@ namespace SimpleTwineDialogue
                     
                     // Skip image links (already processed above)
                     if (linkContent.StartsWith("Image:"))
+                        continue;
+
+                    if (linkContent.StartsWith("Character:"))
+                        continue;
+
+                    if (linkContent.StartsWith("Speak:"))
                         continue;
                     
                     string choiceText = "";
@@ -216,6 +272,8 @@ namespace SimpleTwineDialogue
                     Images = images,
                     Choices = choices,
                     ParsedChoices = parsedChoices,
+                    CharacterEmotions = characters,
+                    Speakers = speakers,
                     Position = position,
                     Size = size
                 };
