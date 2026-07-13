@@ -939,7 +939,8 @@ MonoBehaviour:
   loadFromWeb: 0
   webFileURL: https://alexiabucket.s3.us-east-2.amazonaws.com/twinetounity/ExampleTwee.twee
   imageBaseURL: https://alexiabucket.s3.us-east-2.amazonaws.com/twinetounity/
-  localFileName: dialogue/DialogueProto_v3b.twee
+  localFileName: dialogue/DialogueProto_Choicesv1.twee
+  choicesMade: []
   delay: 0.05
   _narraFont: {fileID: 11400000, guid: 7ce6a81843cf1c04da78fb161621aa24, type: 2}
   _speakFont: {fileID: 11400000, guid: 7cf67c879191511469c121abc70bd1a8, type: 2}

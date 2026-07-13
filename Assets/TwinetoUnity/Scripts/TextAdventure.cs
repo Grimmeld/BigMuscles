@@ -87,6 +87,9 @@ namespace SimpleTwineDialogue
         // Dictionary storing all passages from the Twee file
         private Dictionary<string, TweeParser.Passage> passages;
 
+        public List<string> choicesMade;
+        public string currentTextDisplay;
+
         // Title of the currently displayed passage
         private string currentPassageTitle;
         private Passage currentPassage;
@@ -280,6 +283,7 @@ namespace SimpleTwineDialogue
             // Display passage text
             currentPassageTitle = passageTitle;
 
+            choicesMade.Add(currentPassageTitle);
 
             /// <summary>
             /// Modifications :
@@ -551,24 +555,6 @@ namespace SimpleTwineDialogue
             }
         }
 
-        // Clear out the image to make room for the new one.
-        void ClearImages()
-        {
-            foreach (Transform child in imageContainer)
-            {
-                Destroy(child.gameObject);
-            }
-
-            foreach (Transform child in imageCharContainer)
-            {
-                Destroy(child.gameObject);
-            }
-
-            foreach (Transform child in imageEyeContainer)
-            {
-                Destroy(child.gameObject);
-            }
-        }
 
         void ClearText()
         {
@@ -592,8 +578,55 @@ namespace SimpleTwineDialogue
             //    choiceButton.onClick.AddListener(() => OnChoiceSelected(targetPassage, passage.Body));
             //}
 
-            for(int i = 0; i < passage.ParsedChoices.Count; i++) 
+            for (int i = 0; i < passage.ParsedChoices.Count; i++)
             {
+                bool isShowed = true;
+
+
+                if (passage.ParsedChoices[i].Condition != "")
+                {
+                    // Choose which text to display
+                    isShowed = false;
+
+                    // Si la condition est le Bro Meter
+                    if (passage.ParsedChoices[i].Condition.Contains("-"))
+                    {
+                        string[] texts = passage.ParsedChoices[i].Condition.Split("-");
+                        Character character = CharacterManagement.Instance.FindCharacterName(texts[0]);
+                        if (character != null)
+                        {
+                            float value = float.Parse(texts[1]);
+                            if (character.meter >= value)
+                            {
+                                isShowed = true;
+                                
+                            }
+                        }
+                    }
+
+                    // Si la condition est un choix effectué
+                    else
+                    {
+
+                        // Search for everychoices made in the game
+                        foreach (string choiceMade in choicesMade)
+                        {
+
+                            if (choiceMade == passage.ParsedChoices[i].Condition)
+                            {
+                                isShowed = true;
+                                break;
+                            }
+                        }
+
+
+                    }
+
+                }
+
+                if (!isShowed)
+                    continue;
+
                 var choiceButton = Instantiate(choiceButtonPrefab, choiceButtonContainer);
 
                 // Display the choice text on the button
@@ -624,9 +657,76 @@ namespace SimpleTwineDialogue
 
         IEnumerator ShowText(Passage passage)
         {
-            for (int i = 0; i < passage.Body.Length; i++)
+            string passageToDisplay = null;
+
+            // Choose which text to display
+            foreach (var body in passage.Bodies)
             {
-                passageText.text = passage.Body.Substring(0, i);
+                // Si la condition est le Bro Meter
+                if (body.Condition.Contains("-"))
+                {
+                    string[] texts = body.Condition.Split("-");
+                    Character character = CharacterManagement.Instance.FindCharacterName(texts[0]);
+                    if (character != null)
+                    {
+                        float value = float.Parse(texts[1]);
+                        if (character.meter >= value)
+                        {
+                            passageToDisplay = string.Concat(
+                                body.Text,
+                                " ",
+                                passage.Body
+                                );
+                            break;
+                        }
+                    }
+                }
+
+                // Si la condition est un choix effectué
+                else
+                {
+                    switch (body.Condition)
+                    {
+                        case "else":
+                            passageToDisplay = string.Concat(
+                                body.Text,
+                                " ",
+                                passage.Body
+                                );
+                            break;
+
+                        default:
+                            // Search for everychoices made in the game
+                            foreach (string choiceMade in choicesMade)
+                            {
+
+                                if (choiceMade == body.Condition)
+                                {
+                                    passageToDisplay = string.Concat(
+                                        body.Text,
+                                        " ",
+                                        passage.Body
+                                        );
+                                    break;
+                                }
+                            }
+                            break;
+                    }
+                    
+                }
+
+
+            }
+
+            //When no condition, put a default text
+            passageToDisplay ??= passage.Body;
+
+            currentTextDisplay = passageToDisplay;
+
+
+            for (int i = 0; i < currentTextDisplay.Length; i++)
+            {
+                passageText.text = currentTextDisplay.Substring(0, i);
                 yield return new WaitForSeconds(delay);
             }
 
@@ -665,7 +765,8 @@ namespace SimpleTwineDialogue
             if (isWriting)
             {
                 StopAllCoroutines();
-                passageText.text = currentPassage.Body;
+                //passageText.text = currentPassage.Body;
+                passageText.text = currentTextDisplay;
                 
                 // The choices needs to appear when the full text is displayed
                 CreateChoices(currentPassage);

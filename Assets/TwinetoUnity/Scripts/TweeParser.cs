@@ -46,6 +46,9 @@ namespace SimpleTwineDialogue
             
             /// <summary>Original format from the Twee file (e.g., "[[Text|Target]]")</summary>
             public string OriginalFormat;
+
+            /// <summary>Original format [[(if:SalleVulnérable2)Allez au fond de la salle->Salle1]]</summary>
+            public string Condition;
         }
 
         /// <summary>
@@ -58,6 +61,19 @@ namespace SimpleTwineDialogue
 
             /// <summary>Target passage to navigate to when selected</summary>
             public string CharacterEye;
+
+        }
+
+        /// <summary>
+        /// Represents a parsed choice/link from a Twee passage
+        /// </summary>
+        public class BodyConditions
+        {
+            /// <summary>Display text shown to the user</summary>
+            public string Condition;
+
+            /// <summary>Target passage to navigate to when selected</summary>
+            public string Text;
 
         }
 
@@ -75,7 +91,10 @@ namespace SimpleTwineDialogue
             
             /// <summary>The passage body text (with choices and images removed)</summary>
             public string Body;
-            
+
+            /// <summary>The passage body text (with choices and images removed)</summary>
+            public List<BodyConditions> Bodies;
+
             /// <summary>List of image filenames referenced in this passage</summary>
             public List<string> Images;
             
@@ -125,6 +144,8 @@ namespace SimpleTwineDialogue
             var imageRegex = new Regex(@"\[\[Image:(?<path>[^\]]+)\]\]");
             var characterRegex = new Regex(@"\[\[Character:(?<character>[^\]]+)\]\]");
             var speakRegex = new Regex(@"\[\[Speak:(?<speak>[^\]]+)\]\]");
+            var conditionRegex = new Regex(@"\(if:(?<condition>[^\]]+)\)\[(?<text>[^\]]+)\]\r?\n", RegexOptions.Multiline);
+
 
             var matches = passageRegex.Matches(text);
             foreach (Match match in matches)
@@ -208,11 +229,13 @@ namespace SimpleTwineDialogue
                 // 1. [[Text|Target]] - pipe format (Harlowe/SugarCube style)
                 // 2. [[Text->Target]] - arrow format (Twine 2 style)
                 // 3. [[Target]] - simple format (text and target are the same)
-                
+
                 // Find all link patterns in the passage body
                 var allLinkRegex = new Regex(@"\[\[([^\]]+)\]\]");
                 var linkMatches = allLinkRegex.Matches(body);
                 
+                var conditionLinkRegex = new Regex(@"\(if:(?<condition>[^\]]+)\)(?<choiceText>[^\]]+)");
+
                 foreach (Match linkMatch in linkMatches)
                 {
                     var linkContent = linkMatch.Groups[1].Value;
@@ -229,7 +252,8 @@ namespace SimpleTwineDialogue
                     
                     string choiceText = "";
                     string choiceTarget = "";
-                    
+                    string choiceCondition = "";
+
                     // Check if it's a pipe format [[Text|Target]]
                     if (linkContent.Contains("|"))
                     {
@@ -243,6 +267,18 @@ namespace SimpleTwineDialogue
                         var parts = linkContent.Split(new[] { "->" }, System.StringSplitOptions.None);
                         choiceText = parts[0].Trim();
                         choiceTarget = parts.Length > 1 ? parts[1].Trim() : parts[0].Trim();
+
+                        if (choiceText.Contains("if:"))
+                        {
+                            var conditionLinkMatches = conditionLinkRegex.Matches(choiceText);
+                            foreach(Match conditionLinkMatch in conditionLinkMatches)
+                            {
+                                choiceCondition = conditionLinkMatch.Groups["condition"].Value.Trim();
+                                choiceText = conditionLinkMatch.Groups["choiceText"].Value.Trim();
+                            }
+
+                        }
+
                     }
                     // Otherwise it's a simple format [[Target]]
                     else
@@ -257,11 +293,42 @@ namespace SimpleTwineDialogue
                     { 
                         Text = choiceText, 
                         Target = choiceTarget,
-                        OriginalFormat = linkMatch.Value.Trim()
+                        OriginalFormat = linkMatch.Value.Trim(),
+                        Condition = choiceCondition
                     });
                     
                     body = body.Replace(linkMatch.Value, ""); // Remove choice tag from body
                 }
+
+
+                /// Handle condition
+                /// 
+                var conditions = new List<BodyConditions>();
+                var conditionMatches = conditionRegex.Matches(body);
+                if (conditionMatches.Count > 0)
+                {
+                    foreach (Match conditionMatch in conditionMatches)
+                    {
+                        conditions.Add(new BodyConditions
+                        {
+                            Condition = conditionMatch.Groups["condition"].Value.Trim(),
+                            Text = 
+                            conditionMatch.Groups["text"].Value.Trim()
+                        });
+                        body = body.Replace(conditionMatch.Value, "");
+                    }
+                }
+                else
+                {
+                    // Si pas de condition, mettre un texte par default
+                    conditions.Add(new BodyConditions
+                    {
+                        Condition = "default",
+                        Text = body
+                    });
+                }
+                body.Trim();
+
 
                 // Create the passage object with all extracted data
                 passages[title] = new Passage
@@ -269,6 +336,7 @@ namespace SimpleTwineDialogue
                     Title = title,
                     Tags = tags ?? new string[0],
                     Body = body,
+                    Bodies = conditions,
                     Images = images,
                     Choices = choices,
                     ParsedChoices = parsedChoices,
