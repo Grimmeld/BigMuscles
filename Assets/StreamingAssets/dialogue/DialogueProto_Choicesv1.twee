@@ -40,15 +40,13 @@ BigMuscle_Proto
 :: Salle1 {"position":"800,575","size":"100,100"}
 Les équipements vous semblent intimidants, alors vous décidez de commencer tranquillement votre entrainement. 
 Une kettlebell au fond de la salle vous fait de l'oeil.
-[[(Next)->Salle2]]
+[[>>->Salle2]]
 
 
 :: Salle2 {"position":"650,800","size":"100,100"}
 Salut beauté ! T'as envie de t'essayer un petit entrainement ?
-[[(if:Start)Être confiant->SalleConfiant]]
-[[(if:BILL-20)Être moyen->SalleConfiant]]
+[[(if:BILL-30)Être confiant->SalleConfiant]]
 [[Montrer sa vulnérabilité->SalleVulnérable]]
-[[Perpétuité->SalleVulnérable]]
 
 [[Character:BILL-FLIRTY]]
 [[Speak:BILL]]
@@ -56,7 +54,7 @@ Salut beauté ! T'as envie de t'essayer un petit entrainement ?
 
 :: SalleConfiant {"position":"775,925","size":"100,100"}
 "Ouais grave ! Je vais bien te soulever"
-[[(Next)->SalleConfiant2]]
+[[>>->SalleConfiant2]]
 
 [[Speak:SELF-]]
 
@@ -65,7 +63,7 @@ Salut beauté ! T'as envie de t'essayer un petit entrainement ?
 :: SalleConfiant2 [MALUS-BILL] {"position":"775,1075","size":"100,100"}
 Les kettlebell sont la base de l'entrainement. Donc tu vas redescendre vite fait, bro
 
-[[(Next)->SalleEnd1]]
+[[>>->SalleEnd1]]
 
 
 [[Character:BILL-SAD]]
@@ -83,7 +81,7 @@ Le texte par défault.
 
 :: SalleVulnérable {"position":"525,925","size":"100,100"}
 "Euh ouais mais tu sais... Ca fait longtemps que je n'ai pas fait ça"
-[[(Next)->SalleVulnérable2]]
+[[>>->SalleVulnérable2]]
 
 [[Speak:SELF-]]
 
@@ -92,7 +90,7 @@ Le texte par défault.
 :: SalleVulnérable2 [BONUS-BILL] {"position":"500,1075","size":"100,100"}
 T'en fais pas bébé. Je vais te guider
 
-[[(Next)->SalleEnd1]]
+[[>>->SalleEnd1]]
 
 
 [[Character:BILL-FLIRTY]]

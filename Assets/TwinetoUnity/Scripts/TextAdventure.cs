@@ -62,6 +62,9 @@ namespace SimpleTwineDialogue
         // Container where images will be displayed
         public Transform imageEyeContainer;
 
+        // Next button to advance dialogues
+        [SerializeField] private Button nextButton;
+
         // Counter for tracking how many choices the player has made
         //int myChoices = 0;
         //public TextMeshProUGUI myChoiceCounterUI;
@@ -87,8 +90,9 @@ namespace SimpleTwineDialogue
         // Dictionary storing all passages from the Twee file
         private Dictionary<string, TweeParser.Passage> passages;
 
-        public List<string> choicesMade;
-        public string currentTextDisplay;
+        [HideInInspector] public List<string> choicesMade;
+        private string currentTextDisplay;
+
 
         // Title of the currently displayed passage
         private string currentPassageTitle;
@@ -117,6 +121,7 @@ namespace SimpleTwineDialogue
             {
                 StartCoroutine(LoadTweeFile(Path.Combine(Application.streamingAssetsPath, localFileName)));
             }
+
         }
 
         /// <summary>
@@ -312,6 +317,7 @@ namespace SimpleTwineDialogue
 
                 if (tags.Contains("MALUS"))
                 {
+                    Debug.Log("ceci est un malus");
                     string[] charTags = tags.Split("-");
 
                     Character character = CharacterManagement.Instance.FindCharacterName(charTags[1]);
@@ -489,6 +495,7 @@ namespace SimpleTwineDialogue
             if (passages.ContainsKey("Start"))
             {
                 Debug.Log("Passage 'Start' found.");
+                ClearImagesChar();
                 DisplayPassage("Start");  // Display the initial passage
             }
             else
@@ -545,6 +552,8 @@ namespace SimpleTwineDialogue
             {
                 Destroy(child.gameObject);
             }
+
+            CharacterManagement.Instance.ToggleMeterContainer(false);
         }
 
         void ClearImagesEye()
@@ -559,6 +568,9 @@ namespace SimpleTwineDialogue
         void ClearText()
         {
             isWriting = true;
+            if (nextButton != null) 
+            nextButton.gameObject.SetActive(false);
+            
             CanceledSelect();
             
         }
@@ -581,6 +593,7 @@ namespace SimpleTwineDialogue
             for (int i = 0; i < passage.ParsedChoices.Count; i++)
             {
                 bool isShowed = true;
+                bool isLocked = false;  
 
 
                 if (passage.ParsedChoices[i].Condition != "")
@@ -595,11 +608,19 @@ namespace SimpleTwineDialogue
                         Character character = CharacterManagement.Instance.FindCharacterName(texts[0]);
                         if (character != null)
                         {
+                            isShowed = true;
+
                             float value = float.Parse(texts[1]);
                             if (character.meter >= value)
                             {
-                                isShowed = true;
                                 
+                                
+                            }
+                            else
+                            {
+                                // bloquer l'interaction
+                                // Montrer icone lock
+                                isLocked = true;
                             }
                         }
                     }
@@ -627,21 +648,46 @@ namespace SimpleTwineDialogue
                 if (!isShowed)
                     continue;
 
-                var choiceButton = Instantiate(choiceButtonPrefab, choiceButtonContainer);
-
-                // Display the choice text on the button
-                choiceButton.GetComponentInChildren<TextMeshProUGUI>().text = passage.ParsedChoices[i].Text;
-
-                // When clicked, navigate to the target passage
-                string targetPassage = passage.ParsedChoices[i].Target; // Capture for lambda
-                choiceButton.onClick.AddListener(() => OnChoiceSelected(targetPassage, passage.Body));
-                
-                // Navigation with keyboard
-                // Select the first button to continue
-                if (i == 0)
+                if (passage.ParsedChoices[0].Text == ">>")
                 {
-                    EventSystem.current.firstSelectedGameObject = choiceButton.gameObject;
-                    choiceButton.Select();
+                    if (nextButton != null)
+                    { 
+                        nextButton.gameObject.SetActive(true);
+                        string nextPassage = passage.ParsedChoices[i].Target; // Capture for lambda
+                        nextButton.onClick.AddListener(() => OnChoiceSelected(nextPassage, passage.Body));
+                        EventSystem.current.firstSelectedGameObject = nextButton.gameObject;
+                        nextButton.Select();
+                    }
+                    
+                }
+                else 
+                { 
+                    var choiceButton = Instantiate(choiceButtonPrefab, choiceButtonContainer);
+
+                    // Display the choice text on the button
+                    choiceButton.GetComponentInChildren<TextMeshProUGUI>().text = passage.ParsedChoices[i].Text;
+
+                    // When clicked, navigate to the target passage
+                    string targetPassage = passage.ParsedChoices[i].Target; // Capture for lambda
+                    
+                    if (!isLocked)
+                    choiceButton.onClick.AddListener(() => OnChoiceSelected(targetPassage, passage.Body));
+                    else
+                    {
+                        
+                        if (choiceButton.TryGetComponent(out ButtonChoice buttonchoice))
+                            buttonchoice.OnLocked();
+
+                    }
+
+
+                    // Navigation with keyboard
+                    // Select the first button to continue
+                    if (i == 0)
+                        {
+                            EventSystem.current.firstSelectedGameObject = choiceButton.gameObject;
+                            choiceButton.Select();
+                        }
                 }
             }
         
@@ -804,6 +850,11 @@ namespace SimpleTwineDialogue
         {
             _actionSelect.canceled += OnSelectChoice;
             _actionSelect.Enable();
+        }
+
+        public bool currentlyWriting()
+        {
+            return isWriting;
         }
     }
 }
