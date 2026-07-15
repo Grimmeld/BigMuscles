@@ -46,6 +46,10 @@ namespace SimpleTwineDialogue
         // Container where choice buttons will be spawned
         public Transform choiceButtonContainer;
 
+        // Next button to advance dialogues
+        [SerializeField] private Transform nextButtonContainer;
+        [SerializeField] private Button nextButtonPrefab;
+
         // Container where images will be displayed
         public Transform imageContainer;
 
@@ -62,8 +66,6 @@ namespace SimpleTwineDialogue
         // Container where images will be displayed
         public Transform imageEyeContainer;
 
-        // Next button to advance dialogues
-        [SerializeField] private Button nextButton;
 
         // Counter for tracking how many choices the player has made
         //int myChoices = 0;
@@ -274,7 +276,6 @@ namespace SimpleTwineDialogue
 
             // Clear previous content
             ClearChoices();
-            //ClearImages();
             ClearText();
 
             // Display background image
@@ -317,7 +318,7 @@ namespace SimpleTwineDialogue
 
                 if (tags.Contains("MALUS"))
                 {
-                    Debug.Log("ceci est un malus");
+                    
                     string[] charTags = tags.Split("-");
 
                     Character character = CharacterManagement.Instance.FindCharacterName(charTags[1]);
@@ -568,8 +569,11 @@ namespace SimpleTwineDialogue
         void ClearText()
         {
             isWriting = true;
-            if (nextButton != null) 
-            nextButton.gameObject.SetActive(false);
+
+            foreach (Transform child in nextButtonContainer)
+            {
+                Destroy(child.gameObject);
+            }
             
             CanceledSelect();
             
@@ -650,10 +654,12 @@ namespace SimpleTwineDialogue
 
                 if (passage.ParsedChoices[0].Text == ">>")
                 {
-                    if (nextButton != null)
-                    { 
+                    if (nextButtonContainer != null)
+                    {
+                        var nextButton = Instantiate(nextButtonPrefab, nextButtonContainer);
                         nextButton.gameObject.SetActive(true);
-                        string nextPassage = passage.ParsedChoices[i].Target; // Capture for lambda
+                        TextPanel.Instance.SetNextButton(nextButton);
+                        string nextPassage = passage.ParsedChoices[0].Target; // Capture for lambda
                         nextButton.onClick.AddListener(() => OnChoiceSelected(nextPassage, passage.Body));
                         EventSystem.current.firstSelectedGameObject = nextButton.gameObject;
                         nextButton.Select();
