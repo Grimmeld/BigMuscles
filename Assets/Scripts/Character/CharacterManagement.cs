@@ -57,7 +57,8 @@ public class CharacterManagement : MonoBehaviour
     private void UpdateUI(float NewMeter, float bonus)
     {
         StopAllCoroutines();
-        StartCoroutine(ChangeMeterContainer(NewMeter));
+        //StartCoroutine(ChangeMeterContainer(NewMeter));
+        StartCoroutine(AnimateSlider(NewMeter, fadeSlider));
     }
 
     private void AddToList(Character c)
@@ -154,5 +155,29 @@ public class CharacterManagement : MonoBehaviour
 
 
         return null;
+    }
+
+    private IEnumerator AnimateSlider(float targetValue, float duration)
+    {
+        meterContainer.GetComponentInChildren<TextMeshProUGUI>().text = (targetValue.ToString() + " %");
+
+        Slider slider = meterContainer.GetComponentInChildren<Slider>();
+
+        float startValue = slider.value;
+        float elapsed = 0f;
+        while (elapsed<duration)
+        {
+            elapsed += Time.deltaTime;
+
+            slider.value = Mathf.Lerp(
+                startValue,
+                targetValue,
+                elapsed / duration
+                );
+
+            yield return null;
+        }
+
+        slider.value = targetValue;
     }
 }

@@ -692,7 +692,8 @@ namespace SimpleTwineDialogue
                     if (i == 0)
                         {
                             EventSystem.current.firstSelectedGameObject = choiceButton.gameObject;
-                            choiceButton.Select();
+                            //choiceButton.Select();
+                            EventSystem.current.SetSelectedGameObject(choiceButton.gameObject);
                         }
                 }
             }

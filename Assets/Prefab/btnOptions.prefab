@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 3715831818057816134}
   - component: {fileID: 635462922816583177}
   - component: {fileID: 1626368423056724907}
+  - component: {fileID: 5811491886039766353}
   m_Layer: 5
   m_Name: btnOptions
   m_TagString: Untagged
@@ -288,6 +289,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ButtonChoice
   imageLock: {fileID: 4114154016102954333}
   isLocked: 0
+--- !u!114 &5811491886039766353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7349090575992489000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3973190c991f4444b1f1bb3b8533e96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HighlightedSelector
 --- !u!1 &8037700603318579075
 GameObject:
   m_ObjectHideFlags: 0
