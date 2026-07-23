@@ -11,21 +11,17 @@ public class TextPanel : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
     [SerializeField] private TextAdventure textAdventure;
     [SerializeField] private Button nextButton;
 
-    public Texture2D customCursor;
 
-    private void Awake()
-    {
-        if (Instance != null)
-            Destroy(this);
-
-        Instance = this;
-    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void OnPointerClick(PointerEventData pointerEventData)
     {
         if (textAdventure.currentlyWriting())
-        textAdventure.ShowAllPassageText();
+        {
+
+            textAdventure.ShowAllPassageText(); 
+        }
+        
 
         else
         {

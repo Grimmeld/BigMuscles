@@ -54,6 +54,11 @@ public class CharacterManagement : MonoBehaviour
 
     }
 
+    public void SetMeterContainer(Transform container)
+    {
+        meterContainer = container;
+    }
+
     private void UpdateUI(float NewMeter, float bonus)
     {
         StopAllCoroutines();
@@ -117,7 +122,7 @@ public class CharacterManagement : MonoBehaviour
 
 
         slider.value = meter;
-
+    
     }
 
 
@@ -140,6 +145,9 @@ public class CharacterManagement : MonoBehaviour
 
     public void ToggleMeterContainer(bool state)
     {
+        if (meterContainer == null)
+            return;
+
         meterContainer.gameObject.SetActive(state);
 
     }
@@ -179,5 +187,6 @@ public class CharacterManagement : MonoBehaviour
         }
 
         slider.value = targetValue;
+        
     }
 }

@@ -13,11 +13,13 @@ public class Character
     public int characterWidth;
     public int characterHeight;
 
+    public Texture2D characterIcon;
+    public Color text_color;
+
     [Tooltip("Affection level ; start with 0 for new game")]
     [Range(-100,100)]
     public float meter;
 
-    public Color text_color;
 
 
 }

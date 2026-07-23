@@ -1,14 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
 using UnityEngine.Networking;
-using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 using static SimpleTwineDialogue.TweeParser;
 
@@ -66,6 +64,9 @@ namespace SimpleTwineDialogue
         // Container where images will be displayed
         public Transform imageEyeContainer;
 
+        // Text panel container
+        [SerializeField] private TextPanel textPanel;
+
 
         // Counter for tracking how many choices the player has made
         //int myChoices = 0;
@@ -108,6 +109,9 @@ namespace SimpleTwineDialogue
         public TMP_FontAsset _speakFont;
         public Color _narraColor;
 
+        [Header("Event")]
+        public Action OnEndChapter;
+
         /// <summary>
         /// Initialize the text adventure and start loading the Twee file
         /// </summary>
@@ -123,6 +127,8 @@ namespace SimpleTwineDialogue
             {
                 StartCoroutine(LoadTweeFile(Path.Combine(Application.streamingAssetsPath, localFileName)));
             }
+
+            InputManager.Instance.SetTextAdventure(this);
 
         }
 
@@ -333,7 +339,8 @@ namespace SimpleTwineDialogue
                 {
                     case "END":
 
-                        Application.Quit();
+                        //Application.Quit();
+                        OnEndChapter.Invoke();
 
                     break;
                     
@@ -347,6 +354,7 @@ namespace SimpleTwineDialogue
                 switch (character.CharacterName)
                 {
                     case "REMOVE":
+                        Debug.Log("Remove char et eyes");
                         ClearImagesChar();
                         ClearImagesEye();
                         break;
@@ -575,7 +583,7 @@ namespace SimpleTwineDialogue
                 Destroy(child.gameObject);
             }
             
-            CanceledSelect();
+            InputManager.Instance.CanceledSelect();
             
         }
 
@@ -658,7 +666,7 @@ namespace SimpleTwineDialogue
                     {
                         var nextButton = Instantiate(nextButtonPrefab, nextButtonContainer);
                         nextButton.gameObject.SetActive(true);
-                        TextPanel.Instance.SetNextButton(nextButton);
+                        textPanel.SetNextButton(nextButton);
                         string nextPassage = passage.ParsedChoices[0].Target; // Capture for lambda
                         nextButton.onClick.AddListener(() => OnChoiceSelected(nextPassage, passage.Body));
                         EventSystem.current.firstSelectedGameObject = nextButton.gameObject;
@@ -790,28 +798,6 @@ namespace SimpleTwineDialogue
             
         }
 
-        private InputAction _actionSelect;
-
-        private void Awake()
-        {
-            _actionSelect = GameObject.FindWithTag("Player").GetComponent<PlayerInput>().actions.FindActionMap("Player").FindAction("Select");
-
-        }
-
-        /// <summary>
-        /// PLAYER INPUT ACTIONS
-        /// </summary>
-
-        public void onAdvanceSequence(InputAction.CallbackContext context)
-        {
-            if (context.started)
-            {
-                ShowAllPassageText();
-
-            }
-
-
-        }
 
         public void ShowAllPassageText()
         {
@@ -824,7 +810,7 @@ namespace SimpleTwineDialogue
                 // The choices needs to appear when the full text is displayed
                 CreateChoices(currentPassage);
 
-                EnableSelect();
+                InputManager.Instance.EnableSelect();
                 
 
                 isWriting = false;
@@ -832,32 +818,6 @@ namespace SimpleTwineDialogue
             }
         }
 
-        public void OnSelectChoice(InputAction.CallbackContext context) 
-        { 
-            if (!isWriting)
-            {
-                if (context.canceled)
-                {
-                     if (EventSystem.current.currentSelectedGameObject != null)
-                    {
-                            Button button = EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
-                            ExecuteEvents.Execute<IPointerClickHandler>(button.gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerClickHandler);
-                    }
-
-                }
-            }
-        }
-
-        public void CanceledSelect()
-        {
-            _actionSelect.canceled -= OnSelectChoice;
-            _actionSelect.Disable();
-        }
-        public void EnableSelect()
-        {
-            _actionSelect.canceled += OnSelectChoice;
-            _actionSelect.Enable();
-        }
 
         public bool currentlyWriting()
         {

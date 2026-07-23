@@ -19,7 +19,9 @@ BigMuscle_Proto
     "MALUS-BILL": "red",
     "BONUS-BILL": "red",
     "BCKG-Gym_Upper_2": "purple",
-    "BONUS-BILL;EYE-FLIRTY": "green"
+    "BONUS-BILL;EYE-FLIRTY": "green",
+    "CHAR-REMOVE": "yellow",
+    "END": "blue"
   },
   "zoom": 0.6
 }
@@ -30,6 +32,14 @@ BigMuscle_Proto
 
 
 :: Character:BILL-SAD {"position":"75,850","size":"100,100"}
+
+
+
+:: Character:REMOVE- {"position":"925,525","size":"100,100"}
+
+
+
+:: End [END] {"position":"625,1400","size":"100,100"}
 
 
 
@@ -75,6 +85,9 @@ Les kettlebell sont la base de l'entrainement. Donc tu vas redescendre vite fait
 (if:BILL-10)[Je suis passé par la salle Vulnérable.]
 (if:else)[Je suis allé autrepart.]
 Le texte par défault.
+[[>>->End]]
+
+
 [[Speak:SELF-]]
 
 
@@ -101,6 +114,10 @@ T'en fais pas bébé. Je vais te guider
 
 
 
+:: Speak:REMOVE {"position":"675,525","size":"100,100"}
+
+
+
 :: Speak:SELF- {"position":"75,525","size":"100,100"}
 
 
@@ -112,4 +129,5 @@ L'odeur de sueur et de caoutchouc vous prend au nez. Vous ne vous êtes toujours
 [[Restez près de l'accueil->Salle1]]
 
 [[Image:bckgrnd\Gym_Upper_2.png]]
-
+[[Character:REMOVE-]]
+[[Speak:REMOVE]]
