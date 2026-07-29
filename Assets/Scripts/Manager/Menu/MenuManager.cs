@@ -9,9 +9,22 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] private List<Transform> canvas;
+    public static MenuManager Instance;
+
+    [SerializeField] private List<Transform> canvas;    
 
     public string buttonSound;
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
 
     private void Start()
     {
@@ -19,6 +32,8 @@ public class MenuManager : MonoBehaviour
 
         canvas[0].gameObject.SetActive(true);
     }
+
+
 
     public void ClearCanvas()
     {

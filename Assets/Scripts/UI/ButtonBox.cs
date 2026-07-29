@@ -1,0 +1,17 @@
+using UnityEngine;
+
+public class ButtonBox : MonoBehaviour
+{
+
+    private void OnEnable()
+    {
+        transform.localPosition = new Vector2(-Screen.width, 215);
+        transform.LeanMoveX(100, 0.5f).setEaseOutExpo().delay = 0.1f;
+    }
+
+    private void OnDisable()
+    {
+        transform.LeanMoveX(-Screen.width, 0.5f).setEaseInExpo();
+    }
+
+}
