@@ -6,7 +6,7 @@ public class ButtonBox : MonoBehaviour
     private void OnEnable()
     {
         transform.localPosition = new Vector2(-Screen.width, 215);
-        transform.LeanMoveX(100, 0.5f).setEaseOutExpo().delay = 0.1f;
+        transform.LeanMoveX(100, 0.5f).setEaseOutExpo().delay = 0.3f;
     }
 
     private void OnDisable()
