@@ -66,6 +66,6 @@ public class SceneLoadManager : MonoBehaviour
     {
             currentChapter = Instantiate(prefab[currentIdx]);
             currentText = currentChapter.GetComponentInChildren<TextAdventure>();
-            currentText.OnEndChapter += SetNewScene;
+        currentText.OnEndChapter += SetNewScene;
     }
 }

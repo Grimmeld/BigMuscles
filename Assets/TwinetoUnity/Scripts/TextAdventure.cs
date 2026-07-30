@@ -81,14 +81,14 @@ namespace SimpleTwineDialogue
 
         [Header("Load from Web")]
         // URL to the Twee file hosted on a web server
-        public string webFileURL;
+        [HideInInspector] public string webFileURL;
 
         // Base URL where images are hosted (images will be loaded from imageBaseURL/imageName)
-        public string imageBaseURL;
+        [HideInInspector] public string imageBaseURL;
 
         [Header("Load from Local")]
         // Filename of the Twee file in the StreamingAssets folder
-        public string localFileName;
+        [HideInInspector] public string localFileName;
 
         // Parser instance for reading Twee files
         private TweeParser tweeParser;
@@ -96,7 +96,7 @@ namespace SimpleTwineDialogue
         // Dictionary storing all passages from the Twee file
         private Dictionary<string, TweeParser.Passage> passages;
 
-        [HideInInspector] public List<string> choicesMade;
+        //[HideInInspector] public List<string> choicesMade;
         private string currentTextDisplay;
 
 
@@ -107,13 +107,17 @@ namespace SimpleTwineDialogue
 
         //Type writer text style
         [Header("Styling text")]
-        [Tooltip("The delay every letter will appear, in seconds")] public float delay;
+        [Tooltip("The delay every letter will appear, in seconds")] public float typingDelay;
         public TMP_FontAsset _narraFont;
         public TMP_FontAsset _speakFont;
         public Color _narraColor;
 
         [Header("Event")]
         public Action OnEndChapter;
+
+        [Header("Title Modifier")]
+        private bool hasTitleDisplayed;
+        [Tooltip("The delay text appears after title")] private float textDelay = 0f;
 
         /// <summary>
         /// Initialize the text adventure and start loading the Twee file
@@ -134,6 +138,18 @@ namespace SimpleTwineDialogue
             InputManager.Instance.SetTextAdventure(this);
 
         }
+
+        ///<summary>
+        /// Initialiaze prefab variant parameter
+        /// </summary>
+        private void Awake()
+        {
+            ChapterPrefabManager prefabManager = GetComponentInParent<ChapterPrefabManager>();
+            localFileName = prefabManager.SetVariantFilename();
+            hasTitleDisplayed = prefabManager.SetVariantTitleDisplay();
+            textDelay = prefabManager.SetVariantTextDelay();
+        }
+
 
         /// <summary>
         /// Called when a choice button is clicked
@@ -299,12 +315,8 @@ namespace SimpleTwineDialogue
             currentPassageTitle = passageTitle;
 
             // Ajouter Les passages parcourues pour retenir les choix du joueur
-            choicesMade.Add(currentPassageTitle);
+            //choicesMade.Add(currentPassageTitle);
 
-            /// <summary>
-            /// On veut voir le titre du chapitre puis le sous chapitre avant que le texte n'apparaisse
-            /// </summary>
-            titleContainer.gameObject.SetActive(true);
 
             /// <summary>
             /// Modifications :
@@ -312,10 +324,27 @@ namespace SimpleTwineDialogue
             /// - Choices have to appear only when the full text is displayed
             /// - Player can show full text by clicking on space
             /// </summary>
-
             currentPassage = passage;
             StopAllCoroutines(); // Clear show text
-            StartCoroutine(ShowText(passage));
+
+
+            /// <summary>
+            /// On veut voir le titre du chapitre puis le sous chapitre avant que le texte n'apparaisse
+            /// </summary>
+            if (!hasTitleDisplayed)
+            {
+                // First node
+                hasTitleDisplayed = true;
+                titleContainer.gameObject.SetActive(true);
+                StartCoroutine(TextWithDelay(passage));
+            }
+            else
+            {
+                // other nodes
+                StartCoroutine(ShowText(passage));
+            }
+
+
 
             foreach (var tags in passage.Tags)
             {
@@ -347,12 +376,15 @@ namespace SimpleTwineDialogue
                 switch (tags)
                 {
                     case "END":
-
-                        //Application.Quit();
+                        // Last node of the prefab
                         OnEndChapter.Invoke();
+                        break;
 
-                    break;
-                    
+                    case "KEY":
+                        //Important choice that may impact other dialogues
+                        PlayerManager.Instance.AddKeyChoices(currentPassageTitle);
+                        break;
+
 
                 }
 
@@ -592,7 +624,7 @@ namespace SimpleTwineDialogue
                 Destroy(child.gameObject);
             }
             
-            InputManager.Instance.CanceledSelect();
+            InputManager.Instance.DisableSelect();
             
         }
 
@@ -651,16 +683,16 @@ namespace SimpleTwineDialogue
                     {
 
                         // Search for everychoices made in the game
-                        foreach (string choiceMade in choicesMade)
-                        {
+                        //foreach (string choiceMade in choicesMade)
+                        //{
 
-                            if (choiceMade == passage.ParsedChoices[i].Condition)
-                            {
-                                isShowed = true;
-                                break;
-                            }
-                        }
-
+                        //    if (choiceMade == passage.ParsedChoices[i].Condition)
+                        //    {
+                        //        isShowed = true;
+                        //        break;
+                        //    }
+                        //}
+                        isShowed = PlayerManager.Instance.isConditionChecked(passage.ParsedChoices[i].Condition);
 
                     }
 
@@ -742,11 +774,15 @@ namespace SimpleTwineDialogue
                         float value = float.Parse(texts[1]);
                         if (character.meter >= value)
                         {
-                            passageToDisplay = string.Concat(
-                                body.Text,
-                                " ",
-                                passage.Body
-                                );
+                            if (passageToDisplay == body.Text)
+                            {
+                                passageToDisplay = string.Concat(
+                                    body.Text,
+                                    " ",
+                                    passage.Body
+                                    );
+                            }
+
                             break;
                         }
                     }
@@ -767,19 +803,28 @@ namespace SimpleTwineDialogue
 
                         default:
                             // Search for everychoices made in the game
-                            foreach (string choiceMade in choicesMade)
-                            {
 
-                                if (choiceMade == body.Condition)
-                                {
-                                    passageToDisplay = string.Concat(
-                                        body.Text,
-                                        " ",
-                                        passage.Body
-                                        );
-                                    break;
-                                }
+                            if (PlayerManager.Instance.isConditionChecked(body.Condition))
+                            {
+                                passageToDisplay = string.Concat(
+                                    body.Text,
+                                    " ",
+                                    passage.Body
+                                    );
                             }
+
+                            //foreach (string choiceMade in choicesMade)
+                            //{
+                                //if (choiceMade == body.Condition)
+                                //{
+                                //    passageToDisplay = string.Concat(
+                                //        body.Text,
+                                //        " ",
+                                //        passage.Body
+                                //        );
+                                //    break;
+                                //}
+                            //}
                             break;
                     }
                     
@@ -797,7 +842,7 @@ namespace SimpleTwineDialogue
             for (int i = 0; i < currentTextDisplay.Length; i++)
             {
                 passageText.text = currentTextDisplay.Substring(0, i);
-                yield return new WaitForSeconds(delay);
+                yield return new WaitForSeconds(typingDelay);
             }
 
             isWriting = false;
@@ -832,5 +877,22 @@ namespace SimpleTwineDialogue
         {
             return isWriting;
         }
+    
+        private IEnumerator TextWithDelay(Passage passage)
+        {
+            textPanel.gameObject.SetActive(false);
+            InputManager.Instance.DisableSelect();
+            InputManager.Instance.ToggleAdvance(false);
+            CharacterManagement.Instance.ToggleMeterContainer(false);
+
+            yield return new WaitForSeconds(textDelay);
+            
+            textPanel.gameObject.SetActive(true);
+            InputManager.Instance.ToggleAdvance(true);
+            StartCoroutine(ShowText(passage));
+        }
+    
     }
+
+    
 }

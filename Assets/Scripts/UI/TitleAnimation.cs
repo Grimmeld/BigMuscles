@@ -11,24 +11,38 @@ public class TitleAnimation : MonoBehaviour
 
     private void OnEnable()
     {
-        chapter.transform.localPosition = new Vector2(Screen.width, -100);
-        chapter.alpha = 0;
-        subChapter.transform.localPosition = new Vector2(Screen.width, -200);
-        subChapter.alpha = 0;
+        
+        if(chapter != null)
+        {
+            chapter.transform.localPosition = new Vector2(Screen.width, -100);
+            chapter.alpha = 0;
+            TitleDisplay(chapter, 0f);
+        }
 
-
-        TitleDisplay(chapter, 0f);
-        TitleDisplay(subChapter, 1f);
+        if (subChapter != null )
+        {
+            subChapter.transform.localPosition = new Vector2(Screen.width, -200);
+            subChapter.alpha = 0;
+            TitleDisplay(subChapter, 1f);
+        }
 
         Invoke("OutAnimation", outAnimationDelay);
     }
 
     private void OutAnimation()
     {
-        chapter.transform.LeanMoveLocalX(-Screen.width, 2f).setEaseOutExpo().setOnComplete(DisableScript);
-        chapter.LeanAlpha(0, 0.5f);
-        subChapter.transform.LeanMoveLocalX(-Screen.width, 2f).setEaseOutExpo().setOnComplete(DisableScript);
-        subChapter.LeanAlpha(0, 0.5f);
+        if (chapter != null)
+        {
+            chapter.transform.LeanMoveLocalX(-Screen.width, 2f).setEaseOutExpo().setOnComplete(DisableScript);
+            chapter.LeanAlpha(0, 0.5f);
+        }
+
+        if (subChapter != null)
+        {
+            subChapter.transform.LeanMoveLocalX(-Screen.width, 2f).setEaseOutExpo().setOnComplete(DisableScript);
+            subChapter.LeanAlpha(0, 0.5f);
+        }
+            
 
     }
 

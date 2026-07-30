@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MeterSetUp : MonoBehaviour
 {
-    private void Start()
+    private void Awake()
     {
         CharacterManagement.Instance.SetMeterContainer(this.gameObject.transform);
     }

@@ -2,6 +2,7 @@ using SimpleTwineDialogue;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class InputManager : MonoBehaviour
@@ -9,6 +10,7 @@ public class InputManager : MonoBehaviour
     public static InputManager Instance;
     [SerializeField] private TextAdventure _textAdventure;
     private InputAction _actionSelect;
+    private InputAction _actionAdvance;
 
     private void Awake()
     {
@@ -18,6 +20,7 @@ public class InputManager : MonoBehaviour
         Instance = this;
 
         _actionSelect = gameObject.GetComponent<PlayerInput>().actions.FindActionMap("Player").FindAction("Select");
+        _actionAdvance = gameObject.GetComponent<PlayerInput>().actions.FindActionMap("Player").FindAction("Advance");
     }
 
     public void SetTextAdventure(TextAdventure textAdventure)
@@ -29,6 +32,7 @@ public class InputManager : MonoBehaviour
     {
         if (context.started)
         {
+
             if (_textAdventure == null)
                 return;
             _textAdventure.ShowAllPassageText();
@@ -42,7 +46,7 @@ public class InputManager : MonoBehaviour
     {
             if (context.canceled)
             {
-                if (_textAdventure == null)
+            if (_textAdventure == null)
                     return;
 
                 if(!_textAdventure.currentlyWriting())
@@ -67,19 +71,27 @@ public class InputManager : MonoBehaviour
             Button button = EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
             ExecuteEvents.Execute<IPointerClickHandler>(button.gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerClickHandler);
         }
-    }
+    } 
 
-
-
-    public void CanceledSelect()
+    public void DisableSelect()
     {
-        _actionSelect.canceled -= InputManager.Instance.OnSelectChoice;
         _actionSelect.Disable();
     }
     public void EnableSelect()
     {
-        _actionSelect.canceled += InputManager.Instance.OnSelectChoice;
         _actionSelect.Enable();
+    }
+
+    public void ToggleAdvance(bool activate)
+    {
+        if(activate)
+        {
+            _actionAdvance.Enable();
+        }
+        else
+        {
+            _actionAdvance.Disable();
+        }
     }
 
 }
