@@ -64,6 +64,9 @@ namespace SimpleTwineDialogue
         // Container where images will be displayed
         public Transform imageEyeContainer;
 
+        // Container for chapter and sub chapter
+        public Transform titleContainer;
+
         // Text panel container
         [SerializeField] private TextPanel textPanel;
 
@@ -295,7 +298,13 @@ namespace SimpleTwineDialogue
             // Display passage text
             currentPassageTitle = passageTitle;
 
+            // Ajouter Les passages parcourues pour retenir les choix du joueur
             choicesMade.Add(currentPassageTitle);
+
+            /// <summary>
+            /// On veut voir le titre du chapitre puis le sous chapitre avant que le texte n'apparaisse
+            /// </summary>
+            titleContainer.gameObject.SetActive(true);
 
             /// <summary>
             /// Modifications :
@@ -354,7 +363,6 @@ namespace SimpleTwineDialogue
                 switch (character.CharacterName)
                 {
                     case "REMOVE":
-                        Debug.Log("Remove char et eyes");
                         ClearImagesChar();
                         ClearImagesEye();
                         break;
@@ -396,6 +404,7 @@ namespace SimpleTwineDialogue
                     case "REMOVE":
                         selfnameContainer.gameObject.SetActive(false);
                         charnameContainer.gameObject.SetActive(false);
+
                         break;
 
                     default:

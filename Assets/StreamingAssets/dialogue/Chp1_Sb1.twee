@@ -1,0 +1,393 @@
+:: StoryTitle
+Chp1_Sb1
+
+
+:: StoryData
+{
+  "ifid": "34398B5D-F2C9-4EA5-8939-FD847A03D72C",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Start",
+  "tag-colors": {
+    "START": "orange",
+    "END": "blue"
+  },
+  "zoom": 0.6
+}
+
+
+:: Character:REMOVE- {"position":"925,925","size":"100,100"}
+
+
+
+:: Character:SELF- {"position":"800,1925","size":"100,100"}
+
+
+
+:: Chp1_Sb1_BreakUp_1 {"position":"800,800","size":"100,100"}
+Tu en avais déjà parlé avec tes potes. C’est toujours après deux bières que transpirer ensemble, entre bro, semble être une idée enviable. [[>>->Chp1_Sb1_BreakUp_2]]   
+
+
+
+:: Chp1_Sb1_BreakUp_10 {"position":"675,1925","size":"100,100"}
+Ça t’est tombé dessus comme une merde dans une soupe. [[>>->Chp1_Sb1_BreakUp_11]]  [[Character:REMOVE-]] [[Speak:REMOVE]]
+
+
+
+:: Chp1_Sb1_BreakUp_11 {"position":"675,2050","size":"100,100"}
+Vous étiez bien ensemble. Tu avais appris à gérer ses demandes incessantes, son hystérie et même… Ses règles ! [[>>->Chp1_Sb1_BreakUp_12]]   
+
+
+
+:: Chp1_Sb1_BreakUp_12 {"position":"675,2175","size":"100,100"}
+Elle t’a annoncé ça un soir. Tu venais de rentrer d’une journée de TP de neurologie super important. [[>>->Chp1_Sb1_BreakUp_13]]   
+
+
+
+:: Chp1_Sb1_BreakUp_13 {"position":"675,2300","size":"100,100"}
+En plus – encore une fois – tu avais été si habile dans tes gestes, si ingénieux dans ta réflexion. [[>>->Chp1_Sb1_BreakUp_14]]   
+
+
+
+:: Chp1_Sb1_BreakUp_14 {"position":"675,2425","size":"100,100"}
+Oui, tu avais été si bon. [[>>->Chp1_Sb1_BreakUp_15]]   
+
+
+
+:: Chp1_Sb1_BreakUp_15 {"position":"675,2550","size":"100,100"}
+Que tu espérais bien te faire sucer ce soir. [[>>->Chp1_Sb1_BreakUp_16]]   
+
+
+
+:: Chp1_Sb1_BreakUp_16 {"position":"675,2675","size":"100,100"}
+Mais non. [[>>->Chp1_Sb1_BreakUp_17]]   
+
+
+
+:: Chp1_Sb1_BreakUp_17 {"position":"675,2800","size":"100,100"}
+Elle t’attendait sur le canapé. Elle avait ce regard où tu savais que tu étais dans la merde. [[>>->Chp1_Sb1_BreakUp_18]]   
+
+
+
+:: Chp1_Sb1_BreakUp_18 {"position":"675,2925","size":"100,100"}
+Le pire, c’est qu’elle n’a même pas su te donner de réelle raison. [[>>->Chp1_Sb1_BreakUp_19]]   
+
+
+
+:: Chp1_Sb1_BreakUp_19 {"position":"675,3050","size":"100,100"}
+Elle ne t’aime plus. C’est tout ce qu’elle t’a dit. [[>>->Chp1_Sb1_BreakUp_20]]   
+
+
+
+:: Chp1_Sb1_BreakUp_2 {"position":"800,925","size":"100,100"}
+Mais quand l’alcool retombe, tu n’as jamais pu trouver la motivation nécessaire pour t’inscrire. Parce que tu as tout pour être heureux. [[>>->Chp1_Sb1_BreakUp_3]]   
+
+
+
+:: Chp1_Sb1_BreakUp_20 {"position":"675,3175","size":"100,100"}
+Tu sers un peu plus fort la sangle de ton sac. [[>>->Chp1_Sb1_BreakUp_21]]   
+
+
+
+:: Chp1_Sb1_BreakUp_21 {"position":"675,3300","size":"100,100"}
+Tu es quelqu’un de perspicace et de rationnel. Tu vois les choses et tu sais les analyser. Alors - avec toutes tes qualités - tu ne vois pas bien comment elle peut ne plus rien ressentir pour toi. [[>>->Chp1_Sb1_BreakUp_22]]   
+
+
+
+:: Chp1_Sb1_BreakUp_22 {"position":"675,3425","size":"100,100"}
+"Mais par-dessus tout, ce qui te fait le plus chier, c’est… [[De t’être fait duper->Chp1_Sb1_BreakUp_24]]
+[[Les sentiments que tu as encore pour elle->Chp1_Sb1_BreakUp_30]]
+[[Qu’elle était plutôt bonne au lit ->Chp1_Sb1_BreakUp_34]]   "
+
+
+
+:: Chp1_Sb1_BreakUp_24 {"position":"550,3550","size":"100,100"}
+Ce n’est pas la première fois qu’elle te fait le coup [[>>->Chp1_Sb1_BreakUp_25]]   
+
+
+
+:: Chp1_Sb1_BreakUp_25 {"position":"550,3675","size":"100,100"}
+A te quitter parce qu’elle ne se sentait pas assez soutenue. [[>>->Chp1_Sb1_BreakUp_26]]   
+
+
+
+:: Chp1_Sb1_BreakUp_26 {"position":"550,3800","size":"100,100"}
+Pfff du bullshit !   [[>>->Chp1_Sb1_BreakUp_27]]   
+
+
+
+:: Chp1_Sb1_BreakUp_27 {"position":"550,3925","size":"100,100"}
+Mais ça montre bien que c’est une nana qui ne sait pas ce qu’elle veut. [[>>->Chp1_Sb1_BreakUp_28]]   
+
+
+
+:: Chp1_Sb1_BreakUp_28 {"position":"550,4050","size":"100,100"}
+Elle t’a fait perdre assez de temps comme ça. [[>>->Chp1_Sb1_BreakUp_39]]   
+
+
+
+:: Chp1_Sb1_BreakUp_3 {"position":"800,1050","size":"100,100"}
+Tu es jeune. [[>>->Chp1_Sb1_BreakUp_4]]   
+
+
+
+:: Chp1_Sb1_BreakUp_30 {"position":"675,3550","size":"100,100"}
+Elle est chiante mais tu l’aimais bien. Tu l’aimes toujours. [[>>->Chp1_Sb1_BreakUp_31]]   
+
+
+
+:: Chp1_Sb1_BreakUp_31 {"position":"675,3675","size":"100,100"}
+Ses petits-déjeuners qu’elle t’apportait le week-end. Sa façon de danser qui éclairait la piste. Elle savait te mettre en valeur. [[>>->Chp1_Sb1_BreakUp_32]]   
+
+
+
+:: Chp1_Sb1_BreakUp_32 {"position":"675,3800","size":"100,100"}
+Ta gorge se serre légèrement à ses souvenirs qui te reviennent en tête. Mais tu retiens tes larmes. Tu ne vas pas pleurer pour cette histoire. Tu vaux mieux que ça. [[>>->Chp1_Sb1_BreakUp_39]]   
+
+
+
+:: Chp1_Sb1_BreakUp_34 {"position":"800,3550","size":"100,100"}
+Personne ne t’avait touché de cette façon. [[>>->Chp1_Sb1_BreakUp_35]]   
+
+
+
+:: Chp1_Sb1_BreakUp_35 {"position":"800,3675","size":"100,100"}
+Sa bouche, ses seins. Son corps était une divinité qui ne servait qu’à te rendre heureux. [[>>->Chp1_Sb1_BreakUp_36]]   
+
+
+
+:: Chp1_Sb1_BreakUp_36 {"position":"800,3800","size":"100,100"}
+Elle était du genre à vouloir faire plaisir aux autres, et….. Ce n’est pas quelque chose que tu vas crier partout, mais tu ne te faisais pas trop prier pour réaliser tes fantasmes. [[>>->Chp1_Sb1_BreakUp_37]]   
+
+
+
+:: Chp1_Sb1_BreakUp_37 {"position":"800,3925","size":"100,100"}
+Maintenant, tu n’as plus que ta main, un mouchoir et ton imagination pour libérer la tension dans tes couilles. [[>>->Chp1_Sb1_BreakUp_38]]   
+
+
+
+:: Chp1_Sb1_BreakUp_38 {"position":"800,4050","size":"100,100"}
+Tu laisses échapper un soupir. [[>>->Chp1_Sb1_BreakUp_39]]   
+
+
+
+:: Chp1_Sb1_BreakUp_39 {"position":"675,4175","size":"100,100"}
+De toute façon, c’est n’importe quoi. [[>>->Chp1_Sb1_BreakUp_40]]   
+
+
+
+:: Chp1_Sb1_BreakUp_4 {"position":"800,1175","size":"100,100"}
+Tu es en bonne santé. [[>>->Chp1_Sb1_BreakUp_5]]   
+
+
+
+:: Chp1_Sb1_BreakUp_40 {"position":"675,4350","size":"100,100"}
+Tu sais qu’elle reviendra à la raison. Qu’elle s’en mordra les doigts. [[>>->Chp1_Sb1_WhoAreYou_41]]   
+
+
+
+:: Chp1_Sb1_BreakUp_5 {"position":"800,1300","size":"100,100"}
+Un des meilleurs de ta promo de médecine. [[>>->Chp1_Sb1_BreakUp_6]]   
+
+
+
+:: Chp1_Sb1_BreakUp_6 {"position":"800,1425","size":"100,100"}
+Un véritable champion ! [[>>->Chp1_Sb1_BreakUp_7]]   
+
+
+
+:: Chp1_Sb1_BreakUp_7 {"position":"800,1550","size":"100,100"}
+Et pourtant… [[>>->Chp1_Sb1_BreakUp_8]]   
+
+
+
+:: Chp1_Sb1_BreakUp_8 {"position":"800,1675","size":"100,100"}
+Elle t’a quitté. [[>>->Chp1_Sb1_BreakUp_9]]   
+
+
+
+:: Chp1_Sb1_BreakUp_9 {"position":"800,1800","size":"100,100"}
+La salope ! [[>>->Chp1_Sb1_BreakUp_10]]  [[Character:SELF-]] [[Speak:SELF]]
+
+
+
+:: Chp1_Sb1_NewHope_71 {"position":"600,7000","size":"100,100"}
+Tu as besoin de sentir toi à nouveau. Tu as assez cogité sur ce que tu as pu faire de mal. Sur ce que tu aurais pu faire différemment. [[>>->Chp1_Sb1_NewHope_72]]   
+
+
+
+:: Chp1_Sb1_NewHope_72 {"position":"600,7125","size":"100,100"}
+Il faut que tu penses un peu à toi maintenant. Que tu te fasses passer en priorité. Parce que tu le mérites. [[>>->Chp1_Sb1_NewHope_73]]   
+
+
+
+:: Chp1_Sb1_NewHope_73 {"position":"600,7250","size":"100,100"}
+Cette salle de sport : le « Bro Gym Paradise », c’est un nouveau départ pour toi. [[>>->Chp1_Sb1_NewHope_74]]   
+
+
+
+:: Chp1_Sb1_NewHope_74 {"position":"600,7375","size":"100,100"}
+Tu vas pouvoir te redécouvrir et laisser cette salope derrière toi. [[>>->END]]   
+
+
+
+:: Chp1_Sb1_SignUp_50 {"position":"625,5600","size":"100,100"}
+La salle de sport à côté de chez toi propose plusieurs programmes et une gamme d’équipements sportifs assez conséquente. [[>>->Chp1_Sb1_SignUp_51]]   
+
+
+
+:: Chp1_Sb1_SignUp_51 {"position":"625,5725","size":"100,100"}
+Tu as discuté avec un coach de la salle et il t’a convaincu. Il t’a dit de revenir avec tes affaires de sport pour commencer la première séance. [[>>->Chp1_Sb1_SignUp_52]]   
+
+
+
+:: Chp1_Sb1_SignUp_52 {"position":"625,5850","size":"100,100"}
+D’après ce qu’il t’a dit, tu vas pouvoir augmenter ton endurance, développer ta mobilité, et faire du bien à ta santé mentale. [[>>->Chp1_Sb1_SignUp_53]]   
+
+
+
+:: Chp1_Sb1_SignUp_53 {"position":"625,5975","size":"100,100"}
+Mais ça c’est bien pour les personnes fragiles ! [[>>->Chp1_Sb1_SignUp_54]]   
+
+
+
+:: Chp1_Sb1_SignUp_54 {"position":"625,6100","size":"100,100"}
+"Ce que tu cherches surtout en t’inscrivant, c’est autre chose. [[Libérer la tension ->Chp1_Sb1_SignUp_56]]
+[[Être la meilleure version de toi-même->Chp1_Sb1_SignUp_61]]
+[[Un physique avantageux ->Chp1_Sb1_SignUp_68]]   "
+
+
+
+:: Chp1_Sb1_SignUp_56 {"position":"500,6225","size":"100,100"}
+Le parcours de médecine est très demandant. Tu aimes sentir cette pression. [[>>->Chp1_Sb1_SignUp_57]]   
+
+
+
+:: Chp1_Sb1_SignUp_57 {"position":"500,6350","size":"100,100"}
+Comme pour placer un cathéter dans le cœur d’une souris, il te faut beaucoup de dextérité et de concentration. [[>>->Chp1_Sb1_SignUp_58]]   
+
+
+
+:: Chp1_Sb1_SignUp_58 {"position":"500,6475","size":"100,100"}
+Avant, ta copine était là pour t’aider à relâcher cette tension. Mais maintenant qu’elle est partie. Tu vas devoir trouver d’autres techniques. [[>>->Chp1_Sb1_SignUp_59]]   
+
+
+
+:: Chp1_Sb1_SignUp_59 {"position":"500,6600","size":"100,100"}
+Un autre type d’exutoire. [[>>->Chp1_Sb1_NewHope_71]]   
+
+
+
+:: Chp1_Sb1_SignUp_61 {"position":"625,6225","size":"100,100"}
+« Ubi voluntas est, ibi via est. » [[>>->Chp1_Sb1_SignUp_62]]   
+
+
+
+:: Chp1_Sb1_SignUp_62 {"position":"625,6350","size":"100,100"}
+Ou encore pour les débiles qui ne parlent pas latin, « Quand on veut, on peut » [[>>->Chp1_Sb1_SignUp_63]]   
+
+
+
+:: Chp1_Sb1_SignUp_63 {"position":"625,6475","size":"100,100"}
+C’est comme ça que tu fonctionnes depuis toujours. C’est cette philosophie qui t’a mené si loin. [[>>->Chp1_Sb1_SignUp_64]]   
+
+
+
+:: Chp1_Sb1_SignUp_64 {"position":"625,6600","size":"100,100"}
+On peut toujours s’améliorer. [[>>->Chp1_Sb1_SignUp_65]]   
+
+
+
+:: Chp1_Sb1_SignUp_65 {"position":"625,6725","size":"100,100"}
+Sinon on s’encroute et on devient une de ses personnes flasques, sans conviction et sans ambition. [[>>->Chp1_Sb1_SignUp_66]]   
+
+
+
+:: Chp1_Sb1_SignUp_66 {"position":"625,6850","size":"100,100"}
+Tu ne deviendras pas cette personne. Ni maintenant, ni jamais. [[>>->Chp1_Sb1_NewHope_71]]   
+
+
+
+:: Chp1_Sb1_SignUp_68 {"position":"750,6225","size":"100,100"}
+Imagine un peu [[>>->Chp1_Sb1_SignUp_69]]   
+
+
+
+:: Chp1_Sb1_SignUp_69 {"position":"750,6350","size":"100,100"}
+Médecin. Dans ton cabinet. Avec des épaules qui tendent ta blouse blanche. [[>>->Chp1_Sb1_SignUp_70]]   
+
+
+
+:: Chp1_Sb1_SignUp_70 {"position":"750,6475","size":"100,100"}
+Ils se demanderont tous comment tu fais pour être aussi parfait.   [[>>->Chp1_Sb1_NewHope_71]]   
+
+
+
+:: Chp1_Sb1_WhoAreYou_41 {"position":"675,4475","size":"100,100"}
+En attendant, tu as besoin d’une nouvelle activité. Ce n’est pas que cette histoire te prend la tête. Tu es quand même au-dessus de ça. [[>>->Chp1_Sb1_WhoAreYou_42]] [[Image:bckgrnd\Street_1.png]]  
+
+
+
+:: Chp1_Sb1_WhoAreYou_42 {"position":"612.5,4600","size":"100,100"}
+Mais tes potes t’ont convaincu que ça te ferait du bien de t’inscrire dans cette salle. [[>>->Chp1_Sb1_WhoAreYou_43]]   
+
+
+
+:: Chp1_Sb1_WhoAreYou_43 {"position":"612.5,4725","size":"100,100"}
+Ton ex s’en voudra encore plus quand elle te verra et que tu seras à ton meilleur jour. [[>>->Chp1_Sb1_WhoAreYou_44]]   
+
+
+
+:: Chp1_Sb1_WhoAreYou_44 {"position":"612.5,4850","size":"100,100"}
+Avec ta boucle d’oreille et tes cheveux brillants, tu es plutôt beau gosse. Une « beauté sans effort », comme les autres diraient. [[>>->Chp1_Sb1_WhoAreYou_45]]   
+
+
+
+:: Chp1_Sb1_WhoAreYou_45 {"position":"612.5,4975","size":"100,100"}
+Sans être vantard, bien sûr.   [[>>->Chp1_Sb1_WhoAreYou_46]]   
+
+
+
+:: Chp1_Sb1_WhoAreYou_46 {"position":"612.5,5100","size":"100,100"}
+Tu es plutôt grand. Ou en tout cas, tu as toujours été plus grand que toutes tes ex. [[>>->Chp1_Sb1_WhoAreYou_47]]   
+
+
+
+:: Chp1_Sb1_WhoAreYou_47 {"position":"612.5,5225","size":"100,100"}
+Sans être trop maigre, ta silhouette est assez mince. Tu n’avais jamais vu ça comme un défaut. Après tout, tu n’es pas obèse, donc tout va bien ! [[>>->Chp1_Sb1_WhoAreYou_48]]   
+
+
+
+:: Chp1_Sb1_WhoAreYou_48 {"position":"625,5350","size":"100,100"}
+D’après tes bro, tu trouverais plus facilement une remplaçante si tu prenais un peu de muscles. [[>>->Chp1_Sb1_WhoAreYou_49]]   
+
+
+
+:: Chp1_Sb1_WhoAreYou_49 {"position":"625,5475","size":"100,100"}
+Et ils n’ont pas tort.   [[>>->Chp1_Sb1_SignUp_50]]   
+
+
+
+:: END [END] {"position":"600,7500","size":"100,100"}
+
+
+
+:: Image:bckgrnd\\Street_1.png {"position":"737.5,4600","size":"100,100"}
+
+
+
+:: Image:bckgrnd\\Street_2.png {"position":"925,800","size":"100,100"}
+
+
+
+:: Speak:REMOVE {"position":"1050,800","size":"100,100"}
+
+
+
+:: Speak:SELF {"position":"925,1925","size":"100,100"}
+
+
+
+:: Start [START] {"position":"925,675","size":"100,100"}
+Tu marches dans la rue, un sac de sport sur le dos. Tu as décidé de t’inscrire dans une salle de sport [[>>->Chp1_Sb1_BreakUp_1]] [[Image:bckgrnd\Street_2.png]] [[Character:REMOVE-]] [[Speak:REMOVE]]
+

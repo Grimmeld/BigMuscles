@@ -147,7 +147,7 @@ public class CharacterManagement : MonoBehaviour
     {
         if (meterContainer == null)
             return;
-
+        
         meterContainer.gameObject.SetActive(state);
 
     }
