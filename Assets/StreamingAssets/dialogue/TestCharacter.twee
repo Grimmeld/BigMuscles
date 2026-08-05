@@ -1,0 +1,130 @@
+:: StoryTitle
+TestCharacter
+
+
+:: StoryData
+{
+  "ifid": "665F66CB-D215-43DD-A9B4-24F22A3F7021",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Start",
+  "tag-colors": {
+    "START": "orange",
+    "END": "blue"
+  },
+  "zoom": 1
+}
+
+
+:: Character:BILL-FLIRTY {"position":"550,775","size":"100,100"}
+
+
+
+:: Character:BILL-HAPPY {"position":"612.5,650","size":"100,100"}
+
+
+
+:: Character:BILL-SAD {"position":"487.5,900","size":"100,100"}
+
+
+
+:: Character:JESS-ANGRY {"position":"300,1150","size":"100,100"}
+
+
+
+:: Character:JESS-HAPPY {"position":"362.5,1025","size":"100,100"}
+
+
+
+:: Character:JESS-SAD {"position":"575,1275","size":"100,100"}
+
+
+
+:: Character:REMOVE- {"position":"862.5,525","size":"100,100"}
+
+
+
+:: Character:SEAN-FLIRTY {"position":"375,1525","size":"100,100"}
+
+
+
+:: Character:SEAN-HAPPY {"position":"450,1400","size":"100,100"}
+
+
+
+:: Character:SEAN-SAD {"position":"325,1650","size":"100,100"}
+
+
+
+:: Chp1_Sb1_BreakUp_1 {"position":"612.5,525","size":"100,100"}
+??? [[>>->Chp1_Sb1_BreakUp_2]]  [[Character:BILL-HAPPY]] [[Speak:BILL]]
+
+
+
+:: Chp1_Sb1_BreakUp_2 {"position":"487.5,650","size":"100,100"}
+??? [[>>->Chp1_Sb1_BreakUp_3]]  [[Character:BILL-FLIRTY]] [[Speak:BILL]]
+
+
+
+:: Chp1_Sb1_BreakUp_3 {"position":"425,775","size":"100,100"}
+??? [[>>->Chp1_Sb1_BreakUp_4]]  [[Character:BILL-SAD]] [[Speak:BILL]]
+
+
+
+:: Chp1_Sb1_BreakUp_4 {"position":"362.5,900","size":"100,100"}
+??? [[>>->Chp1_Sb1_BreakUp_5]]  [[Character:JESS-HAPPY]] [[Speak:JESS]]
+
+
+
+:: Chp1_Sb1_BreakUp_5 {"position":"237.5,1025","size":"100,100"}
+??? [[>>->Chp1_Sb1_BreakUp_6]]  [[Character:JESS-ANGRY]] [[Speak:JESS]]
+
+
+
+:: Chp1_Sb1_BreakUp_6 {"position":"175,1150","size":"100,100"}
+??? [[>>->Chp1_Sb1_BreakUp_7]]  [[Character:JESS-SAD]] [[Speak:JESS]]
+
+
+
+:: Chp1_Sb1_BreakUp_7 {"position":"450,1275","size":"100,100"}
+??? [[>>->Chp1_Sb1_BreakUp_8]]  [[Character:SEAN-HAPPY]] [[Speak:SEAN]]
+
+
+
+:: Chp1_Sb1_BreakUp_8 {"position":"325,1400","size":"100,100"}
+??? [[>>->Chp1_Sb1_BreakUp_9]]  [[Character:SEAN-FLIRTY]] [[Speak:SEAN]]
+
+
+
+:: Chp1_Sb1_BreakUp_9 {"position":"250,1525","size":"100,100"}
+??? [[>>->END]]  [[Character:SEAN-SAD]] [[Speak:SEAN]]
+
+
+
+:: END [END] {"position":"125,1650","size":"100,100"}
+
+
+
+:: Image:bckgrnd\\Street_2.png {"position":"737.5,525","size":"100,100"}
+
+
+
+:: Speak:BILL {"position":"737.5,650","size":"100,100"}
+
+
+
+:: Speak:JESS {"position":"487.5,1025","size":"100,100"}
+
+
+
+:: Speak:REMOVE {"position":"987.5,525","size":"100,100"}
+
+
+
+:: Speak:SEAN {"position":"575,1400","size":"100,100"}
+
+
+
+:: Start [START] {"position":"800,400","size":"100,100"}
+Tu marches dans la rue, un sac de sport sur le dos. Tu as décidé de t’inscrire dans une salle de sport [[>>->Chp1_Sb1_BreakUp_1]] [[Image:bckgrnd\Street_2.png]] [[Character:REMOVE-]] [[Speak:REMOVE]]
+

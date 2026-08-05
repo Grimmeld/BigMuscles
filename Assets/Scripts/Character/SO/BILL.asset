@@ -15,8 +15,28 @@ MonoBehaviour:
   character:
     keyName: BILL
     charName: Bill
-    characterImage: {fileID: 2800000, guid: 184095303f0d28a4482763f91aefdf78, type: 3}
-    characterWidth: 500
+    characterImage: {fileID: 2800000, guid: 540463d4e8d0aed42b90790c2497287e, type: 3}
+    characterWidth: 383
     characterHeight: 500
-    meter: 10
-    text_color: {r: 0.3726415, g: 0.963553, b: 1, a: 1}
+    characterIcon: {fileID: 0}
+    text_color: {r: 0.5568628, g: 0.8509804, b: 0.4509804, a: 1}
+    eyeimages:
+    - eyeName: HAPPY
+      eyeImage: {fileID: 2800000, guid: b6384f5e402b2be4fab37fff792f6920, type: 3}
+      eyeWidth: 305
+      eyeHeight: 250
+      posX: 165
+      posY: 0
+    - eyeName: FLIRTY
+      eyeImage: {fileID: 2800000, guid: 60d57c1363a3a494793cbf3f5e0c7580, type: 3}
+      eyeWidth: 305
+      eyeHeight: 250
+      posX: 165
+      posY: 0
+    - eyeName: SAD
+      eyeImage: {fileID: 2800000, guid: cc3ef3ef5ed98254ea47d2022c095f3a, type: 3}
+      eyeWidth: 305
+      eyeHeight: 250
+      posX: 165
+      posY: 0
+    meter: 0

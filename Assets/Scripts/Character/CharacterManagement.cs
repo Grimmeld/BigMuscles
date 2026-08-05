@@ -165,6 +165,25 @@ public class CharacterManagement : MonoBehaviour
         return null;
     }
 
+
+    public EyeImage FindEyeImage(string charName, string eyeName)
+    {
+        Character character = FindCharacterName(charName);
+        if(character != null)
+        {
+            foreach (EyeImage eye in character.eyeimages)
+            {
+                if(eye.eyeName == eyeName)
+                {
+                    return eye;
+                }
+            }
+        }
+
+
+        return null;
+    }
+
     private IEnumerator AnimateSlider(float targetValue, float duration)
     {
         meterContainer.GetComponentInChildren<TextMeshProUGUI>().text = (targetValue.ToString() + " %");

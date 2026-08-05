@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32dac72697ff56243a8d44e17917fe0f, type: 3}
+  m_Name: JESS
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterSO
+  character:
+    keyName: JESS
+    charName: Jessica
+    characterImage: {fileID: 2800000, guid: 25d872e0c08986a478cc29435844d501, type: 3}
+    characterWidth: 600
+    characterHeight: 600
+    characterIcon: {fileID: 0}
+    text_color: {r: 0.8739046, g: 0.374466, b: 0.9339623, a: 1}
+    eyeimages:
+    - eyeName: HAPPY
+      eyeImage: {fileID: 2800000, guid: f8a618475153c9b468e6f804b5dcac50, type: 3}
+      eyeWidth: 258
+      eyeHeight: 230
+      posX: 222
+      posY: 108
+    - eyeName: ANGRY
+      eyeImage: {fileID: 2800000, guid: ea41cc2973a39d7489a9059e451082ad, type: 3}
+      eyeWidth: 258
+      eyeHeight: 230
+      posX: 222
+      posY: 108
+    - eyeName: SAD
+      eyeImage: {fileID: 2800000, guid: 272acddaa3462774ab170220fcffc40b, type: 3}
+      eyeWidth: 258
+      eyeHeight: 230
+      posX: 222
+      posY: 108
+    meter: 0

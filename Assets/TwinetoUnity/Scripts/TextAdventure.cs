@@ -410,11 +410,15 @@ namespace SimpleTwineDialogue
                         if (character.CharacterEye != null)
                         {
                             ClearImagesEye();
-                            Eye eye = CharacterManagement.Instance.FindEyeByName(character.CharacterEye);
+
+
+                            EyeImage eye = CharacterManagement.Instance.FindEyeImage(character.CharacterName, character.CharacterEye);
+                            //Eye eye = CharacterManagement.Instance.FindEyeByName(character.CharacterEye);
                             if (eye != null)
                             {
                                 imageEyeContainer.gameObject.SetActive(true);
                                 SetImageSize(imageEyeContainer, eye.eyeWidth, eye.eyeHeight);
+                                SetImagePosition(imageEyeContainer, eye.posX, eye.posY);
                                 DisplayImage(eye.eyeImage, eye.eyeImage.width, eye.eyeImage.height, imageEyeContainer);
 
                             }
@@ -528,6 +532,12 @@ namespace SimpleTwineDialogue
             container.gameObject.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, width);
             container.gameObject.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, height);
         }
+
+        private void SetImagePosition(Transform container, float x, float y)
+        {
+            container.gameObject.GetComponent<RectTransform>().SetLocalPositionAndRotation(new Vector3(x, y, 0), Quaternion.identity);
+        }
+
 
         private void DisplayImage(Texture2D texture, int width, int height, Transform container)
         {
