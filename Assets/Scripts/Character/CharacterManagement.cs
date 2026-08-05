@@ -206,6 +206,7 @@ public class CharacterManagement : MonoBehaviour
         }
 
         slider.value = targetValue;
-        
+
+
     }
 }

@@ -16,18 +16,19 @@ public class AnimationNextIcon : MonoBehaviour
 
     private void OnEnable()
     {
+        StopAllCoroutines();
         ClearArrows();
         StartCoroutine(OnArrowAnimation());
     }
 
     private void OnDisable()
     {
-        StopCoroutine(OnArrowAnimation());
+        ClearArrows();
+        StopAllCoroutines();
     }
 
     private IEnumerator OnArrowAnimation()
     {
-
         foreach (Image image in images)
         {
 
