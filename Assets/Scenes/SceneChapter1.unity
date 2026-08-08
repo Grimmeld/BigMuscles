@@ -3388,7 +3388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneLoadManager
   prefab:
-  - {fileID: 8242844381398351860, guid: 903282777828fa14d92f1406a684fcaf, type: 3}
+  - {fileID: 2242046671897853851, guid: acf4d1a3b45020b4fbd4d813209b927d, type: 3}
   currentChapter: {fileID: 0}
   currentText: {fileID: 0}
   currentIdx: 0

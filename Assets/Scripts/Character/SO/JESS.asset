@@ -25,18 +25,18 @@ MonoBehaviour:
       eyeImage: {fileID: 2800000, guid: f8a618475153c9b468e6f804b5dcac50, type: 3}
       eyeWidth: 258
       eyeHeight: 230
-      posX: 222
+      posX: 182
       posY: 108
     - eyeName: ANGRY
       eyeImage: {fileID: 2800000, guid: ea41cc2973a39d7489a9059e451082ad, type: 3}
       eyeWidth: 338
       eyeHeight: 221
-      posX: 230
+      posX: 190
       posY: 108
     - eyeName: SAD
       eyeImage: {fileID: 2800000, guid: 272acddaa3462774ab170220fcffc40b, type: 3}
       eyeWidth: 258
       eyeHeight: 230
-      posX: 222
+      posX: 182
       posY: 108
     meter: 0

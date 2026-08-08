@@ -19,6 +19,9 @@ public class FeuxDeLAmourEffect : MonoBehaviour
     public List<FAMGroupImage> fAMGroups;
     private int idx = 0;
 
+    [Tooltip("Time where the images will start to appear")] public float startDelay = 3.5f;
+    [Tooltip("Repeated time for each FAM group")] public float repeatDelay = 6;
+
 
     private void OnEnable()
     {
@@ -36,7 +39,7 @@ public class FeuxDeLAmourEffect : MonoBehaviour
             fAMGroups[i].textName.alpha = 0;
         }
 
-        InvokeRepeating("LoopFAMgroup", 3.5f, 6);
+        InvokeRepeating("LoopFAMgroup", startDelay, repeatDelay);
 
         
     }
