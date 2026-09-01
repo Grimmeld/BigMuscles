@@ -2088,7 +2088,18 @@ MonoBehaviour:
     typeMusic: 0
     clip: {fileID: 8300000, guid: fd128b5b63a52db45aaa29561c70dbfa, type: 3}
     mixer: {fileID: 3700997323172657897, guid: b8001dab09b775d429c11dff14eb2466, type: 2}
-    volume: 0.5
+    volume: 0.3
+    pitch: 1
+    spatialBlend: 0
+    loop: 0
+    playOnAwake: 0
+    minDistance: 0
+    source: {fileID: 0}
+  - nameMusic: ambience
+    typeMusic: 0
+    clip: {fileID: 8300000, guid: 0ed019d21d5bf514da60a1a0e236e2cc, type: 3}
+    mixer: {fileID: 8861102294391329876, guid: b8001dab09b775d429c11dff14eb2466, type: 2}
+    volume: 0.3
     pitch: 1
     spatialBlend: 0
     loop: 0
@@ -2096,7 +2107,7 @@ MonoBehaviour:
     minDistance: 0
     source: {fileID: 0}
   audioMixer: {fileID: 24100000, guid: b8001dab09b775d429c11dff14eb2466, type: 2}
-  ambienceMusic: 
+  ambienceMusic: ambience
 --- !u!1001 &1033489357
 PrefabInstance:
   m_ObjectHideFlags: 0

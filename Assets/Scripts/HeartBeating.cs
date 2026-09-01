@@ -8,7 +8,7 @@ public class HeartBeating : MonoBehaviour
 
     private void OnEnable()
     {
-        float delay = Random.Range(5, 7);
+        float delay = Random.Range(3, 7);
 
         Invoke("Beating", delay);
         
@@ -23,7 +23,7 @@ public class HeartBeating : MonoBehaviour
     private void Beating()
     {
         CancelInvoke();
-        float rate = Random.Range(10, 20);
+        float rate = Random.Range(3, 20);
         heart.LeanScale(new Vector3(1.05f, 1.05f, 1.05f), pace).setEaseInOutBack().setLoopCount(count).setOnComplete(BackToNormal);
         Invoke("Beating", rate);
         

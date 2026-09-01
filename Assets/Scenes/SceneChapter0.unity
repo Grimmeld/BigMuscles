@@ -2909,7 +2909,7 @@ MonoBehaviour:
     typeMusic: 0
     clip: {fileID: 8300000, guid: dbed72c3acdbef0418a2f66cb3125c8f, type: 3}
     mixer: {fileID: 3700997323172657897, guid: b8001dab09b775d429c11dff14eb2466, type: 2}
-    volume: 0.5
+    volume: 0.3
     pitch: 1
     spatialBlend: 0
     loop: 0
@@ -4163,6 +4163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c4b4e7b61d8be6468325327bfe93ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EndManager
+  notShowingDetail: 0
   summaryCompetences:
   - NameKey: Chp0_Sb1_Intro_8
     Value: -20
@@ -4183,7 +4184,7 @@ MonoBehaviour:
     Value: -10
     GroupNb: 2
   - NameKey: Chp0_Sb1_Wrm_78
-    Value: 0
+    Value: 10
     GroupNb: 1
   - NameKey: Chp0_Sb1_Wrm_80
     Value: 0
@@ -4202,6 +4203,9 @@ MonoBehaviour:
     GroupNb: 2
   - NameKey: Chp0_Sb1_Ccl_194
     Value: -10
+    GroupNb: 1
+  - NameKey: Chp0_Sb1_Intro_19
+    Value: 10
     GroupNb: 1
   sumGroup1: 0
   sumGroup2: 0

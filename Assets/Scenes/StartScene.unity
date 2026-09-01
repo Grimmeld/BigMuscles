@@ -1230,7 +1230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6406022829262217812, guid: 79f95d3b3b5102e409dd2e52306cf6d2, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 20
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6406022829262217812, guid: 79f95d3b3b5102e409dd2e52306cf6d2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1405,7 +1405,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 240}
+  m_AnchoredPosition: {x: 0, y: 208}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &470969633
@@ -1428,7 +1428,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 300, y: 60}
+  m_CellSize: {x: 300, y: 50}
   m_Spacing: {x: 0, y: 20}
   m_Constraint: 1
   m_ConstraintCount: 1
@@ -2522,7 +2522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1527138413820798481, guid: 88bc50918602a6a448b7b2cfb20f55c7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: QuitGame
+      value: QuiGame
       objectReference: {fileID: 0}
     - target: {fileID: 1527138413820798481, guid: 88bc50918602a6a448b7b2cfb20f55c7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -3823,7 +3823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6406022829262217812, guid: 79f95d3b3b5102e409dd2e52306cf6d2, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 20
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6406022829262217812, guid: 79f95d3b3b5102e409dd2e52306cf6d2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4503,7 +4503,7 @@ MonoBehaviour:
     typeMusic: 0
     clip: {fileID: 8300000, guid: dbed72c3acdbef0418a2f66cb3125c8f, type: 3}
     mixer: {fileID: 3700997323172657897, guid: b8001dab09b775d429c11dff14eb2466, type: 2}
-    volume: 0.5
+    volume: 0.3
     pitch: 1
     spatialBlend: 0
     loop: 0
