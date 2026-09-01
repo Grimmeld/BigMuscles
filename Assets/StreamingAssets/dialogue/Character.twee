@@ -1,0 +1,148 @@
+:: StoryTitle
+Character
+
+
+:: StoryData
+{
+  "ifid": "CC1EF339-B347-498B-AEA1-51C082697B6C",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Start",
+  "tag-colors": {
+    "START": "orange",
+    "END": "blue"
+  },
+  "zoom": 1
+}
+
+
+:: Bill1 {"position":"675,525","size":"100,100"}
+Bill est une des plus anciennes kettlebell de la salle. Il connaît tout le monde et a vu beaucoup d'adhérent partir. Malgré sa polyvalence dans les entraînements, il adore particulièrement les exercices qui font travailler les ischiojambiers.  
+
+[[>>->Bill2]] 
+[[Character:BILL-HAPPY]] [[Speak:BILL]]
+
+
+:: Bill2 {"position":"425,650","size":"100,100"}
+Bill est... gentil... (Chiant, dirait certaines personnes.) Mais il est aussi loyal et adore aider les débutants. Ce qui le rendrait le plus heureux est de trouver un partenaire avec qui travailler main dans la anse.
+[[>>->Bill3]] 
+[[Character:BILL-FLIRTY]] [[Speak:BILL]]
+
+
+:: Bill3 {"position":"362.5,775","size":"100,100"}
+Bill ne supporte pas les adhérents beaucoup trop sûr d'eux. Allergique aux disputes, c'est en voulant calmer une prise de bec entre deux adhérents qu'il a obtenu une cicatrice au milieu de sa partie boulière, qui est pour lui, une source de complexe. 
+[[>>->Start]] 
+[[Character:BILL-SAD]] [[Speak:BILL]]
+
+
+:: Character:BILL-FLIRTY {"position":"487.5,775","size":"100,100"}
+
+
+
+:: Character:BILL-HAPPY {"position":"550,650","size":"100,100"}
+
+
+
+:: Character:BILL-SAD {"position":"425,900","size":"100,100"}
+
+
+
+:: Character:JESS-ANGRY {"position":"987.5,1150","size":"100,100"}
+
+
+
+:: Character:JESS-HAPPY {"position":"1050,900","size":"100,100"}
+
+
+
+:: Character:JESS-SAD {"position":"862.5,1275","size":"100,100"}
+
+
+
+:: Character:SEAN-FLIRTY {"position":"737.5,1150","size":"100,100"}
+
+
+
+:: Character:SEAN-HAPPY {"position":"800,1025","size":"100,100"}
+
+
+
+:: Character:SEAN-SAD {"position":"662.5,1275","size":"100,100"}
+
+
+
+:: Character:SELF- {"position":"800,900","size":"100,100"}
+
+
+
+:: End [END] {"position":"825,750","size":"100,100"}
+
+
+
+:: Image:bckgrnd\\NeonWorkIt.jpg {"position":"675,775","size":"100,100"}
+
+
+
+:: Jess1 {"position":"925,525","size":"100,100"}
+Jess est la ligne téléphonique de la salle. Présente dès l'accueil, elle connaît tout et tout le monde, ce qui l'arrange car c'est une gossip de la pire espèce. 
+
+[[>>->Jess2]] 
+[[Character:JESS-HAPPY]] [[Speak:JESS]]
+
+
+:: Jess2 {"position":"925,900","size":"100,100"}
+Jess n'aime pas qu'on lui donne du travail. Mais elle se montrera amicale si on la flatte. Un peu boomeuse sur les bords, les flirt les plus grossières fonctionnent particulièrement avec elle. 
+
+[[>>->Jess3]] 
+[[Character:JESS-ANGRY]] [[Speak:JESS]]
+
+
+:: Jess3 {"position":"862.5,1150","size":"100,100"}
+Elle est très fière de ses stickers colorés. Elle adoooore celui avec Cristiano Ronaldo, lors de la coupe du monde d'Afrique du Sud. Ouais.. Elle est si vieille...
+
+[[>>->Start]] 
+[[Character:JESS-SAD]] [[Speak:JESS]]
+
+
+:: Sean1 {"position":"800,525","size":"100,100"}
+Cette pull down a participé à l'entraînement de culturiste participant à des championnats internationaux, son histoire est visible avec les autocollants des sponsors encore collés sur lui. 
+
+[[>>->Sean2]] 
+[[Character:SEAN-HAPPY]] [[Speak:SEAN]]
+
+
+:: Sean2 {"position":"675,1025","size":"100,100"}
+Ambitieux et arrogant, il cherche un adhérent assez doué pour l'emmener à nouveau dans les championnats. Sa répution est très importante pour lui et va rejeter tout adhérent qui lui semble incompétent. 
+
+[[>>->Sean3]] 
+[[Character:SEAN-FLIRTY]] [[Speak:SEAN]]
+
+
+:: Sean3 {"position":"600,1150","size":"100,100"}
+Sean est aussi une machine auto-centré et très misogyne. Les ZOM avant tout ! 
+
+[[>>->Start]] 
+[[Character:SEAN-SAD]] [[Speak:SEAN]]
+
+
+:: Speak:BILL {"position":"675,650","size":"100,100"}
+
+
+
+:: Speak:JESS {"position":"1175,900","size":"100,100"}
+
+
+
+:: Speak:SEAN {"position":"925,1025","size":"100,100"}
+
+
+
+:: Start [START] {"position":"800,400","size":"100,100"}
+Sur quel personnage souhaites-tu avoir des infos? 
+ [[Image:bckgrnd\NeonWorkIt.jpg]] [[Character:SELF-]] 
+
+[[Bill, la kettlebell->Bill1]] 
+[[Sean, la pull down machine->Sean1]] 
+[[Jess, le téléphone->Jess1]] 
+[[Sortir->End]] 
+

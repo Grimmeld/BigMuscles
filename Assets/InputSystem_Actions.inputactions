@@ -230,7 +230,7 @@
                 {
                     "name": "",
                     "id": "a1aa02ef-3b68-4ad0-8065-a7edd84e7e4b",
-                    "path": "<Keyboard>/space",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -253,6 +253,17 @@
                     "name": "",
                     "id": "488bfeaa-0c8c-4f37-a1c9-89e6c1acf0fe",
                     "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2eb2ab74-4fbb-4a88-b376-0889d4149a91",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

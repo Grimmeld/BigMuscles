@@ -16,7 +16,7 @@ Chp1_Sb1
 }
 
 
-:: Character:REMOVE- {"position":"925,925","size":"100,100"}
+:: Character:REMOVE- {"position":"1050,800","size":"100,100"}
 
 
 
@@ -30,7 +30,7 @@ Tu en avais déjà parlé avec tes potes. C’est toujours après deux bières q
 
 
 :: Chp1_Sb1_BreakUp_10 {"position":"675,1925","size":"100,100"}
-Ça t’est tombé dessus comme une merde dans une soupe. [[>>->Chp1_Sb1_BreakUp_11]]  [[Character:REMOVE-]] [[Speak:REMOVE]]
+Ça t’est tombé dessus comme une merde dans une soupe. [[>>->Chp1_Sb1_BreakUp_11]]  [[Character:SELF-]] 
 
 
 
@@ -95,9 +95,9 @@ Tu es quelqu’un de perspicace et de rationnel. Tu vois les choses et tu sais l
 
 
 :: Chp1_Sb1_BreakUp_22 {"position":"675,3425","size":"100,100"}
-"Mais par-dessus tout, ce qui te fait le plus chier, c’est… [[De t’être fait duper->Chp1_Sb1_BreakUp_24]]
+Mais par-dessus tout, ce qui te fait le plus chier, c’est… [[De t’être fait duper->Chp1_Sb1_BreakUp_24]]
 [[Les sentiments que tu as encore pour elle->Chp1_Sb1_BreakUp_30]]
-[[Qu’elle était plutôt bonne au lit ->Chp1_Sb1_BreakUp_34]]   "
+[[Qu’elle était plutôt bonne au lit ->Chp1_Sb1_BreakUp_34]] 
 
 
 
@@ -252,9 +252,9 @@ Mais ça c’est bien pour les personnes fragiles ! [[>>->Chp1_Sb1_SignUp_54]]
 
 
 :: Chp1_Sb1_SignUp_54 {"position":"625,6100","size":"100,100"}
-"Ce que tu cherches surtout en t’inscrivant, c’est autre chose. [[Libérer la tension ->Chp1_Sb1_SignUp_56]]
+Ce que tu cherches surtout en t’inscrivant, c’est autre chose. [[Libérer la tension ->Chp1_Sb1_SignUp_56]]
 [[Être la meilleure version de toi-même->Chp1_Sb1_SignUp_61]]
-[[Un physique avantageux ->Chp1_Sb1_SignUp_68]]   "
+[[Un physique avantageux ->Chp1_Sb1_SignUp_68]] 
 
 
 
@@ -380,14 +380,10 @@ Et ils n’ont pas tort.   [[>>->Chp1_Sb1_SignUp_50]]
 
 
 
-:: Speak:REMOVE {"position":"1050,800","size":"100,100"}
-
-
-
 :: Speak:SELF {"position":"925,1925","size":"100,100"}
 
 
 
 :: Start [START] {"position":"925,675","size":"100,100"}
-Tu marches dans la rue, un sac de sport sur le dos. Tu as décidé de t’inscrire dans une salle de sport [[>>->Chp1_Sb1_BreakUp_1]] [[Image:bckgrnd\Street_2.png]] [[Character:REMOVE-]] [[Speak:REMOVE]]
+Tu marches dans la rue, un sac de sport sur le dos. Tu as décidé de t’inscrire dans une salle de sport [[>>->Chp1_Sb1_BreakUp_1]] [[Image:bckgrnd\Street_2.png]] [[Character:SELF-]] 
 

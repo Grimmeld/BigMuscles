@@ -118,6 +118,10 @@ namespace SimpleTwineDialogue
         [Header("Title Modifier")]
         private bool hasTitleDisplayed;
         [Tooltip("The delay text appears after title")] private float textDelay = 0f;
+        
+        [Header("Audio")]
+        [SerializeField] private string clicButton;
+
 
         /// <summary>
         /// Initialize the text adventure and start loading the Twee file
@@ -156,8 +160,16 @@ namespace SimpleTwineDialogue
         /// </summary>
         /// <param name="choiceTitle">The target passage to navigate to</param>
         /// <param name="currentPassageText">The text of the current passage</param>
+        void OnNextSelected(string choiceTitle, string currentPassageText)
+        {
+            DisplayPassage(choiceTitle);
+            //myChoices += 1;
+            //myChoiceCounterUI.text = "Choices made: " + myChoices.ToString();
+        }
+
         void OnChoiceSelected(string choiceTitle, string currentPassageText)
         {
+            AudioManager.instance.Play(clicButton);
             DisplayPassage(choiceTitle);
             //myChoices += 1;
             //myChoiceCounterUI.text = "Choices made: " + myChoices.ToString();
@@ -357,7 +369,9 @@ namespace SimpleTwineDialogue
                     if (character != null)
                     {
                         CharacterManagement.Instance.GetAndUpdateMeterBYCharacter(character.keyName, CharacterManagement.Instance.bonusLevel);
+                        AudioManager.instance.Play("bonusMeter");
                     }
+
                 }
 
                 if (tags.Contains("MALUS"))
@@ -369,6 +383,7 @@ namespace SimpleTwineDialogue
                     if (character != null)
                     {
                         CharacterManagement.Instance.GetAndUpdateMeterBYCharacter(character.keyName, CharacterManagement.Instance.bonusLevel * -1);
+                        AudioManager.instance.Play("malusMeter");
                     }
                 }
 
@@ -719,7 +734,7 @@ namespace SimpleTwineDialogue
                         nextButton.gameObject.SetActive(true);
                         textPanel.SetNextButton(nextButton);
                         string nextPassage = passage.ParsedChoices[0].Target; // Capture for lambda
-                        nextButton.onClick.AddListener(() => OnChoiceSelected(nextPassage, passage.Body));
+                        nextButton.onClick.AddListener(() => OnNextSelected(nextPassage, passage.Body));
                         EventSystem.current.firstSelectedGameObject = nextButton.gameObject;
                         nextButton.Select();
                     }

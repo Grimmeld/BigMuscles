@@ -20,10 +20,18 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 941294277662562899, guid: 2df917402331e684d903e296f84d6b50, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.99
+      objectReference: {fileID: 0}
     - target: {fileID: 1170285447210347001, guid: 2df917402331e684d903e296f84d6b50, type: 3}
       propertyPath: m_Name
       value: sliderAudio
       objectReference: {fileID: 0}
+    - target: {fileID: 1306523420224096757, guid: 2df917402331e684d903e296f84d6b50, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8f8687020c3ac3d459da92f4ec00f20d, type: 3}
     - target: {fileID: 4319596570074409676, guid: 2df917402331e684d903e296f84d6b50, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -54,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4319596570074409676, guid: 2df917402331e684d903e296f84d6b50, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 20
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4319596570074409676, guid: 2df917402331e684d903e296f84d6b50, type: 3}
       propertyPath: m_LocalPosition.x

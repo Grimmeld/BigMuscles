@@ -116,7 +116,7 @@ Oh yeah. J’aime le feu que je vois dans tes yeux. [[>>->Chp0_Sb1_Wrm_121]]  [[
 
 
 
-:: Chp0_Sb1_Wrm_118 {"position":"337.5,8100","size":"100,100"}
+:: Chp0_Sb1_Wrm_118 [KEY] {"position":"337.5,8100","size":"100,100"}
 Tu as l’impression de retourner au tout début de tes entrainements et ça t’énerve. Ça t’énerve de ne pas réussir à faire ce que tu veux. Ça t’énerve de galérer autant. Ça t’énerve de te sentir faible à nouveau. [[>>->Chp0_Sb1_Wrm_119]]  [[Character:SELF-]] 
 
 
@@ -282,12 +282,12 @@ Et crois-moi, je t’ai vu te bouger là-bas et c’pas avec des deltoïdes comm
 
 
 
-:: Chp0_Sb1_Wrm_45 [MALUS-SEAN] {"position":"487.5,1525","size":"100,100"}
+:: Chp0_Sb1_Wrm_45 [MALUS-SEAN KEY] {"position":"487.5,1525","size":"100,100"}
 Je ne suis pas venu ici pour me faire insulter.  [[>>->Chp0_Sb1_Wrm_48]]   [[Speak:SELF]]
 
 
 
-:: Chp0_Sb1_Wrm_47 {"position":"612.5,1525","size":"100,100"}
+:: Chp0_Sb1_Wrm_47 [KEY] {"position":"612.5,1525","size":"100,100"}
 Tu le regardes un instant mais il marque un point. [[>>->Chp0_Sb1_Wrm_48]]  [[Character:SELF-]] 
 
 
@@ -425,12 +425,12 @@ Allez, mec. Viens poser ton p’tit cul moulé et on commence. [[Attraper la bar
 
 
 
-:: Chp0_Sb1_Wrm_78 [BONUS-SEAN] {"position":"337.5,3750","size":"100,100"}
+:: Chp0_Sb1_Wrm_78 [BONUS-SEAN KEY] {"position":"337.5,3750","size":"100,100"}
 Oh ouais ! T’y vas pas de main morte, mon grand. J’aime ça. [[>>->Chp0_Sb1_Wrm_81]]   
 
 
 
-:: Chp0_Sb1_Wrm_80 [MALUS-SEAN] {"position":"462.5,3750","size":"100,100"}
+:: Chp0_Sb1_Wrm_80 [MALUS-SEAN KEY] {"position":"450,3750","size":"100,100"}
 Eh je t’ai dit de pas me faire perdre mon temps. [[>>->Chp0_Sb1_Wrm_81]]   
 
 
@@ -530,7 +530,7 @@ Je suis là pour te guider, mec. Mais va falloir te la donner avec moi, si tu ve
 
 
 
-:: Image:bckgrnd\\Gym_PullDown.png {"position":"425,525","size":"100,100"}
+:: Image:bckgrnd\\NeonWorkIt.jpg {"position":"425,525","size":"100,100"}
 
 
 
@@ -543,5 +543,5 @@ Je suis là pour te guider, mec. Mais va falloir te la donner avec moi, si tu ve
 
 
 :: Start [START] {"position":"550,400","size":"100,100"}
-Tu te diriges vers la machine de pull down, le buste en avant, avec cette confiance qui te va si bien. [[>>->Chp0_Sb1_Wrm_37]] [[Image:bckgrnd\Gym_PullDown.png]] [[Character:SELF-]] 
+Tu te diriges vers la machine de pull down, le buste en avant, avec cette confiance qui te va si bien. [[>>->Chp0_Sb1_Wrm_37]] [[Image:bckgrnd\NeonWorkIt.jpg]] [[Character:SELF-]] 
 

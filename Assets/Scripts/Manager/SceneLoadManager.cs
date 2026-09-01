@@ -9,6 +9,8 @@ public class SceneLoadManager : MonoBehaviour
     [SerializeField] private GameObject currentChapter;
     [SerializeField] private TextAdventure currentText;
     [SerializeField] private int currentIdx;
+    [SerializeField] private GameObject endCanvas;
+    [SerializeField] private float delayAppearEnd;
 
 
     private void Awake()
@@ -47,6 +49,10 @@ public class SceneLoadManager : MonoBehaviour
         else
         {
             //finish game;
+            endCanvas.gameObject.SetActive(true);
+            CanvasGroup endGroup = endCanvas.GetComponentInChildren<CanvasGroup>();
+            endGroup.alpha = 0f;
+            endGroup.LeanAlpha(1, delayAppearEnd);
         }
         
     }

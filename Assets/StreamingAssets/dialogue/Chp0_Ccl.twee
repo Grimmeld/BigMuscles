@@ -40,7 +40,7 @@ Tu sens la frustration d’avoir commencé un nouvel exercice sans le finir. Tu 
 
 
 :: Chp0_Sb1_Ccl_147 {"position":"425,650","size":"100,100"}
-Avec un coup d’œil, tu retournes voir ta kettlebell préféré. [[>>->Chp0_Sb1_Ccl_148]] [[Image:bckgrnd\Gym_Back_2.png]] [[Character:SELF-]] 
+Avec un coup d’œil, tu retournes voir ta kettlebell préféré. [[>>->Chp0_Sb1_Ccl_148]] [[Image:bckgrnd\NeonMirror.jpg]] [[Character:SELF-]] 
 
 
 :: Chp0_Sb1_Ccl_148 {"position":"425,825","size":"100,100"}
@@ -53,7 +53,7 @@ Je vais avoir besoin de temps pour l’apprivoiser. [[>>->Chp0_Sb1_Ccl_150]]   [
 
 
 
-:: Chp0_Sb1_Ccl_150 {"position":"325,1225","size":"100,100"}
+:: Chp0_Sb1_Ccl_150 {"position":"425,1225","size":"100,100"}
 Tu passes une main derrière ta nuque. [[(if:Chp0_Sb1_Wrm_100)La douleur brule toujours dans tes muscles.->Chp0_Sb1_Ccl_152]]
 [[(if:Chp0_Sb1_Wrm_137)Se vanter de sa grande sagesse.->Chp0_Sb1_Ccl_158]]  [[Character:SELF-]]
 
@@ -320,11 +320,11 @@ Et peut-être même que tu as pu inspirer plus d’une personne à la salle. [[>
 
 
 
-:: Image:bckgrnd\\Gym_Back_2.png {"position":"675,725","size":"100,100"}
+:: Image:bckgrnd\\NeonMirror.jpg {"position":"550,775","size":"100,100"}
 
 
 
-:: Image:bckgrnd\\Gym_PullDown.png {"position":"550,525","size":"100,100"}
+:: Image:bckgrnd\\NeonWorkIt.jpg {"position":"550,525","size":"100,100"}
 
 
 
@@ -337,5 +337,5 @@ Et peut-être même que tu as pu inspirer plus d’une personne à la salle. [[>
 
 
 :: Start [START] {"position":"550,400","size":"100,100"}
-Tu récupères ta serviette, toujours humide de ton sport précédent. Avec un soupir, tu te diriges vers les vestiaires. [[>>->Chp0_Sb1_Ccl_146]] [[Image:bckgrnd\Gym_PullDown.png]] [[Character:SELF-]] 
+Tu récupères ta serviette, toujours humide de ton sport précédent. Avec un soupir, tu te diriges vers les vestiaires. [[>>->Chp0_Sb1_Ccl_146]] [[Image:bckgrnd\NeonWorkIt.jpg]] [[Character:SELF-]] 
 

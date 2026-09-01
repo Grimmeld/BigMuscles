@@ -1,5 +1,5 @@
 :: StoryTitle
-Chp0
+Chp0_Intro
 
 
 :: StoryData
@@ -12,7 +12,8 @@ Chp0
     "START": "orange",
     "BONUS-BILL": "red",
     "MALUS-BILL": "red",
-    "END": "blue"
+    "END": "blue",
+    "KEY": "blue"
   },
   "zoom": 1
 }
@@ -49,7 +50,7 @@ Ha ! Oui ça on peut le dire.  [[>>->Chp0_Sb1_Intro_25]]  [[Character:BILL-HAPP
 
 
 
-:: Chp0_Sb1_Intro_13 [BONUS-BILL] {"position":"712.5,1525","size":"100,100"}
+:: Chp0_Sb1_Intro_13 [BONUS-BILL KEY] {"position":"712.5,1525","size":"100,100"}
 Tu as raison, Bill.  [[>>->Chp0_Sb1_Intro_14]]   [[Speak:SELF]]
 
 
@@ -74,7 +75,7 @@ Tu croises les yeux de la kettlebell. Tu y vois une lueur de bienveillance et d�
 
 
 
-:: Chp0_Sb1_Intro_19 [MALUS-BILL] {"position":"850,1525","size":"100,100"}
+:: Chp0_Sb1_Intro_19 [MALUS-BILL KEY] {"position":"850,1525","size":"100,100"}
 Oh Bill, on va pas revenir là-dessus. Cette cicatrice n’est pas de ta faute.  [[>>->Chp0_Sb1_Intro_20]]  [[Character:BILL-SAD]] [[Speak:SELF]]
 
 
@@ -185,7 +186,7 @@ Regarde ma fonte, avec… Bref. Je ne ressemble à rien. Tes progrès ne sont qu
 [[Appuyer sur les défauts de Bill->Chp0_Sb1_Intro_19]]  [[Character:BILL-SAD]] [[Speak:BILL]]
 
 
-:: Chp0_Sb1_Intro_8 [BONUS-BILL] {"position":"587.5,1525","size":"100,100"}
+:: Chp0_Sb1_Intro_8 [BONUS-BILL KEY] {"position":"587.5,1525","size":"100,100"}
 Enfin, Bill ! Je n’ai jamais vu une fonte aussi brillante que la tienne.  [[>>->Chp0_Sb1_Intro_9]]   [[Speak:SELF]]
 
 
@@ -199,7 +200,7 @@ Oh arrête ça. Avec les années, on peut voir toutes les rayures. [[>>->Chp0_Sb
 
 
 
-:: Image:bckgrnd\\Gym_Back_2.png {"position":"737.5,525","size":"100,100"}
+:: Image:bckgrnd\\NeonMirror.jpg {"position":"675,525","size":"100,100"}
 
 
 
@@ -216,5 +217,5 @@ Oh arrête ça. Avec les années, on peut voir toutes les rayures. [[>>->Chp0_Sb
 
 
 :: Start [START] {"position":"800,400","size":"100,100"}
-Tu poses ta kettlebell au sol, les bras en feu. Tu te tamponnes le front suant avec ta serviette absorbante. Tu es très content de ta séance du jour. [[>>->Chp0_Sb1_Intro_1]] [[Image:bckgrnd\Gym_Back_2.png]] [[Character:SELF-]] 
+Tu poses ta kettlebell au sol, les bras en feu. Tu te tamponnes le front suant avec ta serviette absorbante. Tu es très content de ta séance du jour. [[>>->Chp0_Sb1_Intro_1]] [[Image:bckgrnd\NeonMirror.jpg]] [[Character:SELF-]] 
 

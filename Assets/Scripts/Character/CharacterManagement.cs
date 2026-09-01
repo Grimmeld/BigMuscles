@@ -25,7 +25,7 @@ public class CharacterManagement : MonoBehaviour
     [Tooltip("Lister tous les personnages de la scène")]
     [SerializeField] private CharacterSO[] characters;
     [SerializeField] private Eye[] eyes;
-    [HideInInspector] public List<Character> characterList;
+     public List<Character> characterList;
 
     [Header("UI")]
     public Transform meterContainer;
@@ -206,6 +206,30 @@ public class CharacterManagement : MonoBehaviour
         }
 
         slider.value = targetValue;
+
+
+    }
+
+    public string HighestBro()
+    {
+        Character bill = FindCharacterName("BILL");
+        Character sean = FindCharacterName("SEAN");
+
+        Debug.Log("Meter bill : " + bill.meter);
+        Debug.Log("Meter sean : " + sean.meter);
+
+        if (bill.meter > sean.meter)
+        {
+            return bill.keyName;
+        }
+        else if (bill.meter < sean.meter)
+        {
+            return sean.keyName;
+        }
+        else 
+        {
+            return bill.keyName;
+        }
 
 
     }

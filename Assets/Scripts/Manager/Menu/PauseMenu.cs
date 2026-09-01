@@ -30,7 +30,7 @@ public class PauseMenu : MonoBehaviour
 
 
 
-private void PauseGame()
+public void PauseGame()
     {
         isPaused = true;
         Time.timeScale = 0f;
