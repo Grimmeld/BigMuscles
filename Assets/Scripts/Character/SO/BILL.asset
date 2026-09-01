@@ -39,4 +39,4 @@ MonoBehaviour:
       eyeHeight: 250
       posX: 125
       posY: 0
-    meter: 0
+    meter: 10

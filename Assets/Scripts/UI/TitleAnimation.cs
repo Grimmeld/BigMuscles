@@ -9,9 +9,19 @@ public class TitleAnimation : MonoBehaviour
     [SerializeField] private CanvasGroup subChapter;
     [SerializeField] private float outAnimationDelay;
 
+    private void Awake()
+    {
+        CanvasGroup[] groups = GetComponentsInChildren<CanvasGroup>();
+        foreach (CanvasGroup group in groups)
+        {
+            group.alpha = 0;
+        }
+
+    }
+
     private void OnEnable()
     {
-        
+
         if(chapter != null)
         {
             chapter.transform.localPosition = new Vector2(Screen.width, -100);

@@ -1,0 +1,220 @@
+:: StoryTitle
+Chp0
+
+
+:: StoryData
+{
+  "ifid": "8A919140-AC3C-4D08-9C50-E2511668E6AC",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Start",
+  "tag-colors": {
+    "START": "orange",
+    "BONUS-BILL": "red",
+    "MALUS-BILL": "red",
+    "END": "blue"
+  },
+  "zoom": 1
+}
+
+
+:: Character:BILL-FLIRTY {"position":"1100,1875","size":"100,100"}
+
+
+
+:: Character:BILL-HAPPY {"position":"800,925","size":"100,100"}
+
+
+
+:: Character:BILL-SAD {"position":"962.5,1525","size":"100,100"}
+
+
+
+:: Character:SELF- {"position":"862.5,525","size":"100,100"}
+
+
+
+:: Chp0_Sb1_Intro_1 {"position":"800,675","size":"100,100"}
+En face des grands miroirs qui tapissent la zone de Tonic Building, tu remontes la manche de ton bras droit. Tu contractes le triceps pour chercher la congestion. Charmé par le volume bien visible, tu souris à ton reflet. [[>>->Chp0_Sb1_Intro_2]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Intro_10 {"position":"587.5,1775","size":"100,100"}
+Ça veut dire que tu es prisé dans cette salle. Je suis sûr que tu as fait contracter plus d’un muscle.   [[>>->Chp0_Sb1_Intro_11]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Intro_11 {"position":"587.5,1900","size":"100,100"}
+Ha ! Oui ça on peut le dire.  [[>>->Chp0_Sb1_Intro_25]]  [[Character:BILL-HAPPY]] [[Speak:BILL]]
+
+
+
+:: Chp0_Sb1_Intro_13 [BONUS-BILL] {"position":"712.5,1525","size":"100,100"}
+Tu as raison, Bill.  [[>>->Chp0_Sb1_Intro_14]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Intro_14 {"position":"712.5,1650","size":"100,100"}
+Je me sens déjà devenir un homme meilleur.  [[>>->Chp0_Sb1_Intro_15]]   
+
+
+
+:: Chp0_Sb1_Intro_15 {"position":"712.5,1775","size":"100,100"}
+Tu sais que je vois déjà la différence ? Les nanas ne me lâchent pas du regard. Je le vois bien qu’elles ont envie de moi. [[>>->Chp0_Sb1_Intro_16]]   
+
+
+
+:: Chp0_Sb1_Intro_16 {"position":"712.5,1900","size":"100,100"}
+Elles seraient folles de penser autrement, bro.  [[>>->Chp0_Sb1_Intro_17]]  [[Character:BILL-FLIRTY]] [[Speak:BILL]]
+
+
+
+:: Chp0_Sb1_Intro_17 {"position":"725,2025","size":"100,100"}
+Tu croises les yeux de la kettlebell. Tu y vois une lueur de bienveillance et d’admiration qui font le charme de ton équipement favori.  [[>>->Chp0_Sb1_Intro_25]]  [[Character:SELF-]] [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Intro_19 [MALUS-BILL] {"position":"850,1525","size":"100,100"}
+Oh Bill, on va pas revenir là-dessus. Cette cicatrice n’est pas de ta faute.  [[>>->Chp0_Sb1_Intro_20]]  [[Character:BILL-SAD]] [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Intro_2 {"position":"800,800","size":"100,100"}
+C’est beau ça. [[>>->Chp0_Sb1_Intro_3]]  [[Character:BILL-HAPPY]] [[Speak:BILL]]
+
+
+
+:: Chp0_Sb1_Intro_20 {"position":"837.5,1650","size":"100,100"}
+Bill se tourne légèrement pour essayer de cacher la fente qui marque sa boule volumineuse.  [[>>->Chp0_Sb1_Intro_21]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Intro_21 {"position":"837.5,1775","size":"100,100"}
+Tu restes sur tes échecs, mon pote. Ça devient exaspérant.  [[>>->Chp0_Sb1_Intro_22]]  [[Character:BILL-SAD]] [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Intro_22 {"position":"837.5,1900","size":"100,100"}
+ J’essaie, mais– [[>>->Chp0_Sb1_Intro_23]]   [[Speak:BILL]]
+
+
+
+:: Chp0_Sb1_Intro_23 {"position":"837.5,2025","size":"100,100"}
+T’as pas le mindset d’un champion, Bill. Essaie d’être un peu plus comme moi. [[>>->Chp0_Sb1_Intro_24]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Intro_24 {"position":"700,2150","size":"100,100"}
+Tu lui lances un de tes sourires carnassiers qui vaut tous les détours.  [[>>->Chp0_Sb1_Intro_25]]  [[Character:SELF-]] [[Speak:REMOVE]]
+
+
+
+:: Chp0_Sb1_Intro_25 {"position":"675,2300","size":"100,100"}
+Tu attrapes ta gourde et appuies sur le plastique pour qu’une rasade de liquide atterrisse dans ta bouche. Souriant et satisfait, tu fais le tour de la salle de sport. [[>>->Chp0_Sb1_Intro_26]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Intro_26 {"position":"675,2425","size":"100,100"}
+La salle Gym Bro Paradise est sans cesse en quête d’amélioration. Une philosophie qui te parle. Ton regard se pose sur la nouvelle machine, arrivée la semaine dernière : une pull down machine. [[>>->Chp0_Sb1_Intro_27]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Intro_27 {"position":"675,2550","size":"100,100"}
+Quelques gouttes de boisson énergétique tombent sur tes lèvres, tu l’essuies un coup de poignet avant de déglutir. [[>>->Chp0_Sb1_Intro_28]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Intro_28 {"position":"675,2675","size":"100,100"}
+Tu observes la personne installée sur le pull down, le marcel qu’elle portait mettait en valeur les muscles de son dos. [[>>->Chp0_Sb1_Intro_29]]   
+
+
+
+:: Chp0_Sb1_Intro_29 {"position":"675,2800","size":"100,100"}
+Son geste avait l’air des plus simples. Tirer avec ses bras, relâcher. Tirer. Relâcher. Easy peasy. [[>>->Chp0_Sb1_Intro_30]]   
+
+
+
+:: Chp0_Sb1_Intro_3 {"position":"800,1025","size":"100,100"}
+Ouais, c’est une bonne séance. Tu m’as bien aidé, Bill. [[>>->Chp0_Sb1_Intro_4]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Intro_30 {"position":"675,2925","size":"100,100"}
+La personne finit sa série en reprenant sa serviette posée sur le banc. Tu scrutes la machine avant de t’y diriger. [[>>->Chp0_Sb1_Intro_31]]   
+
+
+
+:: Chp0_Sb1_Intro_31 {"position":"675,3050","size":"100,100"}
+Bro, tu comptes pas arrêter ta série maintenant ? [[>>->Chp0_Sb1_Intro_32]]  [[Character:BILL-SAD]] [[Speak:BILL]]
+
+
+
+:: Chp0_Sb1_Intro_32 {"position":"675,3175","size":"100,100"}
+Il faut que j’y aille rapidement où la machine sera prise. [[>>->Chp0_Sb1_Intro_33]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Intro_33 {"position":"675,3300","size":"100,100"}
+Me laisse pas, bro. Je t’ai déjà dit que je pouvais t’aider à entrainer ce que tu voulais. [[>>->Chp0_Sb1_Intro_34]]   [[Speak:BILL]]
+
+
+
+:: Chp0_Sb1_Intro_34 {"position":"675,3425","size":"100,100"}
+Même m’aider à faire des tractions ? [[>>->Chp0_Sb1_Intro_35]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Intro_35 {"position":"675,3550","size":"100,100"}
+… [[>>->END]]   [[Speak:BILL]]
+
+
+
+:: Chp0_Sb1_Intro_4 {"position":"800,1150","size":"100,100"}
+Eh. Tu as tout fait, mon bro !  [[>>->Chp0_Sb1_Intro_5]]  [[Character:BILL-HAPPY]] [[Speak:BILL]]
+
+
+
+:: Chp0_Sb1_Intro_5 {"position":"775,1275","size":"100,100"}
+Je sais, je sais. Mais tu l’as dit, la muscu, c’est un travail d’équipe. [[>>->Chp0_Sb1_Intro_6]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Intro_6 {"position":"775,1400","size":"100,100"}
+Regarde ma fonte, avec… Bref. Je ne ressemble à rien. Tes progrès ne sont que le fruit de TON travail. [[Réconforter Bill->Chp0_Sb1_Intro_8]]
+[[Accepter les compliments->Chp0_Sb1_Intro_13]]
+[[Appuyer sur les défauts de Bill->Chp0_Sb1_Intro_19]]  [[Character:BILL-SAD]] [[Speak:BILL]]
+
+
+:: Chp0_Sb1_Intro_8 [BONUS-BILL] {"position":"587.5,1525","size":"100,100"}
+Enfin, Bill ! Je n’ai jamais vu une fonte aussi brillante que la tienne.  [[>>->Chp0_Sb1_Intro_9]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Intro_9 {"position":"587.5,1650","size":"100,100"}
+Oh arrête ça. Avec les années, on peut voir toutes les rayures. [[>>->Chp0_Sb1_Intro_10]]  [[Character:BILL-SAD]] [[Speak:BILL]]
+
+
+
+:: END [END] {"position":"675,3675","size":"100,100"}
+
+
+
+:: Image:bckgrnd\\Gym_Back_2.png {"position":"737.5,525","size":"100,100"}
+
+
+
+:: Speak:BILL {"position":"925,925","size":"100,100"}
+
+
+
+:: Speak:REMOVE {"position":"987.5,525","size":"100,100"}
+
+
+
+:: Speak:SELF {"position":"1000,1075","size":"100,100"}
+
+
+
+:: Start [START] {"position":"800,400","size":"100,100"}
+Tu poses ta kettlebell au sol, les bras en feu. Tu te tamponnes le front suant avec ta serviette absorbante. Tu es très content de ta séance du jour. [[>>->Chp0_Sb1_Intro_1]] [[Image:bckgrnd\Gym_Back_2.png]] [[Character:SELF-]] 
+

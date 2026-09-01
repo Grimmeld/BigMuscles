@@ -1,0 +1,341 @@
+:: StoryTitle
+Chp0_Ccl
+
+
+:: StoryData
+{
+  "ifid": "641D0B94-A755-4AA2-8616-7E45440C0B5D",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Start",
+  "tag-colors": {
+    "START": "orange",
+    "BONUS-BILL": "red",
+    "END": "blue",
+    "KEY": "blue"
+  },
+  "zoom": 0.6
+}
+
+
+:: Character:BILL-FLIRTY {"position":"337.5,3625","size":"100,100"}
+
+
+
+:: Character:BILL-HAPPY {"position":"425,1950","size":"100,100"}
+
+
+
+:: Character:BILL-SAD {"position":"425,950","size":"100,100"}
+
+
+
+:: Character:SELF- {"position":"487.5,1325","size":"100,100"}
+
+
+
+:: Chp0_Sb1_Ccl_146 {"position":"425,525","size":"100,100"}
+Tu sens la frustration d’avoir commencé un nouvel exercice sans le finir. Tu as envie de ressentir cette force qui t’avais atteint à la fin de ton entraînement. [[>>->Chp0_Sb1_Ccl_147]]  [[Character:SELF-]]
+
+
+
+:: Chp0_Sb1_Ccl_147 {"position":"425,650","size":"100,100"}
+Avec un coup d’œil, tu retournes voir ta kettlebell préféré. [[>>->Chp0_Sb1_Ccl_148]] [[Image:bckgrnd\Gym_Back_2.png]] [[Character:SELF-]] 
+
+
+:: Chp0_Sb1_Ccl_148 {"position":"425,825","size":"100,100"}
+Le nouveau à mauvais caractère ? [[>>->Chp0_Sb1_Ccl_149]]  [[Character:BILL-SAD]] [[Speak:BILL]]
+
+
+
+:: Chp0_Sb1_Ccl_149 {"position":"425,1075","size":"100,100"}
+Je vais avoir besoin de temps pour l’apprivoiser. [[>>->Chp0_Sb1_Ccl_150]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Ccl_150 {"position":"325,1225","size":"100,100"}
+Tu passes une main derrière ta nuque. [[(if:Chp0_Sb1_Wrm_100)La douleur brule toujours dans tes muscles.->Chp0_Sb1_Ccl_152]]
+[[(if:Chp0_Sb1_Wrm_137)Se vanter de sa grande sagesse.->Chp0_Sb1_Ccl_158]]  [[Character:SELF-]]
+
+
+
+:: Chp0_Sb1_Ccl_152 {"position":"362.5,1450","size":"100,100"}
+Bill remarque le tressautement dans tes gestes. [[>>->Chp0_Sb1_Ccl_153]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Ccl_153 {"position":"362.5,1575","size":"100,100"}
+Mh. Faut pas te faire avoir par des fuckboy comme Sean. Il n’est pas comme moi. Comme nous.  [[>>->Chp0_Sb1_Ccl_154]]  [[Character:BILL-SAD]] [[Speak:BILL]]
+
+
+
+:: Chp0_Sb1_Ccl_154 {"position":"375,1700","size":"100,100"}
+Nous ? C’est-à-dire ?  [[>>->Chp0_Sb1_Ccl_155]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Ccl_155 {"position":"362.5,1825","size":"100,100"}
+Travailler ensemble. En équipe, bro. C’est ça qui te fera avancer.  [[>>->Chp0_Sb1_Ccl_156]]  [[Character:BILL-HAPPY]] [[Speak:BILL]]
+
+
+
+:: Chp0_Sb1_Ccl_156 {"position":"300,1950","size":"100,100"}
+Tu regardes la kettlebell. Tu n’es pas bien sûr de ce qui te fera atteindre tes objectifs, comment devenir un homme viril.  [[>>->Chp0_Sb1_Ccl_164]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Ccl_158 [BONUS-BILL] {"position":"575,1450","size":"100,100"}
+T’as vu, Bill. On pourrait croire que j’ai reculé devant l’adversité.  [[>>->Chp0_Sb1_Ccl_159]]  [[Character:BILL-HAPPY]] [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Ccl_159 {"position":"575,1575","size":"100,100"}
+Ce qu’il faut que Sean comprenne. C’est que j’ai fait preuve de sagesse en refusant d’augmenter de poids.  [[>>->Chp0_Sb1_Ccl_160]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Ccl_160 {"position":"575,1700","size":"100,100"}
+Nan mais t’as trop raison, bro.  [[>>->Chp0_Sb1_Ccl_161]]   [[Speak:BILL]]
+
+
+
+:: Chp0_Sb1_Ccl_161 {"position":"575,1825","size":"100,100"}
+Et après quoi ? Je me serais fait mal, pour plaire à une machine ?  [[>>->Chp0_Sb1_Ccl_162]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Ccl_162 {"position":"575,1950","size":"100,100"}
+Non. Moi, je trace ma voie. Seul. Viril. Comme un homme.  [[>>->Chp0_Sb1_Ccl_163]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Ccl_163 {"position":"575,2075","size":"100,100"}
+Oh putain, bro. Tes paroles me font tellement vibrer.   [[>>->Chp0_Sb1_Ccl_164]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Ccl_164 {"position":"400,2250","size":"100,100"}
+Eh t’as vu ce que t’as réussi à faire en peu de temps. T’as déjà bien augmenté ta masse musculaire.  [[>>->Chp0_Sb1_Ccl_165]]  [[Character:BILL-HAPPY]] [[Speak:BILL]]
+
+
+
+:: Chp0_Sb1_Ccl_165 {"position":"400,2375","size":"100,100"}
+Avec ces mollets de champions, toutes les nanas vont s’agenouiller devant moi [[>>->Chp0_Sb1_Ccl_166]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Ccl_166 {"position":"400,2500","size":"100,100"}
+Eh bro ? [[>>->Chp0_Sb1_Ccl_167]]   [[Speak:BILL]]
+
+
+
+:: Chp0_Sb1_Ccl_167 {"position":"400,2625","size":"100,100"}
+Ouais ? [[>>->Chp0_Sb1_Ccl_168]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Ccl_168 {"position":"400,2750","size":"100,100"}
+Regarde la feuille qu’il y a dans l’imprimante. [[>>->Chp0_Sb1_Ccl_169]]   [[Speak:BILL]]
+
+
+
+:: Chp0_Sb1_Ccl_169 {"position":"400,2875","size":"100,100"}
+Confus, tu fais les deux pas qui te séparent de l’imprimante et regarde la première feuille que tu vois. [[>>->Chp0_Sb1_Ccl_170]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Ccl_170 {"position":"400,3000","size":"100,100"}
+Il n’y a rien sur ta feuille. [[>>->Chp0_Sb1_Ccl_171]]  [[Character:BILL-HAPPY]] [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Ccl_171 {"position":"400,3125","size":"100,100"}
+C’est ma vie sans toi, bro. [[>>->Chp0_Sb1_Ccl_172]]   [[Speak:BILL]]
+
+
+
+:: Chp0_Sb1_Ccl_172 {"position":"400,3250","size":"100,100"}
+Bro…  [[(if:BILL-50)S'entraîner avec Bill->Chp0_Sb1_Ccl_174]]
+[[Demander des conseils->Chp0_Sb1_Ccl_194]]
+[[Rentrer chez soi->Chp0_Sb1_Ccl_202]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Ccl_174 [KEY] {"position":"275,3375","size":"100,100"}
+Une dernière série, mon Bill ?  [[>>->Chp0_Sb1_Ccl_175]]  [[Character:BILL-HAPPY]] [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Ccl_175 {"position":"275,3500","size":"100,100"}
+Je ne demande que ça, bro.  [[>>->Chp0_Sb1_Ccl_176]]  [[Character:BILL-FLIRTY]] [[Speak:BILL]]
+
+
+
+:: Chp0_Sb1_Ccl_176 {"position":"212.5,3625","size":"100,100"}
+Laisse-moi t’attraper la poignée.  [[>>->Chp0_Sb1_Ccl_177]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Ccl_177 {"position":"212.5,3750","size":"100,100"}
+Bill rougit à tes mots et se penche pour que tu puisses atteindre le caoutchouc vert plus facilement.   [[>>->Chp0_Sb1_Ccl_178]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Ccl_178 {"position":"212.5,3875","size":"100,100"}
+Debout, devant les grands miroirs de la zone de Tonic Building, tu écartes légèrement tes pieds, laissant Bill pendre entre tes cuisses. Tu connais cet exercice de kettle swing presque par cœur. [[>>->Chp0_Sb1_Ccl_179]]   
+
+
+
+:: Chp0_Sb1_Ccl_179 {"position":"212.5,4000","size":"100,100"}
+N’oublie pas, bro. Ce sont les hanches qui font tout le mouvement.  [[>>->Chp0_Sb1_Ccl_180]]  [[Character:BILL-FLIRTY]] [[Speak:BILL]]
+
+
+
+:: Chp0_Sb1_Ccl_180 {"position":"212.5,4125","size":"100,100"}
+Tu exécutes le mouvement de balancier. Contractant tes abdos et tes fesses à chaque aller-retour. [[>>->Chp0_Sb1_Ccl_181]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Ccl_181 {"position":"212.5,4250","size":"100,100"}
+Ta respiration s’accélère. Tu sens le sang monté à tes joues. [[>>->Chp0_Sb1_Ccl_182]]   
+
+
+
+:: Chp0_Sb1_Ccl_182 {"position":"212.5,4375","size":"100,100"}
+La chaleur se diffuse dans ton corps. [[>>->Chp0_Sb1_Ccl_183]]   
+
+
+
+:: Chp0_Sb1_Ccl_183 {"position":"212.5,4500","size":"100,100"}
+Tu sens des gouttes de transpiration se former sur tes tempes. [[>>->Chp0_Sb1_Ccl_184]]   
+
+
+
+:: Chp0_Sb1_Ccl_184 {"position":"212.5,4625","size":"100,100"}
+C’est ça ! Tu y es, mon bro.  [[>>->Chp0_Sb1_Ccl_185]]  [[Character:BILL-FLIRTY]] [[Speak:BILL]]
+
+
+
+:: Chp0_Sb1_Ccl_185 {"position":"212.5,4750","size":"100,100"}
+Va chercher la contraction.  [[>>->Chp0_Sb1_Ccl_186]]   [[Speak:BILL]]
+
+
+
+:: Chp0_Sb1_Ccl_186 {"position":"212.5,4875","size":"100,100"}
+Bill, je le sens bien là.  [[>>->Chp0_Sb1_Ccl_187]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Ccl_187 {"position":"212.5,5000","size":"100,100"}
+Tu sers fort tes abdos. Et bascules vers l’avant… Allez ! 7… 8… 9…   [[>>->Chp0_Sb1_Ccl_188]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Ccl_188 {"position":"212.5,5125","size":"100,100"}
+Tu sens Bill t’effleurer lorsqu’il passe sous tes jambes. [[>>->Chp0_Sb1_Ccl_189]]   
+
+
+
+:: Chp0_Sb1_Ccl_189 {"position":"212.5,5250","size":"100,100"}
+10 ! [[>>->Chp0_Sb1_Ccl_190]]   
+
+
+
+:: Chp0_Sb1_Ccl_190 {"position":"212.5,5375","size":"100,100"}
+Aaaaaah !  [[>>->Chp0_Sb1_Ccl_191]]  [[Character:BILL-FLIRTY]] [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Ccl_191 {"position":"212.5,5500","size":"100,100"}
+Tu finis par lâcher la kettlebell. [[>>->Chp0_Sb1_Ccl_192]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Ccl_192 {"position":"212.5,5625","size":"100,100"}
+Ouf ! Oh, Bill. Ça c’était une série du tonnerre. [[>>->END]]  [[Character:BILL-FLIRTY]] [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Ccl_194 [KEY] {"position":"400,3375","size":"100,100"}
+Bill, j’aime les exercices qu’on fait ensemble. Mais je suis un homme. J’ai des besoins.  [[>>->Chp0_Sb1_Ccl_195]]  [[Character:BILL-HAPPY]] [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Ccl_195 {"position":"400,3500","size":"100,100"}
+Comment je peux faire pour avoir un entraînement plus efficace avec Sean.  [[>>->Chp0_Sb1_Ccl_196]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Ccl_196 {"position":"525,3625","size":"100,100"}
+Bro… Chaque équipement est différent. Il va falloir que tu apprennes à les connaître.  [[>>->Chp0_Sb1_Ccl_197]]   [[Speak:BILL]]
+
+
+
+:: Chp0_Sb1_Ccl_197 {"position":"525,3750","size":"100,100"}
+Les machines en Power Lifting sont… Elles aiment la performance. Aller toujours plus loin.  [[>>->Chp0_Sb1_Ccl_198]]   [[Speak:BILL]]
+
+
+
+:: Chp0_Sb1_Ccl_198 {"position":"525,3875","size":"100,100"}
+Toi qui es un homme rempli d’ambition. Ce discours te parle. [[>>->Chp0_Sb1_Ccl_199]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Ccl_199 {"position":"525,4000","size":"100,100"}
+Si je peux te donner un conseil : sois fier de toi, bro. Ça ne pourra que t’aider avec une machine comme Sean.  [[>>->Chp0_Sb1_Ccl_200]]  [[Character:BILL-HAPPY]] [[Speak:BILL]]
+
+
+
+:: Chp0_Sb1_Ccl_200 {"position":"525,4125","size":"100,100"}
+Fier. Viril. Beau. Tu retiens ces trois valeurs pour réussir tes prochaines tractions.   [[>>->END]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Ccl_202 [KEY] {"position":"750,3400","size":"100,100"}
+La séance du jour t’a épuisé. Tu ne souhaites qu’une chose : mettre un bon film d’époque sur ton vidéo projecteur triple laser 4K et fumer ton meilleur cigare dans ton canapé en cuir noir. [[>>->Chp0_Sb1_Ccl_203]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Ccl_203 {"position":"750,3525","size":"100,100"}
+« Vita est flumen longum et placidum » [[>>->Chp0_Sb1_Ccl_204]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Ccl_204 {"position":"750,3650","size":"100,100"}
+Ça n’a pas grand sens mais ça fait toujours bien de parler latin. [[>>->Chp0_Sb1_Ccl_205]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Ccl_205 {"position":"750,3775","size":"100,100"}
+Malgré la journée mouvementée, tu es convaincu d’avoir été au top. [[>>->Chp0_Sb1_Ccl_206]]   
+
+
+
+:: Chp0_Sb1_Ccl_206 {"position":"750,3900","size":"100,100"}
+Et peut-être même que tu as pu inspirer plus d’une personne à la salle. [[>>->END]]   
+
+
+
+:: END [END] {"position":"212.5,5750","size":"100,100"}
+
+
+
+:: Image:bckgrnd\\Gym_Back_2.png {"position":"675,725","size":"100,100"}
+
+
+
+:: Image:bckgrnd\\Gym_PullDown.png {"position":"550,525","size":"100,100"}
+
+
+
+:: Speak:BILL {"position":"550,950","size":"100,100"}
+
+
+
+:: Speak:SELF {"position":"675,525","size":"100,100"}
+
+
+
+:: Start [START] {"position":"550,400","size":"100,100"}
+Tu récupères ta serviette, toujours humide de ton sport précédent. Avec un soupir, tu te diriges vers les vestiaires. [[>>->Chp0_Sb1_Ccl_146]] [[Image:bckgrnd\Gym_PullDown.png]] [[Character:SELF-]] 
+

@@ -1,0 +1,547 @@
+:: StoryTitle
+Chp0_Wrm
+
+
+:: StoryData
+{
+  "ifid": "9BE65C64-B656-4FFB-9264-2CEE1243CE3A",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Start",
+  "tag-colors": {
+    "START": "orange",
+    "BONUS-SEAN": "red",
+    "MALUS-SEAN": "red",
+    "END": "blue",
+    "KEY": "blue"
+  },
+  "zoom": 1
+}
+
+
+:: Character:SEAN-FLIRTY {"position":"675,650","size":"100,100"}
+
+
+
+:: Character:SEAN-HAPPY {"position":"487.5,1025","size":"100,100"}
+
+
+
+:: Character:SEAN-SAD {"position":"550,2025","size":"100,100"}
+
+
+
+:: Character:SELF- {"position":"675,525","size":"100,100"}
+
+
+
+:: Chp0_Sb1_Wrm_100 [BONUS-SEAN KEY] {"position":"275,6225","size":"100,100"}
+Je suis pas une nana, je vais augmenter. [[>>->Chp0_Sb1_Wrm_101]]  [[Character:SEAN-HAPPY]] [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Wrm_101 {"position":"275,6350","size":"100,100"}
+Tu changes la goupille pour ajouter plus de poids. Le glissement fait un bruit de métal qui te donne des frissons. [[>>->Chp0_Sb1_Wrm_102]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_102 {"position":"275,6475","size":"100,100"}
+Tu t’assois sur le banc, ta serviette sous tes fesses. Loin de toi l’envie de salir le cuir à cause d’une raie humide.   [[>>->Chp0_Sb1_Wrm_103]]   
+
+
+
+:: Chp0_Sb1_Wrm_103 {"position":"275,6600","size":"100,100"}
+Tu avances ton entrejambe pour bien caler tes cuisses sous les pads. [[>>->Chp0_Sb1_Wrm_104]]   
+
+
+
+:: Chp0_Sb1_Wrm_104 {"position":"275,6725","size":"100,100"}
+Tu regardes la barre au-dessus de toi. Tu l’attrapes et sans vraiment tirer, tu as conscience de la différence de poids que tu as ajouté. Tu déglutis. La force requise t’intimide. [[>>->Chp0_Sb1_Wrm_105]]   
+
+
+
+:: Chp0_Sb1_Wrm_105 {"position":"275,6850","size":"100,100"}
+Ecoute-moi bien, mec. Pour tes tractions correctes, il faut que tu tires avec ton dos. C’pas la force dans les bras qui comptent. Et crois-moi, c’est tant mieux dans ton cas ! [[>>->Chp0_Sb1_Wrm_106]]  [[Character:SEAN-HAPPY]] [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_106 {"position":"275,6975","size":"100,100"}
+Tu roules des yeux et souris à son commentaire. Est-ce que tu commences à aimer ses railleries ? [[>>->Chp0_Sb1_Wrm_107]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_107 {"position":"275,7100","size":"100,100"}
+Cette ambiance bon enfant où on n’a pas besoin de faire attention aux sentiments des autres. [[>>->Chp0_Sb1_Wrm_108]]   
+
+
+
+:: Chp0_Sb1_Wrm_108 {"position":"275,7225","size":"100,100"}
+C’est plutôt agréable de pouvoir dire ce que tu veux quand tu veux, sans faire attention aux sensibles. [[>>->Chp0_Sb1_Wrm_109]]   
+
+
+
+:: Chp0_Sb1_Wrm_109 {"position":"275,7350","size":"100,100"}
+Tu vas te reculer juste un peu. Tu dois tenir la barre devant toi. Sors tes pecs, un homme doit se sentir fier. [[>>->Chp0_Sb1_Wrm_110]]   
+
+
+
+:: Chp0_Sb1_Wrm_110 {"position":"275,7475","size":"100,100"}
+Sers tes omoplates, mobilise ton grand dorsal. [[>>->Chp0_Sb1_Wrm_111]]  [[Character:SEAN-HAPPY]] [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_111 {"position":"275,7600","size":"100,100"}
+En changeant de posture, tu sens la différence. Tu passes les doigts sur la barre de traction, la serre et tires de toutes tes forces. Le mouvement est fluide, même si la barre remonte un peu vide. Tes fesses sont soulevées du banc. Tu recommences ta série. [[>>->Chp0_Sb1_Wrm_112]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_112 {"position":"275,7725","size":"100,100"}
+Ouais, c’est bien. Juste comme ça.   [[>>->Chp0_Sb1_Wrm_113]]  [[Character:SEAN-FLIRTY]] [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_113 {"position":"275,7850","size":"100,100"}
+A la 6ème répétition, tu lâches la barre. [[>>->Chp0_Sb1_Wrm_114]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_114 {"position":"275,7975","size":"100,100"}
+Tu inspires et expires rapidement par la bouche. Ton cœur s’emballe. [[Continuer de tirer->Chp0_Sb1_Wrm_116]]
+[[Reprendre son souffle->Chp0_Sb1_Wrm_118]] 
+
+
+
+:: Chp0_Sb1_Wrm_116 {"position":"212.5,8100","size":"100,100"}
+Oh yeah. J’aime le feu que je vois dans tes yeux. [[>>->Chp0_Sb1_Wrm_121]]  [[Character:SEAN-FLIRTY]] [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_118 {"position":"337.5,8100","size":"100,100"}
+Tu as l’impression de retourner au tout début de tes entrainements et ça t’énerve. Ça t’énerve de ne pas réussir à faire ce que tu veux. Ça t’énerve de galérer autant. Ça t’énerve de te sentir faible à nouveau. [[>>->Chp0_Sb1_Wrm_119]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_119 {"position":"462.5,8225","size":"100,100"}
+Allez, mec ! C’pas mon genre de faire trop de compliments. Mais bon… J’dois avouer que tu m’impressionnes. [[>>->Chp0_Sb1_Wrm_120]]  [[Character:SEAN-FLIRTY]] [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_120 {"position":"475,8350","size":"100,100"}
+Chargé par les compliments de la machine, tu saisis la barre fortement. [[>>->Chp0_Sb1_Wrm_121]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_121 {"position":"275,8575","size":"100,100"}
+De toutes tes forces, tu tires avec ton dos. Une traction. Deux tractions. [[>>->Chp0_Sb1_Wrm_122]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_122 {"position":"275,8700","size":"100,100"}
+Les muscles de tes épaules commencent à se contracter. Tu serres les dents pour continuer. [[>>->Chp0_Sb1_Wrm_123]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_123 {"position":"275,8825","size":"100,100"}
+Allez, encore un. Tu peux le faire. Juste pour moi. [[>>->Chp0_Sb1_Wrm_124]]  [[Character:SEAN-FLIRTY]] [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_124 {"position":"275,8950","size":"100,100"}
+Tu fais remonter la barre, puis en full extension, tu la ramènes vers toi. [[>>->Chp0_Sb1_Wrm_125]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_125 {"position":"275,9075","size":"100,100"}
+Encore une fois. [[>>->Chp0_Sb1_Wrm_126]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_126 {"position":"275,9200","size":"100,100"}
+Encore une traction. [[>>->Chp0_Sb1_Wrm_127]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_127 {"position":"275,9325","size":"100,100"}
+Ça c’est mon champion ! [[>>->Chp0_Sb1_Wrm_128]]  [[Character:SEAN-FLIRTY]] [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_128 {"position":"275,9450","size":"100,100"}
+Et tu le sens. La tension dans ton cou ne trouve nulle part où s’enfuir. [[>>->Chp0_Sb1_Wrm_129]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_129 {"position":"275,9575","size":"100,100"}
+Un cri s’échappe de ta bouche quand tu sens la douleur irradiée dans ton épaule gauche. [[>>->Chp0_Sb1_Wrm_130]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_130 {"position":"275,9700","size":"100,100"}
+Tu lâches tout. Tu entends à peine le claquement des poids sur le stack. [[>>->Chp0_Sb1_Wrm_131]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_131 {"position":"275,9825","size":"100,100"}
+Aaaaaargh [[>>->Chp0_Sb1_Wrm_132]]  [[Character:SEAN-FLIRTY]] [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Wrm_132 {"position":"275,9950","size":"100,100"}
+Tu portes ta main à ton épaule. Le muscle est chaud et dur. Tu sens une boule en le massant délicatement avec ta main. [[>>->Chp0_Sb1_Wrm_133]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_133 {"position":"275,10075","size":"100,100"}
+Ça c’est des muscles ! Tu vas réussir à faire des tractions en un rien de temps. [[>>->Chp0_Sb1_Wrm_134]]  [[Character:SEAN-FLIRTY]] [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_134 {"position":"275,10200","size":"100,100"}
+Tu lèves ton bras gauche et la douleur est immédiate. Ça te peine de le dire, mais tu ne penses pas pouvoir retourner à la salle demain. [[>>->Chp0_Sb1_Wrm_135]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_135 {"position":"275,10325","size":"100,100"}
+C’était vraiment stupide de ta part. Ta volonté de travailler plus fort n’en est que renforcer. Si tu étais plus fort, plus dur, cette blessure ne serait jamais arrivée.   [[>>->END]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_137 [MALUS-SEAN KEY] {"position":"550,6225","size":"100,100"}
+T’es pas là pour me dire quoi faire, je m’arrête quand j’ai envie. [[>>->Chp0_Sb1_Wrm_138]]   
+
+
+
+:: Chp0_Sb1_Wrm_138 {"position":"550,6350","size":"100,100"}
+Tu souhaites recommencer une série avec le poids léger. Tu poses tes mains sur la barre de traction et commences à tirer. [[>>->Chp0_Sb1_Wrm_139]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_139 {"position":"550,6475","size":"100,100"}
+Mais la goupille bleue, qui soutient les poids, lâche. Tu sens la barre arrivée beaucoup trop vite vers toi. [[>>->Chp0_Sb1_Wrm_140]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_140 {"position":"550,6600","size":"100,100"}
+Aïe ! [[>>->Chp0_Sb1_Wrm_141]]  [[Character:SEAN-SAD]] [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Wrm_141 {"position":"550,6725","size":"100,100"}
+Pas question qu’une fillette comme toi m’utilise si c’est pour pas donner ton max. J’accepte que les gagnants. Tu piges ? [[>>->Chp0_Sb1_Wrm_142]]   [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_142 {"position":"550,6850","size":"100,100"}
+Mec, j’ai déjà fait une séance complète. Si je force trop, je vais me faire mal. [[>>->Chp0_Sb1_Wrm_143]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Wrm_143 {"position":"550,6975","size":"100,100"}
+Bouhouuu ! Retourne vers ta zumba de gonzesse !   [[>>->Chp0_Sb1_Wrm_144]]   [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_144 {"position":"550,7100","size":"100,100"}
+Tu lâches la barre de traction qui s’arrête contre la poulie. [[>>->END]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_37 {"position":"550,525","size":"100,100"}
+Salut toi ! Tu viens tâter de la barre ? [[>>->Chp0_Sb1_Wrm_38]]  [[Character:SEAN-FLIRTY]] [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_38 {"position":"550,650","size":"100,100"}
+Je vois que tu ne commences pas timidement ! [[>>->Chp0_Sb1_Wrm_39]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Wrm_39 {"position":"550,775","size":"100,100"}
+Commencer timidement, c’pas mon mantra. Avec moi on tire vite.. et fort. C’est la seule façon de progresser. Je m’appelle Sean, mon pote.  [[>>->Chp0_Sb1_Wrm_40]]  [[Character:SEAN-HAPPY]] [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_40 {"position":"550,900","size":"100,100"}
+Tu rigoles en montrant les canines. Les progrès, c’est ça que tu cherches. Tu passes ta serviette à l’arrière de ta nuque, en prenant soin de montrer les bras que tu viens d’entraîner. [[>>->Chp0_Sb1_Wrm_41]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_41 {"position":"550,1150","size":"100,100"}
+Et qu’est-ce que tu sais faire de si intéressant ? [[>>->Chp0_Sb1_Wrm_42]]  [[Character:SEAN-HAPPY]] [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Wrm_42 {"position":"550,1275","size":"100,100"}
+Tu sais très bien pourquoi t’es là, mec. T’as vu les autres. Tu sais que faire une traction ça fait partie du « package » d’un homme.  [[>>->Chp0_Sb1_Wrm_43]]   [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_43 {"position":"550,1400","size":"100,100"}
+Et crois-moi, je t’ai vu te bouger là-bas et c’pas avec des deltoïdes comme les tiens que tu vas pouvoir en faire une. [[Se défendre->Chp0_Sb1_Wrm_45]]
+[[Accepter les faits->Chp0_Sb1_Wrm_47]]   [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_45 [MALUS-SEAN] {"position":"487.5,1525","size":"100,100"}
+Je ne suis pas venu ici pour me faire insulter.  [[>>->Chp0_Sb1_Wrm_48]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Wrm_47 {"position":"612.5,1525","size":"100,100"}
+Tu le regardes un instant mais il marque un point. [[>>->Chp0_Sb1_Wrm_48]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_48 {"position":"487.5,1650","size":"100,100"}
+Faire des tractions ça a toujours été un objectif. Tu as déjà essayé d’en faire avec une barre de traction maison bloquée dans l’ouverture d’une porte. Celle-ci avait glissé et tu étais tombé sur les fesses. [[>>->Chp0_Sb1_Wrm_49]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_49 {"position":"487.5,1775","size":"100,100"}
+Un moment humiliant que tu n’as divulgué à personne. [[>>->Chp0_Sb1_Wrm_50]]   
+
+
+
+:: Chp0_Sb1_Wrm_50 {"position":"487.5,1900","size":"100,100"}
+Ecoute-moi bien, ma couille : me fais pas perdre mon temps. J’ai entraîné des champions, des vrais. Des mecs qui ont gagné des médailles, ok ! [[>>->Chp0_Sb1_Wrm_51]]  [[Character:SEAN-SAD]] [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_51 {"position":"425,2025","size":"100,100"}
+Eh, Sean. Je ne suis pas n’importe qui.  [[>>->Chp0_Sb1_Wrm_52]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Wrm_52 {"position":"425,2150","size":"100,100"}
+J’arrive à être premier de ma promo de médecine ET à gonfler mes pecs à la salle. Je suis quelqu’un qui en veut, tu vois.   [[>>->Chp0_Sb1_Wrm_53]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Wrm_53 {"position":"425,2275","size":"100,100"}
+Ouais… Enfin.. Avec un dos comme le tien, je préfère m’assurer que t’en as dans le froc. [[>>->Chp0_Sb1_Wrm_54]]  [[Character:SEAN-HAPPY]] [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_54 {"position":"425,2400","size":"100,100"}
+Pourquoi t’es venu voir mon banc ? [[Devenir le meilleur de moi-même->Chp0_Sb1_Wrm_56]]
+[[Libérer la tension->Chp0_Sb1_Wrm_65]]
+[[Avoir un physique avantageux->Chp0_Sb1_Wrm_71]]   [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_56 [KEY] {"position":"300,2525","size":"100,100"}
+« Ubi voluntas est, ibi via est. » [[>>->Chp0_Sb1_Wrm_57]]  [[Character:SEAN-HAPPY]] [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Wrm_57 {"position":"300,2650","size":"100,100"}
+Ou encore pour les débiles qui ne parlent pas latin, « Quand on veut, on peut » [[>>->Chp0_Sb1_Wrm_58]]   
+
+
+
+:: Chp0_Sb1_Wrm_58 {"position":"300,2775","size":"100,100"}
+C’est comme ça que tu fonctionnes depuis toujours. C’est cette philosophie qui t’a mené si loin. L’ambition est un de tes moteurs. [[>>->Chp0_Sb1_Wrm_59]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_59 {"position":"300,2900","size":"100,100"}
+Putain, t’es un nerd en fait.  [[>>->Chp0_Sb1_Wrm_60]]  [[Character:SEAN-SAD]] [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_60 {"position":"300,3025","size":"100,100"}
+Pas un nerd.  [[>>->Chp0_Sb1_Wrm_61]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Wrm_61 {"position":"300,3150","size":"100,100"}
+Pour être le meilleur, il ne faut négliger ni le corps ni la tête.  [[>>->Chp0_Sb1_Wrm_62]]  [[Character:SEAN-HAPPY]] [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Wrm_62 {"position":"300,3275","size":"100,100"}
+Tu regardes Sean avec un air de défi. Tu sais ce que tu vaux, et tu n’as pas l’intention de le laisser t’intimider. [[>>->Chp0_Sb1_Wrm_63]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_63 {"position":"300,3400","size":"100,100"}
+La pull down sourit en coin. Elle a l’air satisfaite. [[>>->Chp0_Sb1_Wrm_76]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_65 [KEY] {"position":"425,2525","size":"100,100"}
+Sean.. Être interne en médecine implique beaucoup de responsabilités. Je dois prendre des décisions vitales tous les jours.  [[>>->Chp0_Sb1_Wrm_66]]  [[Character:SEAN-HAPPY]] [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Wrm_66 {"position":"425,2650","size":"100,100"}
+Il me faut un moyen de libérer ce stress pour rester au top.  [[>>->Chp0_Sb1_Wrm_67]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Wrm_67 {"position":"425,2775","size":"100,100"}
+Et comme ma meuf… Mon ex… Enfin… Il faut libérer cette tension.  [[>>->Chp0_Sb1_Wrm_68]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Wrm_68 {"position":"425,2900","size":"100,100"}
+T’as plus ta meuf pour te vider les couilles et tu veux… [[>>->Chp0_Sb1_Wrm_69]]  [[Character:SEAN-FLIRTY]] [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_69 {"position":"425,3025","size":"100,100"}
+Un autre type d’exutoire, c’est ça. [[>>->Chp0_Sb1_Wrm_76]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Wrm_71 [KEY] {"position":"550,2525","size":"100,100"}
+Je veux que mon ex soit dégoutée de m’avoir quitté. [[>>->Chp0_Sb1_Wrm_72]]  [[Character:SEAN-HAPPY]] [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Wrm_72 {"position":"550,2650","size":"100,100"}
+C’est une gonz’ qui t’a lâché ? Ha ! C’est minable.  [[>>->Chp0_Sb1_Wrm_73]]   [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_73 {"position":"550,2775","size":"100,100"}
+Justement. Elle m’a trop cassé les couilles.  [[>>->Chp0_Sb1_Wrm_74]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Wrm_74 {"position":"550,2900","size":"100,100"}
+T’inquiète, les meufs, ça sert qu’à se vider les couilles.  [[>>->Chp0_Sb1_Wrm_75]]   [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_75 {"position":"550,3025","size":"100,100"}
+Mais tellement ! Et pour maximiser mon potentiel, il me faut un corps de ouf.   [[>>->Chp0_Sb1_Wrm_76]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Wrm_76 {"position":"400,3625","size":"100,100"}
+Allez, mec. Viens poser ton p’tit cul moulé et on commence. [[Attraper la barre directement->Chp0_Sb1_Wrm_78]]
+[[Regarder tout autour pour savoir comment fonctionne la machine->Chp0_Sb1_Wrm_80]]  [[Character:SEAN-HAPPY]] [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_78 [BONUS-SEAN] {"position":"337.5,3750","size":"100,100"}
+Oh ouais ! T’y vas pas de main morte, mon grand. J’aime ça. [[>>->Chp0_Sb1_Wrm_81]]   
+
+
+
+:: Chp0_Sb1_Wrm_80 [MALUS-SEAN] {"position":"462.5,3750","size":"100,100"}
+Eh je t’ai dit de pas me faire perdre mon temps. [[>>->Chp0_Sb1_Wrm_81]]   
+
+
+
+:: Chp0_Sb1_Wrm_81 {"position":"400,3950","size":"100,100"}
+Tu t’assoies sur le banc et places tes cuisses sous la poutre de soutien. Le cuir nu est doux et agréable. [[>>->Chp0_Sb1_Wrm_82]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_82 {"position":"400,4075","size":"100,100"}
+Devant toi, tu vois les stickers des championnats internationaux dans lesquels Sean à participer, ainsi que les sponsors prestigieux qui l’ont accompagné. [[>>->Chp0_Sb1_Wrm_83]]   
+
+
+
+:: Chp0_Sb1_Wrm_83 {"position":"400,4200","size":"100,100"}
+Tu ajustes le poids pour le mettre sur l’un des premiers emplacements possibles. [[>>->Chp0_Sb1_Wrm_84]]   
+
+
+
+:: Chp0_Sb1_Wrm_84 {"position":"400,4325","size":"100,100"}
+Ha ! Je savais bien que t’avais des p’tits bras ! [[>>->Chp0_Sb1_Wrm_85]]  [[Character:SEAN-HAPPY]] [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_85 {"position":"400,4450","size":"100,100"}
+Laisse-moi commencer. [[>>->Chp0_Sb1_Wrm_86]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Wrm_86 {"position":"400,4575","size":"100,100"}
+Tu souffles par le nez, avant de te lever légèrement pour attraper la barre de traction. La barre arrive au-dessus de ta tête. [[>>->Chp0_Sb1_Wrm_87]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_87 {"position":"400,4700","size":"100,100"}
+Tu tires avec tes bras. La barre arrive au niveau de tes pectoraux et tu relâches. C’est assez facile, tu ne sens presque rien. [[>>->Chp0_Sb1_Wrm_88]]   
+
+
+
+:: Chp0_Sb1_Wrm_88 {"position":"400,4825","size":"100,100"}
+Ouais t’y es presque. [[>>->Chp0_Sb1_Wrm_89]]  [[Character:SEAN-HAPPY]] [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_89 {"position":"400,4950","size":"100,100"}
+Tu recommences, une fois, deux fois. [[>>->Chp0_Sb1_Wrm_90]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_90 {"position":"400,5075","size":"100,100"}
+Tu as mis un poids assez léger, mais tu n’imaginais pas que le geste soit si facile. Tu sens la chaleur dans tes biceps et ton cœur s’emballer. Tu en profites pour faire 15 répétitions. [[>>->Chp0_Sb1_Wrm_91]]   
+
+
+
+:: Chp0_Sb1_Wrm_91 {"position":"400,5200","size":"100,100"}
+Wow ! C’est pas mal ! [[>>->Chp0_Sb1_Wrm_92]]  [[Character:SEAN-HAPPY]] [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_92 {"position":"400,5325","size":"100,100"}
+Tu lâches complètement la barre de traction et regarde ton rythme cardiaque sur ta montre connectée. [[>>->Chp0_Sb1_Wrm_93]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_93 {"position":"400,5450","size":"100,100"}
+Elle montre 135 bpm. C’est pas mal, mais pour être à son top, il faudrait être entre 140 et 150 bpm. [[>>->Chp0_Sb1_Wrm_94]]   
+
+
+
+:: Chp0_Sb1_Wrm_94 {"position":"400,5575","size":"100,100"}
+Eh mon gars. T’es un homme ou une gonz’ ? Tu me fais rire avec tes poids, là ! [[>>->Chp0_Sb1_Wrm_95]]  [[Character:SEAN-SAD]] [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_95 {"position":"400,5700","size":"100,100"}
+C’était juste pour commencer. [[>>->Chp0_Sb1_Wrm_96]]   [[Speak:SELF]]
+
+
+
+:: Chp0_Sb1_Wrm_96 {"position":"400,5825","size":"100,100"}
+Pour commencer ? Je t’ai dit de pas m’faire perdre mon temps. Donc tu vas te donner à fond ou tu repars chez ta mère, c’est clair ? [[>>->Chp0_Sb1_Wrm_97]]   [[Speak:SEAN]]
+
+
+
+:: Chp0_Sb1_Wrm_97 {"position":"400,5950","size":"100,100"}
+Tu le regardes en pesant ses mots. Après tout, tu as déjà fait une séance complète, ça pourrait te suffire. Et pourtant tu en as encore sous la semelle. Malgré la fatigue, tu pourrais peut-être pousser encore un peu.   [[>>->Chp0_Sb1_Wrm_98]]  [[Character:SELF-]] 
+
+
+
+:: Chp0_Sb1_Wrm_98 {"position":"400,6075","size":"100,100"}
+Je suis là pour te guider, mec. Mais va falloir te la donner avec moi, si tu veux réussir à faire une putain de traction. [[Ajouter beaucoup de poids à la machine->Chp0_Sb1_Wrm_100]]
+[[Refuser la proposition et s’arrêter pour la journée->Chp0_Sb1_Wrm_137]]  [[Character:SEAN-HAPPY]] [[Speak:SEAN]]
+
+
+
+:: END [END] {"position":"375,10600","size":"100,100"}
+
+
+
+:: Image:bckgrnd\\Gym_PullDown.png {"position":"425,525","size":"100,100"}
+
+
+
+:: Speak:SEAN {"position":"612.5,1025","size":"100,100"}
+
+
+
+:: Speak:SELF {"position":"675,775","size":"100,100"}
+
+
+
+:: Start [START] {"position":"550,400","size":"100,100"}
+Tu te diriges vers la machine de pull down, le buste en avant, avec cette confiance qui te va si bien. [[>>->Chp0_Sb1_Wrm_37]] [[Image:bckgrnd\Gym_PullDown.png]] [[Character:SELF-]] 
+
