@@ -51,6 +51,7 @@ public class InputManager : MonoBehaviour
 
                 if(!_textAdventure.currentlyWriting())
                 {
+                Debug.Log("On select choice");
                     SelectButton();
                 }
 
@@ -68,6 +69,7 @@ public class InputManager : MonoBehaviour
     {
         if (EventSystem.current.currentSelectedGameObject != null)
         {
+            Debug.Log("Select button : Event system ");
             Button button = EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
             ExecuteEvents.Execute<IPointerClickHandler>(button.gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerClickHandler);
         }

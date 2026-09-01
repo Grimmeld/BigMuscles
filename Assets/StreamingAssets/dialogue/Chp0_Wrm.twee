@@ -15,7 +15,7 @@ Chp0_Wrm
     "END": "blue",
     "KEY": "blue"
   },
-  "zoom": 1
+  "zoom": 0.6
 }
 
 
@@ -441,7 +441,7 @@ Tu t’assoies sur le banc et places tes cuisses sous la poutre de soutien. Le c
 
 
 :: Chp0_Sb1_Wrm_82 {"position":"400,4075","size":"100,100"}
-Devant toi, tu vois les stickers des championnats internationaux dans lesquels Sean à participer, ainsi que les sponsors prestigieux qui l’ont accompagné. [[>>->Chp0_Sb1_Wrm_83]]   
+Devant toi, tu vois les stickers des championnats internationaux dans lesquels Sean a participé, ainsi que les sponsors prestigieux qui l’ont accompagné. [[>>->Chp0_Sb1_Wrm_83]]   
 
 
 

@@ -240,6 +240,17 @@
                 },
                 {
                     "name": "",
+                    "id": "6c4cca20-9ce3-48d7-aefc-79da3d48e46c",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Advance",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "e0498c3c-7c5d-4b56-93f4-ad3a431ad224",
                     "path": "<Keyboard>/space",
                     "interactions": "",

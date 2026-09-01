@@ -156,11 +156,11 @@ public class EndManager : MonoBehaviour
         Invoke("SliderAnimationGrp1", delayStartSlider);
 
         group2.LeanAlpha(1, fadeGroup);
-        group2.gameObject.LeanMoveLocalX(-283.5f, 1f).delay = 1.5f; ;
+        group2.gameObject.LeanMoveLocalX(-283.5f, 1f).delay = 2f; ;
         Invoke("SliderAnimationGrp2", delayStartSlider);
 
         broFav.LeanAlpha(1, fadeGroup);
-        broFav.gameObject.LeanMoveLocalX(-348.75f, 1f).delay = 3f; ;
+        broFav.gameObject.LeanMoveLocalX(-348.75f, 1f).delay = 5f; ;
 
     }
 
